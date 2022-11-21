@@ -340,9 +340,9 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
 
   const loadAssets = () => {
     for (let i = 0; i < assets.length; i++) {
-      const modelFile = require('../assets/' + assets[i].file)
+      //const modelFile = require('../assets/' + assets[i].file)
       const scale = assets[i].scale
-      loader.load(modelFile, (gltf) => {
+      loader.load('../assets/' + assets[i].file, (gltf) => {
         const model = gltf.scene
         const mesh = model.children[0]
         assets[i].model = model
