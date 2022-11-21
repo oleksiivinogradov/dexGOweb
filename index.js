@@ -4,8 +4,8 @@
 // is loaded, and before body.html is loaded.
 
 //import './index.css'
-import {startGame as startBallThroughTorusGame} from './games/gameBallThroughTorus';
-import {initScenePipelineModule} from './threejs-scene-init';
+import {startGame as startBallThroughTorusGame} from './games/gameBallThroughTorus.js';
+import {initScenePipelineModule} from './threejs-scene-init.js';
 //import * as camerafeedHtml from './camerafeed.html'
 
 let UI
