@@ -2,30 +2,176 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>8th Wall Web: three.js</title>
+    <title>dexGo</title>
     <link rel="stylesheet" type="text/css" href="index.css">
 
     <!-- THREE.js must be supplied -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r123/three.min.js"></script>
 
-    <!-- Required to load glTF (.gltf or .glb) models -->
-    <script src="//cdn.rawgit.com/mrdoob/three.js/r123/examples/js/loaders/GLTFLoader.js"></script>
-
-    <!-- Javascript tweening engine -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
-
     <!-- XR Extras - provides utilities like load screen, almost there, and error handling.
          See github.com/8thwall/web/tree/master/xrextras -->
     <script src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
 
+    <!-- Landing Pages - see https://www.8thwall.com/docs/web/#landing-pages -->
+    <script src='//cdn.8thwall.com/web/landing-page/landing-page.js'></script>
+
+    <!-- Required to load glTF (.gltf or .glb) models -->
+    <script src="//cdn.rawgit.com/mrdoob/three.js/r123/examples/js/loaders/GLTFLoader.js"></script>
+    <!-- Ammo physics -->
+    <script src="//cdn.rawgit.com/mrdoob/three.js/r123/examples/js/libs/ammo.wasm.js"></script>
+
+    <!-- Additional libs -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+
     <!-- 8thWall Web - Replace the app key here with your own app key -->
-    <script async src="//apps.8thwall.com/xrweb?appKey=XXXXXXXX"></script>
+    <script async src="//apps.8thwall.com/xrweb?appKey=kQD39u57pP0x0q1iaHXMIKA1nNxCEaA1eC8SfCrPSb9Wjs1jl7env3iGqcaeLFRkNoqhix"></script>
 
     <!-- client code -->
     <script src="index.js"></script>
   </head>
 
   <body>
+    <!-- Test UI -->
+    <div id="test-ui">
+      <div id="message">
+        You can`t run the game at this location
+      </div>
+      <div id="test-ui-wrapper">
+        <div id="quest-list">
+          <ul>
+          </ul>
+        </div>
+        <div class="active" id="quest-single">
+          <a href="#">Game</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start instructions -->
+    <div id="start-game">
+      <div class="PopUp1_Title">
+        INSTRUCTIONS
+      </div>
+      <div class="PopUp1_Text">
+        <p>First, scan your surroundings to create a collision Mesh.</p>
+        <p>Then, launch as many balls through the Circles as you can.</p>    
+      </div>
+      <div id="start-game-button" class="PopUp1_Btn">
+        <p>START</p>
+      </div>
+    </div>
+
+    <!-- Main page -->
+    <div id="main-page">
+      <div id="Main_Tab">  
+        <div class="Main_BG"></div>     
+        <div class="Main_Road"></div> 
+        <div class="Main_Logo"></div>
+        <div id="TopContent">
+          <div class="UserFlow">
+            <div class="UF_Username">Username</div>
+            <div class="UF_Values">
+              <div class="UF_Money">10995$</div>
+              <div class="UF_Distance">231km</div>
+              <div class="UF_Rating">1795</div>
+              <div class="UserAvatar"><img src="assets/css/img/Avatar_Example_Img.png"></div>
+            </div>  
+          </div>
+          <div class="TC_Profile">
+            <p>PROFILE</p>
+          </div>
+          <div class="TC_FAQ">
+          </div>      
+        </div>
+      </div>
+      <div class="Main_Map">
+        <div class="Map"><img src="assets/css/img/MapImage.png"></div>
+        <div class="Map_Btn">
+          <div class="Map_Left_Flow"></div>   
+          <div class="Minus_btn"></div>
+          <div class="Map_Center_Flow"></div>     
+          <div class="Plus_btn"></div>
+          <div class="Map_Right_Flow"></div>      
+        </div>    
+      </div>
+      <div class="Main_Quest">
+        <h1>Explore the closest quest from you</h1>
+        <h1 id="tracking-status">no tracking</h1>
+        <div class= "Main_Quest_Btn">
+          <p>TAP TO BEGIN</p>   
+        </div>
+      </div>
+      <div id="MainMenu">
+        <nav>
+          <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">SHOES</a></li>
+            <li><a href="#">QUESTS</a></li>
+            <li><a href="#">ASSETS</a></li>
+          </ul>
+        </nav>    
+      </div>
+    </div>
+
+    <!-- Ball through Torus game -->
+    <div id="game">
+      <div id="headerimg">
+              <img src="assets/css/img/header.png">
+      </div>
+      <div class="Had_Left">
+         DESTROY CIRCLES
+      </div>
+      <div class="Had_MidleUp">
+         TIME      
+      </div>
+      <div id="clock" class="Had_MidleDown">
+         00:00       
+      </div>    
+      <div class="Had_Right">
+         AMOUNT: <span id="current-count">0</span>/<span id="total-count">12</span>
+      </div>      
+      <div id="restart-button" class="Left_Btn">
+         <p>RESTART</p>
+      </div>
+      <div id="end-button" class="Right_Btn">
+         <p>FINISH</p>
+      </div>  
+      <div id="launch-ball-button" class="Ball">
+         <img src="assets/css/img/Ball.gif">
+      </div>      
+      <div class="Circle">
+         <img src="assets/css/img/Circle.png">
+      </div>
+    </div>
+
+    <!-- Game results -->
+    <div id="end-game">
+      <div class="GO_Title">
+        GREAT JOB!
+      </div>
+      <div class="GO_Result">
+        YOUR RESULT
+      </div>
+      <div id="game-score" class="GO_Result_Value">
+        100
+      </div>    
+      <div class="GO_Time">
+        YOUR TIME
+      </div>
+      <div id="game-time" class="GO_Time_Value">
+        100
+      </div>    
+      <div id="end-restart-button" class="GO_Restart">
+        <span>RESTART</span>
+      </div>  
+      <div id="exit-button" class="GO_Exit">
+        <span>EXIT</span>
+      </div>
+    </div>
     <canvas id="camerafeed"></canvas>
   </body>
 </html>
