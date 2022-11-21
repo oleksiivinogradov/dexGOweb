@@ -103,14 +103,12 @@ const launchGame = (vps,module,wayspotId) => {
     XR8.XrController.configure({scale: 'absolute', enableVps: false})  
   }
   
-  /*
   window.CoachingOverlay.configure({
     disablePrompt: true,
   })
   window.VpsCoachingOverlay.configure({
     disablePrompt: true,
   })
-  */
 
   XR8.addCameraPipelineModules([  // Add camera pipeline modules.
     // Existing pipeline modules.
@@ -123,13 +121,13 @@ const launchGame = (vps,module,wayspotId) => {
     window.LandingPage.pipelineModule(),         // Detects unsupported browsers and gives hints.
   ])
   if(vps){
-    //XR8.addCameraPipelineModule(window.VpsCoachingOverlay.pipelineModule())
+    XR8.addCameraPipelineModule(window.VpsCoachingOverlay.pipelineModule())
     XR8.addCameraPipelineModule(initScenePipelineModule())
-    XR8.addCameraPipelineModule(module(UI,/*window.VpsCoachingOverlay*/vps,vps,Ammo,wayspotId))
+    XR8.addCameraPipelineModule(module(UI,window.VpsCoachingOverlay,vps,Ammo,wayspotId))
   }else{
-    //XR8.addCameraPipelineModule(window.CoachingOverlay.pipelineModule())
+    XR8.addCameraPipelineModule(window.CoachingOverlay.pipelineModule())
     XR8.addCameraPipelineModule(initScenePipelineModule())
-    XR8.addCameraPipelineModule(module(UI,/*window.CoachingOverlay*/vps,vps,Ammo))
+    XR8.addCameraPipelineModule(module(UI,window.CoachingOverlay,vps,Ammo))
   }
 
   // Open the camera and start running the camera run loop.

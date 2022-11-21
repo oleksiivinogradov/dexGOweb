@@ -154,11 +154,10 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
     // UI
     setTimeout(function () {
       $('.tracking #game').fadeIn(500)
-      /*
+      
       coachingOverlay.configure({
         disablePrompt: false,
       })
-      */
       
     }, 500)
 
@@ -520,11 +519,11 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
           UI.gameBallThroughTorusEndUI.find('#game-time').html(UI.gameBallThroughTorusMainUI.find('#clock').html())
           
           config.game.status.enabled = false
-          /*
+          
           coachingOverlay.configure({
             disablePrompt: true,
           })
-          */
+          
           UI.gameBallThroughTorusMainUI.fadeOut(500)
           setTimeout(function () {
             clearInterval(timer)
