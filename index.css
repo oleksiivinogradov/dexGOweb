@@ -239,7 +239,7 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   z-index: 5; 
-  display: none;
+  //display: none;
 }
 
 .PopUp1_Btn{
