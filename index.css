@@ -26,9 +26,9 @@ a {
   left:0;
   top:0;
 }
-#start-game, #main-page, #game, #end-game {
+/*#start-game, #main-page, #game, #end-game {
   display:none;
-}
+}*/
 #test-ui-wrapper {
   position: absolute;
   top: 50%;

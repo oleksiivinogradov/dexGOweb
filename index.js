@@ -12,6 +12,10 @@ let UI
 let canvas
 const layoutModules = [
   {file: 'test-ui.html', elementId: 'test-ui'},
+  {file: 'instructions.html', elementId: 'start-game'},
+  {file: 'main-page.html', elementId: 'main-page'},
+  {file: 'ball-through-torus-game-ui.html', elementId: 'ball-through-torus-game-ui'},
+  {file: 'end-game.html', elementId: 'end-game'},
 ]
 
 // Check Location Permissions at beginning of session
@@ -98,7 +102,7 @@ const finalPreparation = () => {
   UI = {
     instructionsScreen: $('#start-game'),
     mainPage: $('#main-page'),
-    gameBallThroughTorusMainUI: $('#game'),
+    gameBallThroughTorusMainUI: $('#ball-through-torus-game-ui'),
     gameBallThroughTorusEndUI: $('#end-game'),
     testUI: $('#test-ui')
   }
@@ -186,7 +190,7 @@ const onxrloaded = () => {
     let layoutModulesLoaded = 0
     for(let i = 0; i < layoutModules.length; i++){
       $( '#temp' ).load( './layout/'+layoutModules[i].file+' #'+layoutModules[i].elementId, function() {
-        $('#'+layoutModules[i].elementId).appendTo('body')
+        $('#'+layoutModules[i].elementId).appendTo('body').hide()
         layoutModulesLoaded += 1
         if(layoutModulesLoaded == layoutModules.length){
           $('#temp').remove()
