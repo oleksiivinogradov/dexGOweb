@@ -184,7 +184,7 @@ const onxrloaded = () => {
     // Load layout modules
     let layoutModulesLoaded = 0
     for(let i = 0; i < layoutModules.length; i++){
-      $( "body" ).load( './layout/'+layoutModules[i].file+' '+layoutModules[i].elementId, function() {
+      $( "body" ).load( './layout/'+layoutModules[i].file+' #'+layoutModules[i].elementId, function() {
         layoutModulesLoaded += 1
         if(layoutModulesLoaded == layoutModules.length){
           finalPreparation()
