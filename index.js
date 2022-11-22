@@ -10,7 +10,9 @@ import {initScenePipelineModule} from './threejs-scene-init.js';
 
 let UI
 let canvas
-//let Ammo
+const layoutModules = [
+  {file: 'test-ui.html', elementId: 'test-ui'},
+]
 
 // Check Location Permissions at beginning of session
 const errorCallback = (error) => {
@@ -92,6 +94,42 @@ const renderWayspots = () => {
   }
 }
 
+const finalPreparation = () => {
+  UI = {
+    instructionsScreen: $('#start-game'),
+    mainPage: $('#main-page'),
+    gameBallThroughTorusMainUI: $('#game'),
+    gameBallThroughTorusEndUI: $('#end-game'),
+    testUI: $('#test-ui')
+  }
+  testUI.show()
+  renderWayspots()
+  // launch game without VPS
+  $('#quest-single > a').on('touchstart', function (e) {
+    e.preventDefault()
+    UI.testUI.fadeOut(500)
+    launchGame(false,startBallThroughTorusGame)
+  })
+  // launch game with VPS
+  $('#quest-list ul li').on('touchstart', function (e) {
+    if($(this).hasClass('active')){
+      e.preventDefault()
+      UI.testUI.fadeOut(500)
+      const wayspotId = $(this).data('name')
+      launchGame(true,startBallThroughTorusGame,wayspotId)
+    }else{
+      $('#message').html('You can\'t run the game at this location').show().fadeOut(1000)
+    }
+  })
+  // Enable Physics
+  enablePhysics()
+  // Start checking location with interval
+  checkGeolocationInterval = setInterval(checkGeolocation, checkGeolocationIntervalTime)
+  // Add a canvas to the document for our xr scene.
+  //document.body.insertAdjacentHTML('beforeend', camerafeedHtml)
+  canvas = document.getElementById('camerafeed')
+}
+
 //console.log(JSON.stringify(routeJSON))
 
 const launchGame = (vps,module,wayspotId) => {
@@ -142,53 +180,17 @@ const enablePhysics = () => {
 
 const onxrloaded = () => {
 
-  // Render wayspots based on JSON
   $( document ).ready(function() {
-    UI = {
-      instructionsScreen: $('#start-game'),
-      mainPage: $('#main-page'),
-      gameBallThroughTorusMainUI: $('#game'),
-      gameBallThroughTorusEndUI: $('#end-game'),
-      testUI: $('#test-ui')
-    }
-    renderWayspots()
-    //launch game without VPS
-    $('#quest-single > a').on('touchstart', function (e) {
-      e.preventDefault()
-      UI.testUI.fadeOut(500)
-      launchGame(false,startBallThroughTorusGame)
-    })
-    $('#quest-list ul li').on('touchstart', function (e) {
-      if($(this).hasClass('active')){
-        e.preventDefault()
-        UI.testUI.fadeOut(500)
-        const wayspotId = $(this).data('name')
-        launchGame(true,startBallThroughTorusGame,wayspotId)
-      }else{
-        $('#message').html('You can\'t run the game at this location').show().fadeOut(1000)
-      }
-    })
-    //stop game
-    /*
-    $('#exit-button').on('touchstart', function (e) {
-      e.preventDefault()
-      UI.gameBallThroughTorusEndUI.fadeOut(500)
-      setTimeout(function(){
-        UI.testUI.fadeIn(500)
+    // Load layout modules
+    let layoutModulesLoaded = 0
+    for(i = 0; i < layoutModules.length; i++){
+      $( "body" ).load( './layout/'+layoutModules[i].file+' '+layoutModules[i].elementId, function() {
+        layoutModulesLoaded += 1
+        if(layoutModulesLoaded == layoutModules.length){
+          finalPreparation()
+        }
       })
-      XR8.stop()
-      XR8.Threejs.xrScene().renderer.dispose()
-      XR8.clearCameraPipelineModules()
-    })
-    */
-    // Enable Physics
-    enablePhysics()
-    // Start checking location with interval
-    checkGeolocationInterval = setInterval(checkGeolocation, checkGeolocationIntervalTime)
-    // Add a canvas to the document for our xr scene.
-    //document.body.insertAdjacentHTML('beforeend', camerafeedHtml)
-    canvas = document.getElementById('camerafeed')
-  
+    }
   })
 
 }
