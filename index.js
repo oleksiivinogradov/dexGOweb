@@ -102,7 +102,7 @@ const finalPreparation = () => {
     gameBallThroughTorusEndUI: $('#end-game'),
     testUI: $('#test-ui')
   }
-  testUI.show()
+  UI.testUI.show()
   renderWayspots()
   // launch game without VPS
   $('#quest-single > a').on('touchstart', function (e) {
