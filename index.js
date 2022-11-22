@@ -182,7 +182,7 @@ const onxrloaded = () => {
 
   $( document ).ready(function() {
     // Load layout modules
-    $('body').html('<div id="temp"></div>')
+    $('body').append('<div id="temp"></div>')
     let layoutModulesLoaded = 0
     for(let i = 0; i < layoutModules.length; i++){
       $( '#temp' ).load( './layout/'+layoutModules[i].file+' #'+layoutModules[i].elementId, function() {
