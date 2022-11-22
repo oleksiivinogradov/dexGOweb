@@ -182,11 +182,14 @@ const onxrloaded = () => {
 
   $( document ).ready(function() {
     // Load layout modules
+    $('body').html('<div id="temp"></div>')
     let layoutModulesLoaded = 0
     for(let i = 0; i < layoutModules.length; i++){
-      $( "body" ).load( './layout/'+layoutModules[i].file+' #'+layoutModules[i].elementId, function() {
+      $( '#temp' ).load( './layout/'+layoutModules[i].file+' #'+layoutModules[i].elementId, function() {
+        $('#'+layoutModules[i].elementId).appendTo('body')
         layoutModulesLoaded += 1
         if(layoutModulesLoaded == layoutModules.length){
+          $('#temp').remove()
           finalPreparation()
         }
       })
