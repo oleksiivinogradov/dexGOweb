@@ -654,9 +654,11 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
         colorWrite: false,
       })
       const vpsMesh = new THREE.Mesh(bufferGeometry, material)  // construct VPS mesh - wireframe
-      const occlusionBufferGeometry = bufferGeometry.clone()
-      const vpsMeshOcclusion = new THREE.Mesh(occlusionBufferGeometry, occlMaterial)  // construct VPS mesh - occlusion
+      //const occlusionBufferGeometry = bufferGeometry.clone()
+      const vpsMeshOcclusion = vpsMesh.clone()  // construct VPS mesh - occlusion
+
       console.log('cloned vps occlusion')
+      vpsMeshOcclusion.material = occlMaterial
       vpsMeshOcclusion.renderOrder = 2
       scannedMesh = vpsMesh
       mainGroup.add(scannedMesh)
