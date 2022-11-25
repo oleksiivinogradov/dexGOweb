@@ -153,7 +153,7 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
     config.game.status.enabled = true
     // UI
     setTimeout(function () {
-      $('.tracking #game').fadeIn(500)
+      $('.tracking').find('#'+UI.gameBallThroughTorusMainUI.attr('id')).fadeIn(500)
       
       coachingOverlay.configure({
         disablePrompt: false,
