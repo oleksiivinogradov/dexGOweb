@@ -467,7 +467,7 @@ a {
   max-width: 100%;
   max-height: 100%;   
   z-index:1;
-  //background-image:url('./assets/css/img/BG_Gradient.png');
+  background-image:url('./assets/css/img/BG_Gradient.png');
   background-repeat:repeat x;
   background: cover;  
 }
@@ -476,7 +476,7 @@ a {
   width: 100%;
   height: 100%;   
   z-index:2;
-  //background-image:url('./assets/css/img/BG.png');
+  background-image:url('./assets/css/img/BG.png');
   background-repeat: no-repeat;
   background-position: top;
   background-size: auto 100%; 
@@ -489,7 +489,7 @@ a {
   position: absolute;
   bottom: -70%;
   text-align: center;
-  //background-image:url('./assets/css/img/Road.png');
+  background-image:url('./assets/css/img/Road.png');
   background-repeat: no-repeat;
   background-position: top;
   background-size: 100% 40%; 
