@@ -638,6 +638,7 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
 
   const foundMesh = ({detail}) => {
     if(scannedMesh == null){
+      console.log('vps no wireframe')
       //console.log('mesh found')
       const {id, position, rotation, geometry} = detail
       const bufferGeometry = new THREE.BufferGeometry()
@@ -653,16 +654,15 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
         color: 0x999999,
         //colorWrite: false,
       })
-      const vpsMesh = new THREE.Mesh(bufferGeometry, material)  // construct VPS mesh - wireframe
+      const vpsMesh = new THREE.Mesh(bufferGeometry, occlMaterial)  // construct VPS mesh - wireframe
       //const occlusionBufferGeometry = bufferGeometry.clone()
-      const vpsMeshOcclusion = vpsMesh.clone()  // construct VPS mesh - occlusion
+      //const vpsMeshOcclusion = vpsMesh.clone()  // construct VPS mesh - occlusion
 
-      console.log('cloned vps no occlusion')
-      vpsMeshOcclusion.material = occlMaterial
-      vpsMeshOcclusion.renderOrder = 2
+      //vpsMeshOcclusion.material = occlMaterial
+      //vpsMeshOcclusion.renderOrder = 2
       scannedMesh = vpsMesh
       mainGroup.add(scannedMesh)
-      mainGroup.add(vpsMeshOcclusion)
+      //mainGroup.add(vpsMeshOcclusion)
     }
   }
 
