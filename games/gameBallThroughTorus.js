@@ -227,7 +227,7 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
       color.setHex(Math.random() * 0xffff00)
       const material = new THREE.MeshLambertMaterial({color: color})
       torus.children[0].material = material
-      //torus.children[0].renderOrder = 3
+      torus.children[0].renderOrder = 3
       
       //  random position and rotation
       const randPos = -1 * Math.random() - torusDistance
@@ -318,7 +318,7 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
     // Creates a ball and throws it
     ball = config.objects.ball.model.clone()
     ball.scale.set(config.objects.ball.scale,config.objects.ball.scale,config.objects.ball.scale)
-    //ball.children[0].renderOrder = 3
+    ball.children[0].renderOrder = 3
     //  collision
     ballBB = new THREE.Sphere(ball.position,0.1)
 
@@ -654,11 +654,11 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
         colorWrite: false,
       })
       const vpsMesh = new THREE.Mesh(bufferGeometry, material)  // construct VPS mesh - wireframe
-      //const vpsMeshOcclusion = new THREE.Mesh(bufferGeometry, occlMaterial)  // construct VPS mesh - occlusion
-      //vpsMeshOcclusion.renderOrder = 2
+      const vpsMeshOcclusion = new THREE.Mesh(bufferGeometry, occlMaterial)  // construct VPS mesh - occlusion
+      vpsMeshOcclusion.renderOrder = 2
       scannedMesh = vpsMesh
       mainGroup.add(scannedMesh)
-      //mainGroup.add(vpsMeshOcclusion)
+      mainGroup.add(vpsMeshOcclusion)
     }
   }
 
