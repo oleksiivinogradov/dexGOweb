@@ -23,7 +23,7 @@ a {
   font-family: 'Montserrat', sans-serif;
   display:none;
 }
-#test-ui, #start-game, #main-page, #game, #end-game {
+#test-ui, #start-game, #main-page, .game-main-ui, #end-game {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -32,9 +32,6 @@ a {
   left:0;
   top:0;
 }
-/*#start-game, #main-page, #game, #end-game {
-  display:none;
-}*/
 #test-ui-wrapper {
   position: absolute;
   top: 50%;
