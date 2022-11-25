@@ -638,7 +638,7 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
 
   const foundMesh = ({detail}) => {
     if(scannedMesh == null){
-      console.log('vps not indexed + no color + no vertex colors + render order')
+      console.log('vps not indexed + no color + no vertex colors + colorWrite: false + render order')
       //console.log('mesh found')
       const {id, position, rotation, geometry} = detail
       const bufferGeometry = new THREE.BufferGeometry()
@@ -653,6 +653,7 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
         color: 0x999999,
         //vertexColors: true,
         //wireframe: true,
+        colorWrite: false,
       })
       const occlMaterial = new THREE.MeshBasicMaterial({
         color: 0x999999,
