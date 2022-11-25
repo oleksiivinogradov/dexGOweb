@@ -651,7 +651,6 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
       const material = new THREE.MeshBasicMaterial({
         color: 0x999999,
         wireframe: true,
-        colorWrite: false,
       })
       const occlMaterial = new THREE.MeshBasicMaterial({
         color: 0x999999,
