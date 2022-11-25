@@ -651,13 +651,13 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
       })
       const occlMaterial = new THREE.MeshBasicMaterial({
         color: 0x999999,
-        colorWrite: false,
+        //colorWrite: false,
       })
       const vpsMesh = new THREE.Mesh(bufferGeometry, material)  // construct VPS mesh - wireframe
       //const occlusionBufferGeometry = bufferGeometry.clone()
       const vpsMeshOcclusion = vpsMesh.clone()  // construct VPS mesh - occlusion
 
-      console.log('cloned vps occlusion')
+      console.log('cloned vps no occlusion')
       vpsMeshOcclusion.material = occlMaterial
       vpsMeshOcclusion.renderOrder = 2
       scannedMesh = vpsMesh
