@@ -638,7 +638,7 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
 
   const foundMesh = ({detail}) => {
     if(scannedMesh == null){
-      console.log('vps not indexed + no color + no vertex colors + colorWrite: false + render order')
+      console.log('vps not indexed')
       //console.log('mesh found')
       const {id, position, rotation, geometry} = detail
       const bufferGeometry = new THREE.BufferGeometry()
@@ -648,27 +648,22 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
       bufferGeometry.setAttribute( 'position', new THREE.Float32BufferAttribute( vertices, 3 ) )
       bufferGeometry.setIndex( indices )
       const notIndexed = bufferGeometry.toNonIndexed()
-      //notIndexed.setAttribute( 'color', new THREE.Float32BufferAttribute( color, 3 ) )
       const material = new THREE.MeshBasicMaterial({
         color: 0x999999,
-        //vertexColors: true,
-        //wireframe: true,
+        wireframe: true,
         colorWrite: false,
       })
       const occlMaterial = new THREE.MeshBasicMaterial({
         color: 0x999999,
-        //colorWrite: false,
+        colorWrite: false,
       })
       const vpsMesh = new THREE.Mesh(notIndexed, material)  // construct VPS mesh - wireframe
-      //const occlusionBufferGeometry = bufferGeometry.clone()
-      //const vpsMeshOcclusion = vpsMesh.clone()  // construct VPS mesh - occlusion
-
-      //vpsMeshOcclusion.material = occlMaterial
-      //vpsMeshOcclusion.renderOrder = 2
-      vpsMesh.renderOrder = 2
+      const vpsMeshOcclusion = vpsMesh.clone()  // construct VPS mesh - occlusion
+      vpsMeshOcclusion.material = occlMaterial
+      vpsMeshOcclusion.renderOrder = 2
       scannedMesh = vpsMesh
       mainGroup.add(scannedMesh)
-      //mainGroup.add(vpsMeshOcclusion)
+      mainGroup.add(vpsMeshOcclusion)
     }
   }
 
