@@ -655,6 +655,7 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
       })
       const vpsMesh = new THREE.Mesh(bufferGeometry, material)  // construct VPS mesh - wireframe
       const vpsMeshOcclusion = new THREE.Mesh(bufferGeometry, occlMaterial)  // construct VPS mesh - occlusion
+      console.log('vps occlusion')
       vpsMeshOcclusion.renderOrder = 2
       scannedMesh = vpsMesh
       mainGroup.add(scannedMesh)
