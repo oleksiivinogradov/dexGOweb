@@ -605,7 +605,7 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
       updateTriggersAndPhysics()
       $('body').addClass('tracking')
       if (config.game.status.enabled) {
-        $('.tracking #game').fadeIn(500)
+        $('.tracking').find('#'+UI.gameBallThroughTorusMainUI.attr('id')).fadeIn(500)
       }
       $('#tracking-status').html(detail.name)
     }
