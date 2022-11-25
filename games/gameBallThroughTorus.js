@@ -558,7 +558,7 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
       const ammoTmpQuat = new Ammo.btQuaternion()
       let ms = physicsBody.getMotionState()
       if ( ms ) {
-        console.log(JSON.stringify(ms))
+        //console.log(JSON.stringify(ms))
         ammoTmpPos.setValue(colliderPos.x, colliderPos.y, colliderPos.z)
         ammoTmpQuat.setValue( colliderQuat.x, colliderQuat.y, colliderQuat.z, colliderQuat.w)
 
@@ -654,8 +654,9 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
         colorWrite: false,
       })
       const vpsMesh = new THREE.Mesh(bufferGeometry, material)  // construct VPS mesh - wireframe
-      const vpsMeshOcclusion = new THREE.Mesh(bufferGeometry, occlMaterial)  // construct VPS mesh - occlusion
-      console.log('vps occlusion')
+      const occlusionBufferGeometry = bufferGeometry.clone()
+      const vpsMeshOcclusion = new THREE.Mesh(occlusionBufferGeometry, occlMaterial)  // construct VPS mesh - occlusion
+      console.log('cloned vps occlusion')
       vpsMeshOcclusion.renderOrder = 2
       scannedMesh = vpsMesh
       mainGroup.add(scannedMesh)
