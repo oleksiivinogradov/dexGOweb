@@ -3,10 +3,9 @@
 // app.js is the main entry point for your 8th Wall app. Code here will execute after head.html
 // is loaded, and before body.html is loaded.
 
-//import './index.css'
-import {startGame as startBallThroughTorusGame} from './games/gameBallThroughTorus.js';
-import {initScenePipelineModule} from './threejs-scene-init.js';
-//import * as camerafeedHtml from './camerafeed.html'
+import { initScenePipelineModule } from './threejs-scene-init.js'
+//import { SimplifyModifier } from './modules/SimplifyModifier.js'
+import { startGame as startBallThroughTorusGame } from './games/gameBallThroughTorus.js'
 
 let UI
 let canvas
@@ -82,7 +81,7 @@ let routeJSON = {
         finished: false,
         score: 0,
       } } },
-    { title:'d833976eb9734957a39e633d7287304a.107', name:'d833976eb973', type:'private',
+    { title:'c776d43912874c5ba5c2503c8db7b1af.107', name:'c776d4391287', type:'private',
       location:'', coordinates: {lat:49.83, long:24.01},
       quest:{ status:{
         available: true,

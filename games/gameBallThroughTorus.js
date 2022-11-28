@@ -1,3 +1,5 @@
+import { SimplifyModifier } from '../modules/SimplifyModifier.js'
+
 export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
   //  Assets
   const assets = [
@@ -37,6 +39,7 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
   let world
   let animationLoop
   const mainGroup = new THREE.Group()
+  const wayspotGroup = new THREE.Group()
   const floorGroup = new THREE.Group()
   const independentGroup = new THREE.Group()
   let scannedMesh = null
@@ -70,6 +73,7 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
   const init = () => {
     console.log('Init game')
     mainGroup.visible = false
+    wayspotGroup.visible = false
     // UI
     UI.instructionsScreen.fadeIn(500)
     UI.instructionsScreen.find('#start-game-button').on('touchstart', function () {
@@ -104,6 +108,7 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
     
 		
     scene.add(mainGroup)
+    scene.add(wayspotGroup)
     scene.add(floorGroup)
     scene.add(independentGroup)
 
@@ -119,21 +124,24 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
     //  stop ball launch button event listener
     UI.gameBallThroughTorusMainUI.find('#launch-ball-button').unbind()
     
-    //  remove all objects
+    //  remove all objects except scanned wayspot
     for (let i = mainGroup.children.length - 1; i >= 0; i--) {
       mainGroup.remove(mainGroup.children[i])
     }
     for (let i = floorGroup.children.length - 1; i >= 0; i--) {
-      mainGroup.remove(floorGroup.children[i])
+      floorGroup.remove(floorGroup.children[i])
     }
     for (let i = independentGroup.children.length - 1; i >= 0; i--) {
-      mainGroup.remove(independentGroup.children[i])
+      independentGroup.remove(independentGroup.children[i])
     }
     for (let i = rigidBodies.length - 1; i >= 0; i--) {
       physicsWorld.removeRigidBody( rigidBodies[i] )
     }
     for (let i = staticBodies.length - 1; i >= 0; i--) {
       physicsWorld.removeRigidBody( staticBodies[i] )
+    }
+    for (let i = collisionTriggers.length - 1; i >= 0; i--) {
+      collisionTriggers[i].makeEmpty()
     }
     rigidBodies = []
     staticBodies = []
@@ -199,11 +207,11 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
     const centerGeometry = new THREE.SphereGeometry( 0.05, 16, 8 )
     const centerMaterial = new THREE.MeshBasicMaterial( { color: 0xff0000 } )
     const centerSphere = new THREE.Mesh( centerGeometry, centerMaterial )
-    mainGroup.add( centerSphere )
+    wayspotGroup.add( centerSphere )
 
     //  add scanned mesh
     if(scannedMesh != null){
-      mainGroup.add(scannedMesh)
+      wayspotGroup.add(scannedMesh)
     }
 
     //  add ground
@@ -283,6 +291,7 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
       body.setCollisionFlags( 2 )
 
   		torus.children[0].userData.physicsBody = body
+      body.sceneObject = torus
   		physicsWorld.addRigidBody( body )
   		sphereBS.staticBody = body
   		staticBodies.push(body)
@@ -296,6 +305,16 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
 
     //  start clock
     timer = setInterval(renderClock, 1000)
+
+    // add scanned mesh if already exists
+    if(scannedMesh != null){
+      let body = scannedMesh.staticBody
+      physicsWorld.addRigidBody( body )
+      staticBodies.push(body)
+    }
+
+    // update triggers and physics
+    updateTriggersAndPhysics()
   }
   
   const renderClock = () => {
@@ -349,6 +368,12 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
         model.castShadow = true
       })
     }
+    // wayspot collider
+    loader.load('../assets/models/' + wayspotId + '_collider.glb', (gltf) => {
+      const model = gltf.scene
+      const mesh = model.children[0]
+      config.objects.wayspotMesh = mesh
+    })
   }
 
   const initPhysics = () => {
@@ -546,21 +571,22 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
       const triggerRadius = collisionTriggers[i].radius
       collisionTriggers[i].mainObject.getWorldPosition(triggerPos)
       collisionTriggers[i].set(new THREE.Vector3(triggerPos.x,triggerPos.y,triggerPos.z), triggerRadius)
-
+    }
+    for (let i = 0; i < staticBodies.length; i++){
       // collision
-      const colliderPos = new THREE.Vector3()
-      const colliderQuat = new THREE.Quaternion()
-      const physicsBody = collisionTriggers[i].mainObject.children[0].userData.physicsBody
-      collisionTriggers[i].mainObject.getWorldPosition(colliderPos)
-      collisionTriggers[i].mainObject.getWorldQuaternion(colliderQuat)
+      const sceneObjectPos = new THREE.Vector3()
+      const sceneObjectQuat = new THREE.Quaternion()
+      const physicsBody = staticBodies[i]
+      staticBodies[i].sceneObject.getWorldPosition(sceneObjectPos)
+      staticBodies[i].sceneObject.getWorldQuaternion(sceneObjectQuat)
       const tmpTrans = new Ammo.btTransform()
       const ammoTmpPos = new Ammo.btVector3()
       const ammoTmpQuat = new Ammo.btQuaternion()
       let ms = physicsBody.getMotionState()
       if ( ms ) {
         //console.log(JSON.stringify(ms))
-        ammoTmpPos.setValue(colliderPos.x, colliderPos.y, colliderPos.z)
-        ammoTmpQuat.setValue( colliderQuat.x, colliderQuat.y, colliderQuat.z, colliderQuat.w)
+        ammoTmpPos.setValue(sceneObjectPos.x, sceneObjectPos.y, sceneObjectPos.z)
+        ammoTmpQuat.setValue( sceneObjectQuat.x, sceneObjectQuat.y, sceneObjectQuat.z, sceneObjectQuat.w)
 
         tmpTrans.setIdentity()
         tmpTrans.setOrigin( ammoTmpPos )
@@ -602,6 +628,9 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
       mainGroup.visible = true
       mainGroup.position.copy(detail.position)
       mainGroup.quaternion.copy(detail.rotation)
+      wayspotGroup.visible = true
+      wayspotGroup.position.copy(detail.position)
+      wayspotGroup.quaternion.copy(detail.rotation)
       updateTriggersAndPhysics()
       $('body').addClass('tracking')
       if (config.game.status.enabled) {
@@ -614,6 +643,8 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
     if(detail.name == wayspotId){
       mainGroup.position.copy(detail.position)
       mainGroup.quaternion.copy(detail.rotation)
+      wayspotGroup.position.copy(detail.position)
+      wayspotGroup.quaternion.copy(detail.rotation)
       updateTriggersAndPhysics()
     }
   }
@@ -630,6 +661,7 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
     */
     if(detail.name == wayspotId){
       mainGroup.visible = false
+      wayspotGroup.visible = false
       $('body').removeClass('tracking')
       UI.gameBallThroughTorusMainUI.fadeOut(500)
       $('#tracking-status').html('no tracking')
@@ -660,8 +692,87 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
       vpsMeshOcclusion.material = occlMaterial
       vpsMeshOcclusion.renderOrder = 2
       scannedMesh = vpsMesh
-      mainGroup.add(scannedMesh)
-      mainGroup.add(vpsMeshOcclusion)
+      wayspotGroup.add(scannedMesh)
+      wayspotGroup.add(vpsMeshOcclusion)
+
+      // physics
+      /*
+      const modifier = new SimplifyModifier()
+      const simplified = scannedMesh.clone()
+      const count = Math.floor( simplified.geometry.attributes.position.count * 0.15 ) // number of vertices to remove
+      console.log(count)
+      simplified.geometry = modifier.modify( simplified.geometry, count )
+
+      console.log(simplified.geometry.getAttribute('position').array.length)
+      */
+
+
+      let physicsIndices = config.objects.wayspotMesh.geometry.index.array
+      let physicsVerticesPos = config.objects.wayspotMesh.geometry.getAttribute('position').array
+      let physicsVertices = []
+      
+      for (let i = 0; i < physicsVerticesPos.length; i += 3) {
+        physicsVertices.push({
+          x: physicsVerticesPos[i],
+          y: physicsVerticesPos[i+1],
+          z: physicsVerticesPos[i+2]
+        })
+      }
+      
+      //let triangle
+      let triangle_mesh = new Ammo.btTriangleMesh(true, true)
+      let vecA = new Ammo.btVector3(0, 0, 0)
+      let vecB = new Ammo.btVector3(0, 0, 0)
+      let vecC = new Ammo.btVector3(0, 0, 0)
+      
+      for (let i = 0; i < physicsIndices.length - 3; i += 3) {
+        vecA.setX(physicsVertices[physicsIndices[i]].x)
+        vecA.setY(physicsVertices[physicsIndices[i]].y)
+        vecA.setZ(physicsVertices[physicsIndices[i]].z)
+
+        vecB.setX(physicsVertices[physicsIndices[i+1]].x)
+        vecB.setY(physicsVertices[physicsIndices[i+1]].y)
+        vecB.setZ(physicsVertices[physicsIndices[i+1]].z)
+
+        vecC.setX(physicsVertices[physicsIndices[i+2]].x)
+        vecC.setY(physicsVertices[physicsIndices[i+2]].y)
+        vecC.setZ(physicsVertices[physicsIndices[i+2]].z)
+
+        triangle_mesh.addTriangle(vecA, vecB, vecC, true)
+      }
+
+      const scannedShape = new Ammo.btBvhTriangleMeshShape(triangle_mesh, true, true)
+      scannedShape.setMargin( margin )
+
+      pos.copy(new THREE.Vector3())
+      quat.copy(new THREE.Quaternion())
+      const transform = new Ammo.btTransform()
+      transform.setIdentity()
+      transform.setOrigin( new Ammo.btVector3( pos.x, pos.y, pos.z ) )
+      transform.setRotation( new Ammo.btQuaternion( quat.x, quat.y, quat.z, quat.w ) )
+      let motionState = new Ammo.btDefaultMotionState( transform )
+  
+      let localInertia = new Ammo.btVector3( 0, 0, 0 )
+      scannedShape.calculateLocalInertia( 0, localInertia )
+  
+      const rbInfo = new Ammo.btRigidBodyConstructionInfo( 0, motionState, scannedShape, localInertia )
+      const body = new Ammo.btRigidBody( rbInfo )
+  
+      body.setFriction(0.5)
+      body.setRestitution(0.5)
+
+      body.setActivationState( 4 )
+      body.setCollisionFlags( 2 )
+
+      body.sceneObject = scannedMesh
+      physicsWorld.addRigidBody( body )
+      scannedMesh.staticBody = body
+      staticBodies.push(body)
+
+      // update triggers and physics
+      updateTriggersAndPhysics()
+      console.log('ok')
+      
     }
   }
 
@@ -694,6 +805,9 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
     UI.gameBallThroughTorusMainUI.find('#end-button').unbind()
     // clear Scene
     clearScene()
+    for (let i = wayspotGroup.children.length - 1; i >= 0; i--) {
+      wayspotGroup.remove(wayspotGroup.children[i])
+    }
     // stop animation loop
     cancelAnimationFrame(animationLoop)
 		// stop XR8
