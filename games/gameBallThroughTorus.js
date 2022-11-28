@@ -10,7 +10,7 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
   ]
   //  Ball settings
 	const ballMass = 1
-	const ballColliderRadius = 0.1
+	const ballColliderRadius = 0.075
 	const ballThrowForce = 15
 	let ball
 	let ballBB
@@ -69,6 +69,13 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
 	let transformAux1
 	let tempBtVec3_1
 	let collisionTriggers = []
+
+  // Anchors
+  const anchorRaycaster = new THREE.Raycaster()
+  const anchorPointer = new THREE.Vector2()
+  let anchorRaycastEnabled = false
+  const anchorDummy = new THREE.Mesh( new THREE.BoxGeometry( 0.1,0.1,0.1 ), new THREE.MeshBasicMaterial( {color: 0x00ff00} ) )
+  const anchorAxis = new THREE.Vector3(0, 0, 1)
   
   const init = () => {
     console.log('Init game')
@@ -95,6 +102,8 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
       config.game.status.enabled = false
       
       UI.gameBallThroughTorusMainUI.fadeOut(500)
+      // Anchors UI
+      UI.anchorsUI.hide()
       setTimeout(function () {
         clearInterval(timer)
         UI.gameBallThroughTorusMainUI.find('#clock').html('00:00')
@@ -154,6 +163,13 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
     UI.gameBallThroughTorusMainUI.find('#total-count').html(config.ringsTotal)
     config.ringsCurrent = 0
     UI.gameBallThroughTorusMainUI.find('#current-count').html(config.ringsCurrent)
+
+    // Anchors
+    anchorRaycastEnabled = false
+    $('#anchors-raycast').unbind()
+    $('#anchors-place').unbind()
+    $('#anchors-raycast').parent().removeClass('active')
+    $('#anchors-place').parent().removeClass('active')
   }
 
   const start = () => {
@@ -315,6 +331,38 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
 
     // update triggers and physics
     updateTriggersAndPhysics()
+
+    // Anchors UI
+    UI.anchorsUI.show()
+    $('#anchors-raycast').on('touchstart', function(){
+      console.log('Raycast')
+      if(!$(this).parent().hasClass('active')){
+        // Enable anchor raycast
+        console.log('Enable raycast')
+        $(this).parent().addClass('active')
+        $(this).parent().next().addClass('active')
+        anchorRaycastEnabled = true
+        anchorDummy.visible = true
+      }else{
+        // Disable anchor raycast
+        console.log('Disable raycast')
+        $(this).parent().removeClass('active')
+        $(this).parent().next().removeClass('active')
+        anchorDummy.visible = false
+        anchorRaycastEnabled = false
+      }
+    })
+    $('#anchors-place').on('touchstart', function(){
+      if($(this).parent().hasClass('active')){
+        // Place anchor
+        const anchor = anchorDummy.clone()
+        anchor.material = new THREE.MeshBasicMaterial( {color: 0x0000ff} )
+        mainGroup.attach(anchor)
+      }
+    })
+    // Anchor dummy
+    anchorDummy.visible = false
+    independentGroup.add( anchorDummy )
   }
   
   const renderClock = () => {
@@ -359,7 +407,6 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
 
   const loadAssets = () => {
     for (let i = 0; i < assets.length; i++) {
-      //const modelFile = require('../assets/' + assets[i].file)
       const scale = assets[i].scale
       loader.load('../assets/models/' + assets[i].file, (gltf) => {
         const model = gltf.scene
@@ -472,13 +519,11 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
 		} else {
 			pos = object.position
 		}
-
 		if ( quat ) {
 			object.quaternion.copy( quat )
 		} else {
 			quat = object.quaternion
 		}
-
 		const transform = new Ammo.btTransform()
 		transform.setIdentity()
 		transform.setOrigin( new Ammo.btVector3( pos.x, pos.y, pos.z ) )
@@ -497,7 +542,6 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
 		if ( vel ) {
 			body.setLinearVelocity( new Ammo.btVector3( vel.x, vel.y, vel.z ) )
 		}
-
 		if ( angVel ) {
 			body.setAngularVelocity( new Ammo.btVector3( angVel.x, angVel.y, angVel.z ) )
 		}
@@ -517,8 +561,6 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
 		return body
 	}
 
-	
-
 	const loop = () => {
     animationLoop = requestAnimationFrame(loop)
     const deltaTime = clock.getDelta()
@@ -527,6 +569,20 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
       checkCollisions()
     }
     updatePhysics( deltaTime )
+
+    // Anchor raycast
+    if(anchorRaycastEnabled && scannedMesh != null){
+      raycaster.setFromCamera( new THREE.Vector2(0,0), camera )
+      const intersects = raycaster.intersectObject( scannedMesh )
+      if(intersects.length > 0){
+        anchorDummy.position.copy(intersects[0].point)
+        const n = intersects[ 0 ].face.normal.clone()
+        n.transformDirection( scannedMesh.matrixWorld )
+        n.multiplyScalar( 10 )
+        n.add( intersects[ 0 ].point )
+        anchorDummy.lookAt( n )
+      }
+    }
   }
 
   const checkCollisions = () => {
@@ -550,6 +606,8 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
           })
           
           UI.gameBallThroughTorusMainUI.fadeOut(500)
+          // Anchors UI
+          UI.anchorsUI.hide()
           setTimeout(function () {
             clearInterval(timer)
             UI.gameBallThroughTorusMainUI.find('#clock').html('00:00')
@@ -596,7 +654,6 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
       }
     }
   }
-
   
   const handleTrackingStatusChange = ({detail}) => {
     if (detail.status === 'LIMITED' && detail.reason === 'INITIALIZING') {
@@ -614,16 +671,6 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
   }
 
   const wayspotFound = ({detail}) => {
-    /*
-    switch(detail.name){
-      case '700eb893eee6':
-        mainGroup700eb893eee6.visible = true
-        break;
-      case '6be453f79201':
-        mainGroup6be453f79201.visible = true
-        break;
-    }
-    */
     if(detail.name == wayspotId){
       mainGroup.visible = true
       mainGroup.position.copy(detail.position)
@@ -649,16 +696,6 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
     }
   }
   const wayspotLost = ({detail}) => {
-    /*
-    switch(detail.name){
-      case '700eb893eee6':
-        mainGroup700eb893eee6.visible = false
-        break;
-      case '6be453f79201':
-        mainGroup6be453f79201.visible = false
-        break;
-    }
-    */
     if(detail.name == wayspotId){
       mainGroup.visible = false
       wayspotGroup.visible = false
@@ -670,7 +707,7 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
 
   const foundMesh = ({detail}) => {
     if(scannedMesh == null){
-      //console.log('mesh found')
+      console.log('Mesh found')
       const {id, position, rotation, geometry} = detail
       const bufferGeometry = new THREE.BufferGeometry()
       const indices = geometry.index
@@ -771,8 +808,6 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
 
       // update triggers and physics
       updateTriggersAndPhysics()
-      console.log('ok')
-      
     }
   }
 

@@ -11,6 +11,7 @@ let UI
 let canvas
 const layoutModules = [
   {file: 'test-ui.html', elementId: 'test-ui'},
+  {file: 'anchors-ui.html', elementId: 'anchors-ui'},
   {file: 'instructions.html', elementId: 'start-game'},
   {file: 'main-page.html', elementId: 'main-page'},
   {file: 'ball-through-torus-game-ui.html', elementId: 'ball-through-torus-game-ui'},
@@ -103,7 +104,8 @@ const finalPreparation = () => {
     mainPage: $('#main-page'),
     gameBallThroughTorusMainUI: $('#ball-through-torus-game-ui'),
     gameBallThroughTorusEndUI: $('#end-game'),
-    testUI: $('#test-ui')
+    testUI: $('#test-ui'),
+    anchorsUI: $('#anchors-ui'),
   }
   UI.testUI.show()
   renderWayspots()
