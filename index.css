@@ -576,27 +576,27 @@ a {
   background-repeat: no-repeat;
 }
 .UserAvatar img{
-  width: 100%;	
-  height: auto;
-  top: 50%;
-  left: 50%;
-  margin-top:2%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  position:absolute;
+  width: 82px;	
+  height: 82px;
+  //margin-top:-20%;
+  //top: 40%;
+  //left: 50%;
+  //margin-right: -50%;
+  //transform: translate(-50%, -50%);
+  //position:absolute;
 }
 
 .UserAvatar {
   height: 82px;  
   width: 82px;  
-  top: -30%;
+  top: -38%;
   left:-242%;  
   position: absolute;	
  -webkit-mask-image: url(https://i.ibb.co/8dRnYP6/Avatar-Mask.png);
  -webkit-mask-repeat: no-repeat;
  -webkit-mask-position: center center;
  -webkit-mask-size: contain;
-  mask-image: urlurl(https://i.ibb.co/8dRnYP6/Avatar-Mask.png);
+  mask-image: url(https://i.ibb.co/8dRnYP6/Avatar-Mask.png);
   mask-repeat: no-repeat;
   mask-position: center center;
   mask-size: contain;
@@ -698,11 +698,11 @@ a {
   height: 100%;	
   margin:0px;
   padding:0px 0px 0px 0px;	
- -webkit-mask-image: url(https://i.ibb.co/LxwLC1F/Map-Field-Mask.png);
+ -webkit-mask-image: url(../assets/css/img/MapField_Mask.png);
  -webkit-mask-repeat: no-repeat;
  -webkit-mask-position: center center;
  -webkit-mask-size: contain;
-  mask-image: url(https://i.ibb.co/LxwLC1F/Map-Field-Mask.png);
+  mask-image: url(../assets/css/img/MapField_Mask.png);
   mask-repeat: no-repeat;
   mask-position: center center;
   mask-size: contain;
