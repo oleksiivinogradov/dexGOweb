@@ -592,11 +592,11 @@ a {
   top: -38%;
   left:-242%;  
   position: absolute;	
- -webkit-mask-image: url(https://i.ibb.co/8dRnYP6/Avatar-Mask.png);
+ -webkit-mask-image: url(./assets/css/img/Avatar_Mask.png);
  -webkit-mask-repeat: no-repeat;
  -webkit-mask-position: center center;
  -webkit-mask-size: contain;
-  mask-image: url(https://i.ibb.co/8dRnYP6/Avatar-Mask.png);
+  mask-image: url(./assets/css/img/Avatar_Mask.png);
   mask-repeat: no-repeat;
   mask-position: center center;
   mask-size: contain;
@@ -623,7 +623,7 @@ a {
   position: absolute;  
   z-index: 10;	
 }
-.UF_Values section{ 
+.UF_Values div{ 
   padding-bottom:8%;	
 }
 
