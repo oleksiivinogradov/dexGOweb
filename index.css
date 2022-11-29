@@ -104,81 +104,131 @@ a {
   z-index:1000;
 }
 
-
+#headerimg {
+  width: 100vw;
+  height: auto;
+  margin-top:-0,1%;
+  position:relative;
+  z-index:1;
+  //opacity: 0.7;
+	}
 #headerimg img {
   width: 100%;
   height: auto;
-  margin-top:-8px;
-  position:relative;
+  top:-0,1%;
+  margin: 0px;
+  position:absolute;
   z-index:1;
-  opacity: 0.7;
+  //opacity: 0.7;
 	}
 		
 .Had_Left {
-  width: 25vw;
-  height: auto;
-  float: left;
+  width: 23vw;
+  height: 23vw;
   text-align: center;
   color: #fff;
-  font-size: 2.5vw;
-  margin-left:1vw;
-  margin-top:-10vw;
-  position: relative;
+  font-size: 2.1vw;
+  top: 1%;
+  left: 0%;
+  position: fixed;
   z-index: 2;
-  background-image:url('./assets/css/img/Smal_Label.png');
-  background-size: 100% 100%;
+  background-image:url('./assets/css/img/LeftLabel.png');
+  background-size: contain;
+  background-repeat: no-repeat;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
+}
+.Had_Left p{
+  width: 23vw;
+  height: 23vw;	
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
 
 
 .Had_Right {
-  width: 25vw;
-  height: auto;
-  float: right;
+  width: 23vw;
+  height: 23vw;
   text-align: center;
   color: #fff;
-  font-size: 2.5vw;
-  margin-right:1vw;
-  margin-top:-10vw;
-  position: relative;
+  font-size: 2.1vw;
+  top: 1%;
+  right: 0%;
+  position: fixed;
   z-index: 2;
-  background-image:url('./assets/css/img/Smal_Label.png');
-  background-size: 100% 100%;
+  background-image:url('./assets/css/img/RightLabel.png');
+  background-size: contain;
+  background-repeat: no-repeat;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 }
+.Had_Right p{
+  width: 23vw;
+  height: 23vw;	
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
 .Had_MidleUp {
-  width: 15vw;
-  height: auto;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto; 
+  width: 22vw;
+  height: 7vw; 
   text-align: center;
+  left:50%;
+  margin-right:-50%;
+  position: absolute; 
+  transform: translate(-50%);  
   color: #fff;
   font-size: 4vw;
-  margin-top:-15vw;
   z-index: 2;
-  background-image:url('./assets/css/img/Label.png');
-  background-size: 90% 100%;
+  background-image:url('./assets/css/img/CenterLabel.png');
+  background-size: contain;
   background-repeat: no-repeat;
-  background-position: center; 
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;  
+  font-weight: 700; 
+}
+.Had_MidleUp p{
+  width: 22vw;
+  height: 7vw; 
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
 }
 .Had_MidleDown {
-  width: 25vw;
-  height: auto;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto; 
+  width: 22vw;
+  height: 12vw;
+  position: absolute;
+  top:-0.6%;
+  left:50%;
+  margin-right:-50%;
+  position: absolute; 
+  transform: translate(-50%, 50%);  
   text-align: center;
   color: #fff;
-  font-size: 7vw;
+  font-size: 6vw;
   margin-top:1.5vw;
   z-index: 2;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
+  background-image:url('./assets/css/img/TimerLabel.png');
+  background-size: contain;
+  background-repeat: no-repeat; 
+}
+.Had_MidleDown p{
+  width: 22vw;
+  height: 12vw;
+  position: absolute;
+  top: 19%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
 .Circle {
   width: 30vw;
@@ -193,81 +243,105 @@ a {
   height: auto;
   text-align: center;
   margin-left: auto;
-  margin-right: auto;  
+  margin-right: auto; 
+  user-select:none;  
 }
 .Right_Btn {
-  width: 26vw;
-  height: 13vw;
-  float: right;
+  width: 28vw;
+  height: 15vw;
   color: #fff;
-  font-size: 4vw;
-  bottom: 2vh;
-  left: 66vw; 
+  font-size: 3.2vw;
+  bottom: 5vh;
+  right: 4.5vw; 
   position: absolute;
+  text-align:center;
   z-index: 2;
-  background-image:url('./assets/css/img/Right_Btn.png');
+  background-image:url('./assets/css/img/L_UI_Btn2.png');
   background-size: 100% 100%;
+  background-repeat: no-repeat;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 }
 .Right_Btn:active {
-  background-image:url('./assets/css/img/Right_Btn_Hover.png');
+  background-image:url('./assets/css/img/L_UI_Btn2_Active.png');
   background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-size: 3vw;  
 }
 .Right_Btn p{
-  text-align: center;
+  width: 15vw;
+  height: 10.5vw;
+  position: absolute;  
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
   user-select:none;
 }
 .Left_Btn {
-  width: 26vw;
-  height: 13vw;
-  float: right;
+  width: 28vw;
+  height: 15vw;
   color: #fff;
-  font-size: 4vw;
-  bottom: 2vh;
-  left: 8vw; 
+  font-size: 3.2vw;
+  text-align:center;
+  bottom: 5vh;
+  left: 4.5vw; 
   position: absolute;
   z-index: 2;
-  background-image:url('./assets/css/img/Left_Btn.png');
+  background-image:url('./assets/css/img/L_UI_Btn.png');
   background-size: 100% 100%;
-  font-family: 'Monfile:///G:/OpenBiSea/DEXGo/dexGO/A_Frame%20Project/MiniGame/Level%20UI/./assets/css/img/PopUp1.pngtserrat', sans-serif;
+  background-repeat: no-repeat;
+  font-family: 'Montserrat', sans-serif;  
+  //font-family: 'Monfile:///G:/OpenBiSea/DEXGo/dexGO/A_Frame%20Project/MiniGame/Level%20UI/./assets/css/img/PopUp1.pngtserrat', sans-serif;
   font-weight: 700;  
 }
 .Left_Btn:active {
-  background-image:url('./assets/css/img/Left_Btn_Hover.png');
+  background-image:url('./assets/css/img/L_UI_Btn_Active.png');
   background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-size: 3vw; 
 }
 .Left_Btn p{
-  text-align: center;
+  width: 15vw;
+  height: 10.5vw;
+  position: absolute;  
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
   user-select:none;  
 }
 
 .Ball {
-  width: 28vw;
+  width: 26vw;
   height: auto;
   position: absolute;
-  bottom: 6.4vh;
-  left: 36vw;   
+  bottom: 7.2vh;
+  left: 37vw;   
   z-index:1;  
 }
 .Ball img{
-  width: 28vw;
+  width: 26vw;
   height: auto;
   text-align: center;
   margin-left: auto;
-  margin-right: auto;  
+  margin-right: auto;
+  user-select:none;  
 }
 /*Start PopUp*/
 
-#start-game { 
-  width: 403px;
-  height: 531px;
+#start-game {
+  width: 90%;
+  height: 85%;  
+  max-width: 403px;
+  max-height: 531px;
+  min-height: 480px;
   position: absolute;
   top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  background-image:url('./assets/css/img/PopUp1.png');
+  background-image:url('./assets/css/img/PopUp3.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -276,27 +350,35 @@ a {
 }
 
 .PopUp1_Btn{
-  width: 160px;
-  height: 80px;
-  margin-top: 15%;
-  margin-left:auto;  
-  margin-right:auto;  
+  width: 246px;
+  height: 84px;
+  position: absolute;
+  top: 82%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
   text-align: center;
   color: #fff;
   font-size: 180%;
   z-index: 6;
-  background-image:url('./assets/css/img/Left_Btn2.png');
+  background-image:url('./assets/css/img/L_UI_Big_Btn.png');
   background-size: 100% 100%;
+  background-repeat: no-repeat;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;		
 }
 .PopUp1_Btn:active {
-  background-image:url('./assets/css/img/Left_Btn2_Hover.png');
+  background-image:url('./assets/css/img/L_UI_Big_Btn_Active.png');
   background-size: 100% 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-size: 170%;
 }
 .PopUp1_Btn p{
+  width: 246px;
+  height: 84px;	
   position: absolute;
-  top: 77%;
+  top: 45%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
@@ -309,17 +391,17 @@ a {
    font-weight: 700;		
    color:#a837ac;
    text-align: center;
-   margin-top: 5%;
-   font-size: 200%;   
+   margin-top: 6.5vh;
+   font-size: 4vh;   
    z-index:6;   	
 }
 .PopUp1_Text{
   font-family: 'Montserrat', sans-serif;
   font-weight: 400; 
   color: #fff;
-  font-size: 180%;   
+  font-size: 3.5vh;   
   z-index:6; 
-  margin-top: 10%;
+  margin-top: 5vh;
   margin-left:5%;  
   margin-right:5%;
   text-align: center;  	
