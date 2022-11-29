@@ -576,21 +576,20 @@ a {
   background-repeat: no-repeat;
 }
 .UserAvatar img{
-  width: 82px;	
-  height: 82px;
-  //margin-top:-20%;
-  //top: 40%;
-  //left: 50%;
-  //margin-right: -50%;
-  //transform: translate(-50%, -50%);
-  //position:absolute;
+  width: 81px;	
+  height: 81px;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  position:absolute;
 }
 
 .UserAvatar {
-  height: 82px;  
-  width: 82px;  
-  top: -38%;
-  left:-242%;  
+  height: 80px;  
+  width: 80px;  
+  top: -32%;
+  left:-239%;  
   position: absolute;	
  -webkit-mask-image: url(./assets/css/img/Avatar_Mask.png);
  -webkit-mask-repeat: no-repeat;
@@ -599,7 +598,7 @@ a {
   mask-image: url(./assets/css/img/Avatar_Mask.png);
   mask-repeat: no-repeat;
   mask-position: center center;
-  mask-size: contain;
+  mask-size: contain;  
   z-index:11;
   text-align:center;  
 }
