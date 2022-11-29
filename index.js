@@ -9,6 +9,7 @@ import { startGame as startBallThroughTorusGame } from './games/gameBallThroughT
 
 let UI
 let canvas
+
 const layoutModules = [
   {file: 'test-ui.html', elementId: 'test-ui'},
   {file: 'anchors-ui.html', elementId: 'anchors-ui'},
@@ -27,7 +28,9 @@ const errorCallback = (error) => {
 const checkGeolocation = () => {
   navigator.geolocation.getCurrentPosition((pos) => {
     let userlat = pos.coords.latitude.toFixed(2)
+    currentLat = userlat
     let userlong = pos.coords.longitude.toFixed(2)
+    currentLong = userlong
     const wayspotList = $('#quest-list ul')
     wayspotList.find('li').each(function(){
       //userlat = 50.32
@@ -42,6 +45,9 @@ const checkGeolocation = () => {
     })
   }, errorCallback)
 }
+
+let currentLat
+let currentLong
 checkGeolocation()
 let checkGeolocationInterval
 const checkGeolocationIntervalTime = 5000
@@ -90,6 +96,14 @@ let routeJSON = {
         finished: false,
         score: 0,
       } } },
+    { title:'80076c9b8dbe4591bf34075d496213f5.107', name:'80076c9b8dbe', type:'private',
+      location:'', coordinates: {lat:50.68, long:30.18},
+      quest:{ status:{
+        available: true,
+        started: false,
+        finished: false,
+        score: 0,
+      } } },
   ],
 }
 const renderWayspots = () => {
@@ -107,7 +121,7 @@ const finalPreparation = () => {
     testUI: $('#test-ui'),
     anchorsUI: $('#anchors-ui'),
   }
-  UI.testUI.show()
+  
   renderWayspots()
   // launch game without VPS
   $('#quest-single > a').on('touchstart', function (e) {
@@ -131,8 +145,32 @@ const finalPreparation = () => {
   // Start checking location with interval
   checkGeolocationInterval = setInterval(checkGeolocation, checkGeolocationIntervalTime)
   // Add a canvas to the document for our xr scene.
-  //document.body.insertAdjacentHTML('beforeend', camerafeedHtml)
   canvas = document.getElementById('camerafeed')
+
+  // TEMPORARY
+  UI.testUI.show()
+  //UI.mainPage.show()
+  // Mapbox
+  /*
+  mapboxgl.accessToken = 'pk.eyJ1Ijoib2xla3NpaXZpbm9ncmFkb3YiLCJhIjoiY2w4YTI0NnMzMGNyODNubnVhZ2J5NjMwZyJ9.bTob5w7nd9autIIxbqt5RQ'
+  const map = new mapboxgl.Map({
+    container: 'mapbox-map', // container ID
+    // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+    style: 'mapbox://styles/mapbox/streets-v12', // style URL
+    center: [currentLong, currentLat], // starting position [lng, lat]
+    zoom: 12 // starting zoom
+  })
+  */
+  /*
+  const anchorsJSON = {
+    anchors: [
+      { id:1, position: { x:0,y:0,z:0 }, rotation: { x:0,y:0,z:0,w:0 } },
+      { id:2, position: { x:1,y:0,z:0 }, rotation: { x:1,y:0,z:0,w:0 } },
+      { id:3, position: { x:2,y:0,z:0 }, rotation: { x:2,y:0,z:0,w:0 } },
+    ]
+  }
+  console.log(JSON.stringify(anchorsJSON))
+  */
 }
 
 //console.log(JSON.stringify(routeJSON))
