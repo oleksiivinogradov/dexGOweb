@@ -4,6 +4,7 @@ body {
   height: 100%;
   margin: -1px 0px 0px 0px !important;
   padding: 0;
+  user-select:none;
 }
 a {
   text-decoration: none;
@@ -326,7 +327,7 @@ a {
 }
 /*Start PopUp*/
 
-#start-game {
+#PopUp1 {
   width: 90%;
   height: 85%;  
   max-width: 403px;
@@ -337,7 +338,7 @@ a {
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  background-image:url('./assets/css/img/PopUp3.png');
+  background-image:url('./assets/css/img/PopUp1.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -366,7 +367,6 @@ a {
 .PopUp1_Btn:active {
   background-image:url('./assets/css/img/L_UI_Big_Btn_Active.png');
   background-size: 100% 100%;
-  background-size: contain;
   background-repeat: no-repeat;
   font-size: 170%;
 }
@@ -718,7 +718,8 @@ a {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  text-align:center;  
+  text-align:center; 
+  user-select:none;  
 }
 .TC_Profile:active {	
   background-image:url('./assets/css/img/Profile_Hover_Btn.png');
@@ -802,10 +803,10 @@ a {
 .Minus_btn {
   width: 8vw;
   height: 8vw;
-  max-width:45px;
-  max-height:45px;
-  min-width:35px; 
-  min-height:35px;  
+  max-width:50px;
+  max-height:50px;
+  min-width:40px; 
+  min-height:40px;;  
   z-index: 10;
   background-image:url('./assets/css/img/Minus_Btn.png');
   background-size: contain;
@@ -822,10 +823,10 @@ a {
 .Plus_btn {
   width: 8vw;
   height: 8vw;
-  max-width:45px;
-  max-height:45px;
-  min-width:35px; 
-  min-height:35px;  
+  max-width:50px;
+  max-height:50px;
+  min-width:40px; 
+  min-height:40px;  
   z-index: 10;
   background-image:url('./assets/css/img/Plus_Btn.png');
   background-size: contain;
@@ -848,7 +849,8 @@ a {
   //max-width:45px;
   max-height:45px;
   min-width:65%; 
-  min-height:35px;  
+  min-height:38px;
+  margin-top:10px;  
   z-index: 10;
   background-image:url('./assets/css/img/Reset_PlayerPos_Btn.png');
   background-size: contain;
@@ -867,8 +869,8 @@ a {
   flex: 1 30%;	
 }
 .Map_Reset_Btn {
-  width: 7vw;
-  height: 7vw;
+  width: 6vw;
+  height: 6vw;
   top: 18%;
   left: 12%; 
   margin-right: -50%;
@@ -876,8 +878,8 @@ a {
   position:absolute; 
   max-width:45px;
   max-height:45px;
-  min-width:35px; 
-  min-height:35px;  
+  min-width:30px; 
+  min-height:30px;  
   z-index: 10;
   background-image:url('./assets/css/img/Reset_Map_Btn.png');
   background-size: contain;
@@ -1008,6 +1010,254 @@ nav ul li a:hover {
    background-size: 90px;
    background-position: center;
    background-repeat: no-repeat; 
+}
+/*Main Page PopUps*/
+
+#MP_PopUp {
+  width: 90%;
+  height: 75%;  
+  //max-width: 403px;
+  //max-height: 531px;
+  //min-height: 480px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background-image:url('./assets/css/img/PopUp1.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 5; 
+  //display: none;
+}
+
+.MP_PopUp1_Left_Btn{
+  width: 130px;
+  height: 70px;
+  position: absolute;
+  top: 87%;
+  left: 25%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  color: #fff;
+  font-size: 100%;
+  z-index: 6;
+  background-image:url('./assets/css/img/L_UI_Btn2.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;		
+}
+.MP_PopUp1_Left_Btn:active {	
+  background-image:url('./assets/css/img/L_UI_Btn2_Active.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-size: 90%;
+}
+.MP_PopUp1_Left_Btn p{
+  width: 130px;
+  height: 70px;	
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  user-select:none;
+}
+.MP_PopUp1_Right_Btn{
+  width: 130px;
+  height: 70px;
+  position: absolute;
+  top: 87%;
+  right: 25%;
+  margin-left: -50%;
+  transform: translate(50%, -50%); 
+  text-align: center;
+  color: #fff;
+  font-size: 100%;
+  z-index: 6;
+  background-image:url('./assets/css/img/L_UI_Btn.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;		
+}
+.MP_PopUp1_Right_Btn:active {
+  background-image:url('./assets/css/img/L_UI_Btn_Active.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-size: 90%;
+}
+.MP_PopUp1_Right_Btn p{
+  width: 130px;
+  height: 70px;	
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  user-select:none;
+}
+.MP_PopUp2_Btn{
+  width: 246px;
+  height: 84px;
+  position: absolute;
+  top: 87%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  color: #fff;
+  font-size: 160%;
+  z-index: 6;
+  background-image:url('./assets/css/img/L_UI_Big_Btn.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;		
+}
+.MP_PopUp2_Btn:active {
+  background-image:url('./assets/css/img/L_UI_Big_Btn_Active.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-size: 150%;
+}
+.MP_PopUp2_Btn p{
+  width: 246px;
+  height: 84px;	
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  user-select:none;
+}
+
+.MP_PopUp_Title{
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;		
+  color:#fff;
+  text-align: center;
+  font-size: 4vh;   
+  z-index:6;   	
+}
+.MP_PopUp_Profit{   
+  width: 25vw;
+  height: 25vw;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  z-index: 7;
+  background-image:url('./assets/css/img/Route_Profit.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;  	
+}
+.MP_PopUp_Profit p{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400; 
+  color: #fff;
+  font-size: 2vh;   
+  z-index:6; 
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  	
+}
+.MP_PopUp_Profit b{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; 
+  color:#fff;
+  font-size: 5vh;   
+  z-index:6; 
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+ //-webkit-text-stroke-width: 1.0px; 
+ //-webkit-text-stroke-color: #fff;
+  text-shadow: 
+    -1.5px 0 0 #f2d40d,
+    0 -1.5px 0 #f2d40d, 
+    1.5px 0 0 #f2d40d, 
+    0 1.5px 0 #f2d40d; 
+}
+.MP_PopUp_Text{
+  width: 90%;	
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400; 
+  color: #fff;
+  font-size: 3vh;   
+  z-index:6;
+  position: absolute;  
+  top: 48%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  text-align: center;  	
+}
+.MP_Coord_Title{   
+  width: 42vw;
+  height: 7vw;
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  z-index: 7;
+  background-image:url('./assets/css/img/User_Connection/Pink_Label.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;  	
+}
+.MP_Coord_Title p{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; 
+  color: #fff;
+  font-size: 2vh;   
+  z-index:6; 
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  	
+}
+.MP_Coord_Value{   
+  width: 55vw;
+  height: 14vw;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  z-index: 7;
+  background-image:url('./assets/css/img/User_Connection/Black_Label.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;  	
+}
+.MP_Coord_Value b{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; 
+  color: #fff;
+  font-size: 2.4vh;   
+  z-index:6; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  	
 }
 /*Shoes Tab*/
 .Shoes_Tab {
