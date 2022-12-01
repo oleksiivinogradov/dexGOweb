@@ -1259,6 +1259,185 @@ nav ul li a:hover {
   margin-right: -50%;
   transform: translate(-50%, -50%);  	
 }
+.MP_PopUp2_Close_Btn{
+  width: 7vw;
+  height: 7vw;
+  position: absolute;
+  top: 5%;
+  right: 10%;
+  margin-left: -50%;
+  transform: translate(50%, -50%); 
+  text-align: center;
+  z-index: 7;
+  background-image:url('./assets/css/img/Close_Btn.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;	
+}
+.MP_PopUp2_Close_Btn:active {
+  width: 6vw;
+  height: 6vw;	
+  background-image:url('./assets/css/img/Close_Btn.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+
+}
+
+
+/*Route Marker*/
+.MP_Route_Marker_Pos{
+  width: 10px;
+  height: 10px;  
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background-image:url('./assets/css/img/User_Location.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 10;	
+}
+.MP_Route_Marker{
+  width: 83px;
+  height: 80px;  
+  position: absolute;
+  top: -64px;
+  left: -66px;
+  background-image:url('./assets/css/img/Quest_Location2.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 10;
+  //opacity:50%;  
+}
+.MP_Route_Marker b{
+  transform: scaleX(0.9);	
+  width: 78px;
+  height: 75px;  
+  position: absolute;
+  font-size: 40%;
+  top: 26px;
+  left: 7.5px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; 
+  color: #fff;  
+  z-index: 10; 
+}
+.MP_Route_Marker p{
+  //display: inline-block;
+  transform: scaleX(0.7);
+  //transform: scaleY(0.9);  
+  width: 78px;
+  height: 75px;  
+  position: absolute;
+  font-size: 39%;
+  top: 45px;
+  left: -8px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400; 
+  color: #fff;  
+  z-index: 10; 
+}
+.MP_Route_Profit{   
+  width: 55px;
+  height: 55px;
+  position: absolute;
+  top: -102px;
+  left: -21px; 
+  text-align: center;
+  z-index: 11;
+  background-image:url('./assets/css/img/Route_Profit.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;  	
+}
+.MP_Route_Profit p{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400; 
+  color: #fff;
+  font-size: 42%;   
+  z-index:6; 
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  	
+}
+.MP_Route_Profit b{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; 
+  color:#fff;
+  font-size: 120%;   
+  z-index:6; 
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+ //-webkit-text-stroke-width: 1.0px; 
+ //-webkit-text-stroke-color: #fff;
+  text-shadow: 
+    -1px 0 0 #f2d40d,
+    0 -1px 0 #f2d40d, 
+    1px 0 0 #f2d40d, 
+    0 1px 0 #f2d40d; 
+}
+
+
+
+/*Route Distance*/
+.MP_Route_Distance_Pos{
+  width: 10px;
+  height: 10px;  
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background-image:url('./assets/css/img/User_Location.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 20;	
+}
+.MP_Route_Distance{   
+  width: 35px;
+  height: 65px;
+  position: absolute;
+  top: -60px;
+  left: -12.5px; 
+  text-align: center;
+  z-index: 11;
+  background-image:url('./assets/css/img/Distance_Map.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;  	
+}
+.MP_Route_Distance p{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400; 
+  color: #fff;
+  font-size: 60%;   
+  z-index:6; 
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  	
+}
+.MP_Route_Distance b{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; 
+  color:#fff;
+  font-size: 50%;   
+  z-index:6; 
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+
 /*Shoes Tab*/
 .Shoes_Tab {
   display:block;	
