@@ -842,12 +842,53 @@ a {
 .Map_Left_Flow{
   flex: 1 30%;	
 }
-.Map_Center_Flow{
-  flex: 1 25%;
+.Map_Reset_Player_Btn{
+  //width: 7vw;
+  height: 7vw;
+  //max-width:45px;
+  max-height:45px;
+  min-width:65%; 
+  min-height:35px;  
+  z-index: 10;
+  background-image:url('./assets/css/img/Reset_PlayerPos_Btn.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;	
+  flex: 1 2%;
   flex-basis: 380px;  
+}
+.Map_Reset_Player_Btn:active {
+  background-image:url('./assets/css/img/Reset_PlayerPos_Active_Btn.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat; 
 }
 .Map_Right_Flow{
   flex: 1 30%;	
+}
+.Map_Reset_Btn {
+  width: 7vw;
+  height: 7vw;
+  top: 18%;
+  left: 12%; 
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  position:absolute; 
+  max-width:45px;
+  max-height:45px;
+  min-width:35px; 
+  min-height:35px;  
+  z-index: 10;
+  background-image:url('./assets/css/img/Reset_Map_Btn.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;	
+}
+.Map_Reset_Btn:active {
+  background-image:url('./assets/css/img/Reset_Map_Active_Btn.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat; 
 }
 .Main_Quest {
   display:block;	
