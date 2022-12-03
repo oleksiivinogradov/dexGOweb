@@ -9,6 +9,9 @@ import { startGame as startBallThroughTorusGame } from './games/gameBallThroughT
 
 let UI
 let canvas
+let map
+let defaultZoom = 13
+let userLocationMarker
 
 const layoutModules = [
   {file: 'test-ui.html', elementId: 'test-ui'},
@@ -44,6 +47,9 @@ const checkGeolocation = () => {
       }
     })
   }, errorCallback)
+  if(userLocationMarker != undefined){
+    userLocationMarker.setLngLat([currentLong,currentLat])
+  }
 }
 
 let currentLat
@@ -148,19 +154,43 @@ const finalPreparation = () => {
   canvas = document.getElementById('camerafeed')
 
   // TEMPORARY
-  UI.testUI.show()
-  //UI.mainPage.show()
+  //UI.testUI.show()
+  UI.mainPage.show()
   // Mapbox
-  /*
+  
   mapboxgl.accessToken = 'pk.eyJ1Ijoib2xla3NpaXZpbm9ncmFkb3YiLCJhIjoiY2w4YTI0NnMzMGNyODNubnVhZ2J5NjMwZyJ9.bTob5w7nd9autIIxbqt5RQ'
-  const map = new mapboxgl.Map({
+  map = new mapboxgl.Map({
     container: 'mapbox-map', // container ID
-    // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
     style: 'mapbox://styles/mapbox/streets-v12', // style URL
     center: [currentLong, currentLat], // starting position [lng, lat]
-    zoom: 12 // starting zoom
+    zoom: defaultZoom // starting zoom
   })
+  /*
+  map.addControl(
+    new mapboxgl.NavigationControl({
+      showCompass: false,
+      showZoom: true
+    }),
+    'bottom-right',
+  )
   */
+  // User location marker
+  userLocationMarker = new mapboxgl.Marker(document.getElementById('user-location-marker')).setLngLat([currentLong,currentLat]).addTo(map)
+  // Wayspots markers
+  for(let i=0; i < routeJSON.wayspots.length; i++){
+    $('#mapbox-map').parent().append('<div id="wayspot'+routeJSON.wayspots[i].name+'-marker" class="marker"></div>')
+    routeJSON.wayspots[i].marker = new mapboxgl.Marker(document.getElementById('wayspot'+routeJSON.wayspots[i].name+'-marker')).setLngLat([routeJSON.wayspots[i].coordinates.long,routeJSON.wayspots[i].coordinates.lat]).addTo(map)
+  }
+  // Navigation buttons
+  $('#map-reset').on('touchstart', function(){
+    map.easeTo({center: [currentLong,currentLat], zoom: defaultZoom})
+  })
+  $('#map-zoom-in').on('touchstart', function(){
+    map.zoomIn()
+  })
+  $('#map-zoom-out').on('touchstart', function(){
+    map.zoomOut()
+  })
   /*
   const anchorsJSON = {
     anchors: [

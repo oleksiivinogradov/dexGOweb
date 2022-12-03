@@ -12,6 +12,20 @@ a {
 }
 
 #mapbox-map { position: absolute; top: 0; bottom: 0; width: 100%; }
+.marker {
+  display: block;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  background-image: url('./assets/css/img/Route_Profit.png');
+  background-size: 100%;
+  width: 2em;
+  height: 2em;
+}
+#user-location-marker {
+  background-image: url('./assets/css/img/User_Location.png');
+}
 
 #message {
   background-color: white;
