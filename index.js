@@ -12,6 +12,7 @@ let canvas
 let map
 let defaultZoom = 13
 let userLocationMarker
+let userLocated = false
 
 const layoutModules = [
   {file: 'test-ui.html', elementId: 'test-ui'},
@@ -46,17 +47,22 @@ const checkGeolocation = () => {
         $(this).removeClass('active')
       }
     })
+    if(map != undefined && userLocationMarker == undefined){
+      // User location marker
+      userLocationMarker = new mapboxgl.Marker(document.getElementById('user-location-marker')).setLngLat([currentLong,currentLat]).addTo(map)
+      map.easeTo({center: [currentLong,currentLat], zoom: defaultZoom})
+      userLocated = true
+    }
+
   }, errorCallback)
-  if(userLocationMarker != undefined){
-    userLocationMarker.setLngLat([currentLong,currentLat])
-  }
+  
 }
 
 let currentLat
 let currentLong
 checkGeolocation()
 let checkGeolocationInterval
-const checkGeolocationIntervalTime = 5000
+const checkGeolocationIntervalTime = 2500
 
 // Route data
 let routeJSON = {
@@ -162,20 +168,10 @@ const finalPreparation = () => {
   map = new mapboxgl.Map({
     container: 'mapbox-map', // container ID
     style: 'mapbox://styles/mapbox/streets-v12', // style URL
-    center: [currentLong, currentLat], // starting position [lng, lat]
-    zoom: defaultZoom // starting zoom
+    //center: [currentLong, currentLat], // starting position [lng, lat]
+    //zoom: defaultZoom // starting zoom
   })
-  /*
-  map.addControl(
-    new mapboxgl.NavigationControl({
-      showCompass: false,
-      showZoom: true
-    }),
-    'bottom-right',
-  )
-  */
-  // User location marker
-  userLocationMarker = new mapboxgl.Marker(document.getElementById('user-location-marker')).setLngLat([currentLong,currentLat]).addTo(map)
+
   // Wayspots markers
   for(let i=0; i < routeJSON.wayspots.length; i++){
     $('#mapbox-map').parent().append('<div id="wayspot'+routeJSON.wayspots[i].name+'-marker" class="marker"></div>')
