@@ -31,10 +31,10 @@ const errorCallback = (error) => {
 }
 const checkGeolocation = () => {
   navigator.geolocation.getCurrentPosition((pos) => {
-    let userlat = pos.coords.latitude.toFixed(2)
-    currentLat = userlat
-    let userlong = pos.coords.longitude.toFixed(2)
-    currentLong = userlong
+    currentLat = pos.coords.latitude
+    let userlat = currentLat.toFixed(2)
+    currentLong = pos.coords.longitude
+    let userlong = currentLong.toFixed(2)
     const wayspotList = $('#quest-list ul')
     wayspotList.find('li').each(function(){
       //userlat = 50.32
