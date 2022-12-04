@@ -1312,6 +1312,10 @@ nav ul li a:hover {
   background-position: center;
   z-index: 10;	
 }
+.MP_Route_Marker_Pos.active .MP_Route_Marker_Scaler{
+  transform: scale(1.25);
+  transition: all .2s ease-in-out;
+}
 .MP_Route_Marker{
   width: 83px;
   height: 80px;  
@@ -1408,7 +1412,7 @@ nav ul li a:hover {
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  background-image:url('./assets/css/img/User_Location.png');
+  //background-image:url('./assets/css/img/User_Location.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
