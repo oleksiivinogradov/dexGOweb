@@ -13,6 +13,7 @@ let map
 let defaultZoom = 13
 let userLocationMarker
 let userLocated = false
+const GPSprecision = 6
 
 const layoutModules = [
   {file: 'test-ui.html', elementId: 'test-ui'},
@@ -26,21 +27,21 @@ const layoutModules = [
 // Check Location Permissions at beginning of session
 const errorCallback = (error) => {
   if (error.code === error.PERMISSION_DENIED) {
-    alert('LOCATION PERMISSIONS DENIED. PLEASE ALLOW AND TRY AGAIN.')
+    alert('Turn "ON" location on your device')
   }
 }
 const checkGeolocation = () => {
   navigator.geolocation.getCurrentPosition((pos) => {
     currentLat = pos.coords.latitude
-    let userlat = currentLat.toFixed(2)
+    let userlat = currentLat.toFixed(GPSprecision)
     currentLong = pos.coords.longitude
-    let userlong = currentLong.toFixed(2)
+    let userlong = currentLong.toFixed(GPSprecision)
     const wayspotList = $('#quest-list ul')
     wayspotList.find('li').each(function(){
       //userlat = 50.32
       //userlong = 30.54
-      const lat = parseFloat($(this).data('lat')).toFixed(2)
-      const long = parseFloat($(this).data('long')).toFixed(2)
+      const lat = parseFloat($(this).data('lat')).toFixed(GPSprecision)
+      const long = parseFloat($(this).data('long')).toFixed(GPSprecision)
       if(lat == userlat && long == userlong){
         $(this).addClass('active')
       }else{
@@ -77,7 +78,7 @@ let routeJSON = {
   googleRoute: {}, 
   wayspots: [
     { title:'700eb893eee64aff9f1046c7d2ea4007.107', name:'700eb893eee6', type:'private',
-      location:'', coordinates: {lat:50.68, long:30.18},
+      location:'', coordinates: {lat:50.676502, long:30.184893},
       quest:{ status:{
         available: true,
         started: false,
@@ -85,7 +86,7 @@ let routeJSON = {
         score: 0,
       } } },
     { title:'Old Ukrainian village', name:'old-ukrainia', type:'public',
-      location:'Havrylivka, Kyiv Oblast, UA', coordinates: {lat:50.68, long:30.18},
+      location:'Havrylivka, Kyiv Oblast, UA', coordinates: {lat:50.67644, long:30.184683},
       quest:{ status:{
         available: true,
         started: false,
@@ -93,7 +94,7 @@ let routeJSON = {
         score: 0,
       } } },
     { title:'6be453f792014d2aa0931bf20f018368.107', name:'6be453f79201', type:'private',
-      location:'', coordinates: {lat:50.32, long:30.54},
+      location:'', coordinates: {lat:50.319702, long:30.541243},
       quest:{ status:{
         available: true,
         started: false,
@@ -101,7 +102,7 @@ let routeJSON = {
         score: 0,
       } } },
     { title:'c776d43912874c5ba5c2503c8db7b1af.107', name:'c776d4391287', type:'private',
-      location:'', coordinates: {lat:49.83, long:24.01},
+      location:'', coordinates: {lat:49.827854, long:24.009167},
       quest:{ status:{
         available: true,
         started: false,
@@ -109,7 +110,7 @@ let routeJSON = {
         score: 0,
       } } },
     { title:'80076c9b8dbe4591bf34075d496213f5.107', name:'80076c9b8dbe', type:'private',
-      location:'', coordinates: {lat:50.68, long:30.18},
+      location:'', coordinates: {lat:50.676346, long:30.18481},
       quest:{ status:{
         available: true,
         started: false,
@@ -265,6 +266,23 @@ const onxrloaded = () => {
     }
   })
 
+  // Waypost data debug
+  /*
+  XR8.XrController.configure({scale: 'responsive', enableVps: true})
+  XR8.addCameraPipelineModule(XR8.XrController.pipelineModule())
+  XR8.addCameraPipelineModule({
+    name: 'eventlogger',
+    listeners: [
+      {event: 'reality.projectwayspotscanning', process: logEvent },
+    ],
+  })
+  canvas = document.getElementById('camerafeed')
+  XR8.run({canvas, allowedDevices: 'any'})
+  */
+}
+
+const logEvent = ({detail}) => {
+  console.log(JSON.stringify(detail))
 }
 
 window.XR8 ? onxrloaded() : window.addEventListener('xrloaded', onxrloaded)
