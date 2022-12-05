@@ -24,7 +24,7 @@ a {
   height: 2em;
 }
 #user-location-marker {
-  background-image: url('./assets/css/img/User_Location.png');
+  background-image: url('./assets/css/img/Routes/RM_Quest_Marker.png');
 }
 
 #message {
@@ -1299,14 +1299,14 @@ nav ul li a:hover {
 
 /*Route Marker*/
 .MP_Route_Marker_Pos{
-  width: 10px;
-  height: 10px;  
+  width: 5vw;
+  height: 5vw;  
   position: relative;
   top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  background-image:url('./assets/css/img/User_Location.png');
+  background-image:url('./assets/css/img/Routes/RM_Quest_Marker.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -1317,52 +1317,46 @@ nav ul li a:hover {
   transition: all .2s ease-in-out;
 }
 .MP_Route_Marker{
-  width: 83px;
-  height: 80px;  
+  width: 15vw;
+  height: 14.5vw;  
   position: absolute;
-  top: -64px;
-  left: -66px;
-  background-image:url('./assets/css/img/Quest_Location2.png');
+  top: -11.7vw;
+  left: -12vw;
+  background-image:url('./assets/css/img/Routes/RM_Quest_Icon.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
   z-index: 10;
   //opacity:50%;  
 }
-.MP_Route_Marker b{
-  transform: scaleX(0.9);	
-  width: 78px;
-  height: 75px;  
+.MP_Route_Marker b{	
+  transform: scaleX(0.6);	  
   position: absolute;
-  font-size: 40%;
-  top: 26px;
-  left: 7.5px;
+  font-size: 1.8vw;
+  top: 5.3vw;
+  left: 0vw;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; 
   color: #fff;  
   z-index: 10; 
 }
 .MP_Route_Marker p{
-  //display: inline-block;
-  transform: scaleX(0.7);
-  //transform: scaleY(0.9);  
-  width: 78px;
-  height: 75px;  
+  transform: scaleX(0.7);    
   position: absolute;
-  font-size: 39%;
-  top: 45px;
-  left: -8px;
+  font-size: 1.2vw;
+  top: 9.5vw;
+  left: -1vw;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400; 
   color: #fff;  
   z-index: 10; 
 }
 .MP_Route_Profit{   
-  width: 55px;
-  height: 55px;
+  width: 11vw;
+  height: 11vw;  
   position: absolute;
-  top: -102px;
-  left: -21px; 
+  top: -18.5vw;
+  left: -3vw; 
   text-align: center;
   z-index: 11;
   background-image:url('./assets/css/img/Route_Profit.png');
@@ -1373,27 +1367,21 @@ nav ul li a:hover {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400; 
   color: #fff;
-  font-size: 42%;   
+  font-size: 1.45vw;   
   z-index:6; 
   position: absolute;
-  top: 5%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);  	
+  top: -0.3vw;
+  left: 2.7vw;  	
 }
 .MP_Route_Profit b{
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; 
   color:#fff;
-  font-size: 120%;   
+  font-size: 4vw;   
   z-index:6; 
   position: absolute;
-  top: 55%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
- //-webkit-text-stroke-width: 1.0px; 
- //-webkit-text-stroke-color: #fff;
+  top: 3.8vw;
+  left: 2vw;
   text-shadow: 
     -1px 0 0 #f2d40d,
     0 -1px 0 #f2d40d, 
@@ -1405,25 +1393,25 @@ nav ul li a:hover {
 
 /*Route Distance*/
 .MP_Route_Distance_Pos{
-  width: 10px;
-  height: 10px;  
+  width: 3vw;
+  height: 3vw;  
   position: relative;
   top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
   //background-image:url('./assets/css/img/User_Location.png');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
+  //background-size: 100% 100%;
+  //background-repeat: no-repeat;
+  //background-position: center;
   z-index: 20;	
 }
 .MP_Route_Distance{   
-  width: 35px;
-  height: 65px;
+  width: 11vw;
+  height: 20.9vw;  
   position: absolute;
-  top: -60px;
-  left: -12.5px; 
+  top: -20vw;
+  left: -4vw;
   text-align: center;
   z-index: 11;
   background-image:url('./assets/css/img/Distance_Map.png');
@@ -1433,26 +1421,22 @@ nav ul li a:hover {
 .MP_Route_Distance p{
   font-family: 'Montserrat', sans-serif;
   font-weight: 400; 
-  color: #fff;
-  font-size: 60%;   
+  color:#fff;
+  font-size: 2.6vw;   
   z-index:6; 
   position: absolute;
-  top: 5%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);  	
+  top: -0.5vw;
+  left: 3vw;  	
 }
 .MP_Route_Distance b{
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; 
   color:#fff;
-  font-size: 50%;   
+  font-size: 2vw;   
   z-index:6; 
   position: absolute;
-  top: 35%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+  top: 6vw;
+  left: 3.75vw;
 }
 
 
