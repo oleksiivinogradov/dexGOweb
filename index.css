@@ -2966,3 +2966,69 @@ nav ul li a:hover {
    font-family: 'Montserrat', sans-serif;
    font-weight: 700;    
 }
+
+
+/*Route Map Distance*/
+.RM_Quest_Distance{
+  width: 5vw;
+  height: 5vw;  
+  position: relative;               
+  top: 50%;
+  left: 50%;	
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background-image:url('./assets/css/img/Routes/RM_Player_Marker.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 20;  
+}
+.RM_Quest_Distance_Flow{
+  width: 14vw;
+  height: 12.5vw;  
+  position: absolute;               
+  top: -24vw;
+  left: 14vw;
+  background-image:url('./assets/css/img/Routes/RM_Distance_Marker.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  z-index: 20;  
+}
+.RM_Quest_Distance_Path{
+  width: 18vw;
+  height: 20vw;  
+  position: absolute;               
+  top: -17.5vw;
+  left: 2.6vw;
+  background-image:url('./assets/css/img/Routes/RM_Distance_Path.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 19;
+}
+.RM_Dist_Full{		  
+  font-size: 2.5vw;
+  margin-top: -1.8vw;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; 
+  color: #fff;  
+  z-index: 10; 
+}
+.RM_Dist_Text{		  
+  font-size: 2vw;
+  margin-top: -1.4vw;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400; 
+  color: #fff;  
+  z-index: 10; 
+}
+.RM_Dist_Real{		  
+  font-size: 2.5vw;
+  margin-top: -0.85vw;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; 
+  color: #fff;  
+  z-index: 10; 
+}
