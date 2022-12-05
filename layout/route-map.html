@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>dexGo</title>
+    <link rel="stylesheet" type="text/css" href="../index.css">
+
+    <!-- Additional libs -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- Main page -->
+    <div id="main-page">
+      <div id="Main_Tab">  
+        <div class="Main_BG"></div>     
+        <div class="Main_Road"></div> 
+        <div class="Main_Logo"></div>
+	  </div>
+	</div>  
+    <div class="Route_Map_Flow">
+      <div class="RM_Description">
+		<p class ="RM_RouteName">ROUTE NAME</p>
+		<p class ="RM_TotalQuests">TOTAL QUESTS: <span>7/10</span></p>
+		<p class ="RM_TotalDistance">TOTAL DISTANCE: <span>5.3km/10.2km</span></p>
+		<div class="RM_Points_Value">
+			<b>175</b>
+			<p>POINTS</p>
+		</div>	
+	  </div>
+	  <div class="RM_Map">
+		<div class="RM_Map_Flow">
+          <!--<img src="../assets/css/img/Route_Map_Mask.png">-->
+          <div id="mapbox-map"></div>
+          <div id="user-location-marker" class="marker"></div>
+        </div>
+		<div id="map-zoom-out" class="RM_Minus_btn"></div>
+        <div id="map-reset" class="RM_Reset_Player_Btn"></div>     
+        <div id="map-zoom-in" class="RM_Plus_btn"></div>
+	  </div>
+	  <div class="RM_Bottom_Btn">
+		<p>CLOSE</p>	  
+	  </div>
+    </div>
+  </body>
+</html>

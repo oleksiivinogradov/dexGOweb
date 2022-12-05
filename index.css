@@ -2753,3 +2753,208 @@ nav ul li a:hover {
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
 }
+/*Route Map*/
+.Route_Map_Flow {	
+  width: 100vw;
+  height: 100vh;  
+  position: absolute;  
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  z-index:6;;  
+}
+
+.RM_Description {	
+  width: 84vw;
+  height: 22vw;  
+  position: absolute;  
+  top: 2vw;
+  left: 8vw;
+  z-index:7;  
+  background-image:url('./assets/css/img/Routes/Route_Top_Field.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;  
+}
+.RM_RouteName {
+   margin: 0;
+   position: absolute;               
+   top: 1vw;
+   left: 37vw;		
+   color:#fff;
+   font-size:3vw;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 700;   	
+}
+.RM_TotalQuests {
+   margin: 0;
+   position: absolute;               
+   top: 7vw;
+   left: 8vw;		
+   color:#fff;
+   font-size:3vw;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 400;   	
+}
+.RM_TotalDistance {
+   margin: 0;
+   position: absolute;               
+   top: 13vw;
+   left: 6vw;		
+   color:#fff;
+   font-size:3vw;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 400;   	
+}
+.RM_Points_Value{
+  width: 22vw;
+  height: 22vw;  
+  position: absolute;  
+  top: 0vw;
+  right: -5vw;
+  z-index:8;  
+  background-image:url('./assets/css/img/Routes/Route_Top_Field_Circle.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;	
+}
+.RM_Points_Value b{
+   margin: 0;
+   position: absolute;               
+   top: 5.4vw;
+   left: 4.5vw;		
+   color:#fff;
+   font-size:8vw;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 700;	
+}
+.RM_Points_Value p{
+   margin: 0;
+   position: absolute;               
+   top: 14vw;
+   left: 5vw;		
+   color:#fff;
+   font-size:3vw;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 400;	
+}
+.RM_Map {	
+  width: 90vw;
+  height: 70vh;  
+  position: absolute;  
+  top: 23vw;
+  left: 5vw;
+  z-index:4;  
+  background-image:url('./assets/css/img/Routes/Route_Map.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;  
+}
+.RM_Map_Flow {	
+  width: 90vw;
+  height: 70vh;	
+  margin:0px;
+  padding:0px 0px 0px 0px;	
+ -webkit-mask-image: url(./assets/css/img/Routes/Route_Map_Mask.png);
+ -webkit-mask-repeat: no-repeat;
+ -webkit-mask-position: center center;
+ -webkit-mask-size: 100% 100%;
+  mask-image: url(./assets/css/img/Routes/Route_Map_Mask.png);
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: 100% 100%;
+  //background-image:url('./assets/css/img/Routes/Route_Map_Mask.png');
+  //background-size: 100% 100%;
+  //background-position: center center;
+  //background-repeat: no-repeat;
+  z-index:8; 
+}
+.RM_Minus_btn{	
+  width: 18vw;
+  height: 13vw;  
+  position: absolute;  
+  top: 50vh;
+  left: 0.5vw;  
+  z-index:7;  
+  background-image:url('./assets/css/img/Routes/RM_Minus_Btn.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index:10;  
+}
+.RM_Minus_btn:active{       
+  background-image:url('./assets/css/img/Routes/RM_Minus_Btn_Active.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;	
+}
+.RM_Plus_btn{	
+  width: 18vw;
+  height: 13vw;  
+  position: absolute;  
+  top: 50vh;
+  Right: 0.5vw;  
+  z-index:7;  
+  background-image:url('./assets/css/img/Routes/RM_Plus_Btn.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index:10;  
+}
+.RM_Plus_btn:active{       
+  background-image:url('./assets/css/img/Routes/RM_Plus_Btn_Active.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;	
+}
+.RM_Reset_Player_Btn{	
+  width: 10vw;
+  height: 10vw;  
+  position: absolute;  
+  top: 58vh;
+  left: 40vw;  
+  z-index:7;  
+  background-image:url('./assets/css/img/Reset_PlayerPos_Btn.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index:10;  
+}
+.RM_Reset_Player_Btn:active{       
+  background-image:url('./assets/css/img/Reset_PlayerPos_Active_Btn.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;	
+}
+.RM_Bottom_Btn{	
+  width: 45vw;
+  height: 18vw;  
+  position: absolute;  
+  top: 85vh;
+  left: 26vw;
+  font-size: 6.5vw;  
+  z-index:7;  
+  background-image:url('./assets/css/img/L_UI_Big_Btn2.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;	
+}
+.RM_Bottom_Btn:active{    
+  font-size: 6vw;   
+  background-image:url('./assets/css/img/L_UI_Big_Btn2_Active.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;	
+}
+.RM_Bottom_Btn p{
+   margin: 0;
+   position: absolute;               
+   top: 50%;
+   left: 50%;	
+   margin-right: -50%;
+   transform: translate(-50%, -50%); 	
+   color:#fff;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 700;    
+}
