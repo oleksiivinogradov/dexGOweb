@@ -1523,10 +1523,10 @@ nav ul li a:hover {
   mask-image: url('./assets/css/img/Routes/RM_Quest_Icon_Mask.png');
   mask-repeat: no-repeat;
   mask-position: center center;
-  mask-size: 100% 100%;
+ // mask-size: 100% 100%;
   z-index:9;  
 }
-.MP_Route_Marker_img{
+.MP_Route_Marker img{
   width: 12vw;
   height: 12vw;  
   position: absolute;
