@@ -1516,14 +1516,14 @@ nav ul li a:hover {
   position: absolute;
   top: -11.7vw;
   left: -12vw; 
- //-webkit-mask-image: url('./assets/css/img/Routes/RM_Quest_Icon_Mask.png');
- //-webkit-mask-repeat: no-repeat;
- //-webkit-mask-position: center center;
- //-webkit-mask-size: 100% 100%;
- // mask-image: url('./assets/css/img/Routes/RM_Quest_Icon_Mask.png');
- // mask-repeat: no-repeat;
- // mask-position: center center;
- // mask-size: 100% 100%;
+ -webkit-mask-image: url('./assets/css/img/Routes/RM_Quest_Icon_Mask.png');
+ -webkit-mask-repeat: no-repeat;
+ -webkit-mask-position: center center;
+ -webkit-mask-size: 100% 100%;
+  mask-image: url('./assets/css/img/Routes/RM_Quest_Icon_Mask.png');
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: 100% 100%;
   z-index:9;  
 }
 .MP_Route_Marker_img{
