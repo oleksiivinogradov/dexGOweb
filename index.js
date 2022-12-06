@@ -13,6 +13,7 @@ let map
 let defaultZoom = 13
 let userLocationMarker
 let userLocated = false
+let distanceToWayspotMarker
 const GPSprecision = 6
 
 const layoutModules = [
@@ -208,6 +209,7 @@ const finalPreparation = () => {
         $(this).parent().parent().addClass('active')
         const markerCoordinates = [$(this).parent().parent().data('long'),$(this).parent().parent().data('lat')]
         getRoute([currentLong,currentLat],markerCoordinates)
+
       }else{
         UI.mainPagePopUp1.find('.MP_PopUp_Title').html(routeJSON.wayspots[i].name)
         UI.mainPagePopUp1.find('.MP_PopUp_Profit > b').html(routeJSON.wayspots[i].profit+'$')
@@ -218,6 +220,9 @@ const finalPreparation = () => {
     })
     marker.show()
   }
+
+  // Distance to wayspot marker
+  distanceToWayspotMarker = new mapboxgl.Marker(document.getElementById('distance-marker')).setLngLat([0,0]).addTo(map)
 
   // Navigation buttons
   $('#map-reset').on('tap click', function(){
@@ -231,6 +236,7 @@ const finalPreparation = () => {
   })
   $('#map-routes-reset').on('tap click', function(){
     $('.MP_Route_Marker_Pos').removeClass('active')
+    UI.distanceMarker.hide()
     map.removeLayer('route')
     map.removeSource('route')
     map.easeTo({center: [currentLong,currentLat], zoom: defaultZoom})
@@ -283,9 +289,12 @@ async function getRoute(start,end) {
   const json = await query.json()
   const data = json.routes[0]
   const distance = (data.distance/1000).toFixed(1)
-  console.log(distance)
+  UI.distanceMarker.find('.MP_Route_Distance > p').html(distance)
+  //console.log(distance)
   const route = data.geometry.coordinates
-  //console.log(JSON.stringify(route))
+  distanceToWayspotMarker.setLngLat(route[(route.length/2).toFixed(0)])
+  UI.distanceMarker.show()
+  //console.log(route.length)
   const geojson = {
     type: 'Feature',
     properties: {},

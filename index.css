@@ -1392,7 +1392,7 @@ nav ul li a:hover {
   transform: scaleX(0.6);	  
   position: absolute;
   font-size: 1.8vw;
-  top: 5.3vw;
+  top: 4.3vw;
   left: 0vw;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; 
@@ -1403,8 +1403,8 @@ nav ul li a:hover {
   transform: scaleX(0.7);    
   position: absolute;
   font-size: 1.2vw;
-  top: 9.5vw;
-  left: -1vw;
+  top: 7.7vw;
+  left: -0.1vw;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400; 
   color: #fff;  
@@ -1432,7 +1432,8 @@ nav ul li a:hover {
   position: absolute;
   top: 0.5vw;
   left: 0.5vw;
-  z-index:9;  
+  z-index:9;
+  transform: none;
 }
 .MP_Route_Profit{   
   width: 11vw;
