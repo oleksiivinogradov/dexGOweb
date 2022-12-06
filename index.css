@@ -243,18 +243,16 @@ a {
 }
 .Circle {
   width: 30vw;
-  height: auto;
+  height: 30vw;
   position: absolute;
   bottom: 6vh;
   left: 35vw;   
-  z-index:2;  
+  z-index:2;
+  text-align: center;  
 }
 .Circle img{
   width: 30vw;
-  height: auto;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto; 
+  height: 30vw; 
   user-select:none;  
 }
 .Right_Btn {
@@ -324,128 +322,229 @@ a {
 }
 
 .Ball {
-  width: 26vw;
-  height: auto;
+  width: 30vw;
+  height: 30vw;
   position: absolute;
-  bottom: 7.2vh;
-  left: 37vw;   
-  z-index:1;  
+  bottom: 6vh;
+  left: 35vw;
+  text-align: center;
+  //vertical-align: middle;  
+  z-index:2;  
 }
 .Ball img{
   width: 26vw;
-  height: auto;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  height: 26vw;
+  margin: 2vw;
   user-select:none;  
 }
+.Quest_Scanning {
+  display: none;	
+  width: 70vw;
+  height: 3vw;
+  position: absolute;
+  bottom: 30vh;
+  left: 15vw;   
+  z-index:10;
+  text-align: center;
+  background-image:url('./assets/css/img/Level_PB_BG.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;  
+}
+.Quest_Scanning img{
+  width: 70vw;
+  height: 3vw;	
+  position: absolute;  
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);    
+}
+.Quest_Scanning p{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -5vw;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 3vw;
+  color:#fff;  
+  user-select:none;  
+}
+.Quest_Scan_Success {
+  display: none;	
+  width: 50vw;
+  height: 50vw;
+  position: absolute;
+  top: 25vh;
+  left: 25vw;   
+  z-index:15;
+  text-align: center;
+  background-image:url('./assets/css/img/Success_PopUp.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;  
+}
+.Quest_Scan_Success p{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25vw;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 5vw;
+  color:#fff;  
+  user-select:none;  
+}
+.Quest_Scan_Attention {
+  display: none;	
+  width: 50vw;
+  height: 50vw;
+  position: absolute;
+  top: 25vh;
+  left: 25vw;   
+  z-index:15;
+  text-align: center;
+  background-image:url('./assets/css/img/Attention_PopUp.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;  
+}
+.Quest_Scan_Attention p{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20vw;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 4vw;
+  color:#fff;  
+  user-select:none;  
+}
+
 /*Start PopUp*/
 
-#PopUp1 {
-  width: 90%;
-  height: 85%;  
-  max-width: 403px;
-  max-height: 531px;
-  min-height: 480px;
+.Quest_Start_PopUp {
+  //display: none;	
+  width: 80vw;
+  height: 115vw;
   position: absolute;
   top: 50%;
   left: 50%;
   margin-right: -50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);   
+  z-index:1000;
+  text-align: center;
   background-image:url('./assets/css/img/PopUp1.png');
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-position: center;
-  z-index: 5; 
-  //display: none;
+  background-position: center;  
 }
-
-.PopUp1_Btn{
-  width: 246px;
-  height: 84px;
+.Quest_Start_PopUp h1{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7vw;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 6vw;
+  color:#fff;  
+  user-select:none;  
+}
+.Quest_Start_PopUp p{
+  width: 75vw;
+  height: 20vw;	
   position: absolute;
-  top: 82%;
+  top: 70vw;
+  left: 2.5vw;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 4vw;
+  color:#fff;  
+  user-select:none;  
+}
+.QSP_Target {	
+  width: 50vw;
+  height: 50vw;
+  position: absolute;
+  top: 20vw;
+  left: 15vw;   
+  z-index:10;
+  background-image:url('./assets/css/img/User_Connection/Pop_Up_Field.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;  
+}
+.QSP_Target_Mask {	
+  width: 50vw;
+  height: 50vw;
+  position: absolute;
+  top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%); 
   text-align: center;
-  color: #fff;
-  font-size: 180%;
+  z-index:11;
+ -webkit-mask-image: url('./assets/css/img/User_Connection/Pop_Up_Field_Mask.png');
+ -webkit-mask-repeat: no-repeat;
+ -webkit-mask-position: center center;
+ -webkit-mask-size: 100% 100%;
+  mask-image: url('./assets/css/img/User_Connection/Pop_Up_Field_Mask.png');
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: 100% 100%;   
+}
+.QSP_Target_Mask img{
+  width: 50vw;
+  height: 50vw;	
+  position: absolute;  
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);    
+}
+.QSP_Start_Btn{
+  width: 34vw;
+  height: 14vw;
+  position: absolute;
+  top: 95vw;
+  left: 23vw; 
   z-index: 6;
   background-image:url('./assets/css/img/L_UI_Big_Btn.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;		
+  font-weight: 700;	
+  color: #fff;
+  font-size: 4.5vw;  
 }
-.PopUp1_Btn:active {
+.QSP_Start_Btn:active {
   background-image:url('./assets/css/img/L_UI_Big_Btn_Active.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  font-size: 170%;
+  font-size: 4vw;
 }
-.PopUp1_Btn p{
-  width: 246px;
-  height: 84px;	
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  user-select:none;
-}
-
-
-.PopUp1_Title{
-   font-family: 'Montserrat', sans-serif;
-   font-weight: 700;		
-   color:#a837ac;
-   text-align: center;
-   margin-top: 6.5vh;
-   font-size: 4vh;   
-   z-index:6;   	
-}
-.PopUp1_Text{
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400; 
-  color: #fff;
-  font-size: 3.5vh;   
-  z-index:6; 
-  margin-top: 5vh;
-  margin-left:5%;  
-  margin-right:5%;
-  text-align: center;  	
-}
-/*Scanning*/
-
-.ScanImage { 
-  width: 40%;
-  height: 40%;
+.QSP_Start_Btn b{	
   position: absolute;
   top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  background-image:url('./assets/css/img/Scanning.png');
-  background-size: contain;
+  user-select:none;
+}
+.QSP_Close_Btn{
+  width: 7vw;
+  height: 7vw;
+  position: absolute;
+  top: 3vw;
+  right: 4vw; 
+  z-index: 6;
+  background-image:url('./assets/css/img/Close_Btn.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;  
+}
+.QSP_Close_Btn:active {	
+  background-image:url('./assets/css/img/Close_Btn.png');
+  background-size: 90% 90%;
   background-repeat: no-repeat;
-  background-position: center;
-  z-index: 5;  
 }
-.ScanText{
-   width: 100%;
-   font-family: 'Montserrat', sans-serif;
-   font-weight: 700;		
-   color:#a837ac;
-   position: absolute;
-   top: 85%;
-   left: 50%;
-   text-align: center;    
-   margin-right: -50%;
-   transform: translate(-50%, -50%);
-   font-size: 150%;   
-   z-index:6;
-}
+
 /*GameOver*/
 .GO_Title{
    width: 100%;
