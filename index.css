@@ -1480,6 +1480,7 @@ nav ul li a:hover {
   position: absolute;
   top: -11.7vw;
   left: -12vw;
+  text-align: center;
   background-image:url('./assets/css/img/Routes/RM_Quest_Icon.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -1487,23 +1488,23 @@ nav ul li a:hover {
   z-index: 10;
   //opacity:50%;  
 }
-.MP_Route_Marker b{	
+.MP_Route_Marker_b{	
   transform: scaleX(0.6);	  
   position: absolute;
   font-size: 1.8vw;
-  top: 4.3vw;
-  left: 0vw;
+  top: 5.4vw;
+  left: -0.05vw;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; 
   color: #fff;  
   z-index: 10; 
 }
-.MP_Route_Marker p{
+.MP_Route_Marker_p{
   transform: scaleX(0.7);    
   position: absolute;
   font-size: 1.2vw;
-  top: 7.7vw;
-  left: -0.1vw;
+  top: 9.4vw;
+  left: -1vw;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400; 
   color: #fff;  
@@ -1515,17 +1516,17 @@ nav ul li a:hover {
   position: absolute;
   top: -11.7vw;
   left: -12vw; 
- -webkit-mask-image: url('./assets/css/img/Routes/RM_Quest_Icon_Mask.png');
- -webkit-mask-repeat: no-repeat;
- -webkit-mask-position: center center;
- -webkit-mask-size: 100% 100%;
-  mask-image: url('./assets/css/img/Routes/RM_Quest_Icon_Mask.png');
-  mask-repeat: no-repeat;
-  mask-position: center center;
-  mask-size: 100% 100%;
+ //-webkit-mask-image: url('./assets/css/img/Routes/RM_Quest_Icon_Mask.png');
+ //-webkit-mask-repeat: no-repeat;
+ //-webkit-mask-position: center center;
+ //-webkit-mask-size: 100% 100%;
+ // mask-image: url('./assets/css/img/Routes/RM_Quest_Icon_Mask.png');
+ // mask-repeat: no-repeat;
+ // mask-position: center center;
+ // mask-size: 100% 100%;
   z-index:9;  
 }
-.MP_Route_Mask img{
+.MP_Route_Marker_img{
   width: 12vw;
   height: 12vw;  
   position: absolute;
@@ -1546,7 +1547,7 @@ nav ul li a:hover {
   background-size: 100% 100%;
   background-repeat: no-repeat;  	
 }
-.MP_Route_Profit p{
+.MP_Route_Profit_p{
   font-family: 'Montserrat', sans-serif;
   font-weight: 400; 
   color: #fff;
@@ -1556,7 +1557,7 @@ nav ul li a:hover {
   top: -0.3vw;
   left: 2.7vw;  	
 }
-.MP_Route_Profit b{
+.MP_Route_Profit_b{
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; 
   color:#fff;
