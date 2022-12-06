@@ -907,7 +907,7 @@ a {
   background-repeat: no-repeat; 
 }
 .Main_Quest {
-  display:block;	
+  //display:none;	
   width: 90%;
   height: 26%;
   max-height:300px;  
@@ -967,6 +967,65 @@ a {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat; 
+}
+.Main_Quest2 {
+  display:none;	
+  width: 90%;
+  height: 26%;
+  max-height:300px;  
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background-image:url('./assets/css/img/Small_Field.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; 
+  z-index:10;
+  text-align:center;  
+}
+
+.Main_Quest2 h1{
+  color: #fff;
+  font-size: 5vw;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-decoration: underline;  
+  position: absolute;
+  margin: auto;  
+  top: 20%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+ -webkit-text-stroke-width: 0.35vw; 
+ -webkit-text-stroke-color: #f2d40d; 
+}
+.Main_Quest2 p{
+  color: #fff;
+  font-size: 3vw;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;  
+  position: absolute;
+  margin: auto;  
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+ -webkit-text-stroke-width: 0.05vw; 
+ -webkit-text-stroke-color: #f2d40d; 
+}
+.Main_Quest2 b{
+  color: #fff;
+  font-size: 6vw;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;  
+  position: absolute;
+  margin: auto;  
+  top: 80%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
 }
 
 #MainMenu{
