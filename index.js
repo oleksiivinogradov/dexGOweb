@@ -22,6 +22,8 @@ const layoutModules = [
   {file: 'main-page.html', elementId: 'main-page'},
   {file: 'MainPage_Route_Marker.html', elementId: 'route-marker'},
   {file: 'MainPage_Route_Distance.html', elementId: 'distance-marker'},
+  {file: 'MainPage_Popup1.html', elementId: 'MP_PopUp1'},
+  {file: 'MainPage_Popup2.html', elementId: 'MP_PopUp2'},
   {file: 'ball-through-torus-game-ui.html', elementId: 'ball-through-torus-game-ui'},
   {file: 'end-game.html', elementId: 'end-game'},
 ]
@@ -82,6 +84,7 @@ let routeJSON = {
     { title:'700eb893eee64aff9f1046c7d2ea4007.107', name:'700eb893eee6', type:'private',
       location:'', coordinates: {lat:50.676502, long:30.184893},
       profit: 25,
+      desc: 'On this route you will learn a lot about the activities of the purple gnomes who lived here several centuries ago...',
       quest:{ status:{
         available: true,
         started: false,
@@ -91,6 +94,7 @@ let routeJSON = {
     { title:'Old Ukrainian village', name:'old-ukrainia', type:'public',
       location:'Havrylivka, Kyiv Oblast, UA', coordinates: {lat:50.67644, long:30.184683},
       profit: 30,
+      desc: 'On this route you will learn a lot about the activities of the purple gnomes who lived here several centuries ago...',
       quest:{ status:{
         available: true,
         started: false,
@@ -100,6 +104,7 @@ let routeJSON = {
     { title:'6be453f792014d2aa0931bf20f018368.107', name:'6be453f79201', type:'private',
       location:'', coordinates: {lat:50.319702, long:30.541243},
       profit: 35,
+      desc: 'On this route you will learn a lot about the activities of the purple gnomes who lived here several centuries ago...',
       quest:{ status:{
         available: true,
         started: false,
@@ -109,6 +114,7 @@ let routeJSON = {
     { title:'c776d43912874c5ba5c2503c8db7b1af.107', name:'c776d4391287', type:'private',
       location:'', coordinates: {lat:49.827854, long:24.009167},
       profit: 40,
+      desc: 'On this route you will learn a lot about the activities of the purple gnomes who lived here several centuries ago...',
       quest:{ status:{
         available: true,
         started: false,
@@ -118,6 +124,7 @@ let routeJSON = {
     { title:'80076c9b8dbe4591bf34075d496213f5.107', name:'80076c9b8dbe', type:'private',
       location:'', coordinates: {lat:50.676346, long:30.18481},
       profit: 20,
+      desc: 'On this route you will learn a lot about the activities of the purple gnomes who lived here several centuries ago...',
       quest:{ status:{
         available: true,
         started: false,
@@ -136,6 +143,8 @@ const finalPreparation = () => {
   UI = {
     instructionsScreen: $('#start-game'),
     mainPage: $('#main-page'),
+    mainPagePopUp1: $('#MP_PopUp1'),
+    mainPagePopUp2: $('#MP_PopUp2'),
     routeMarker: $('#route-marker'),
     distanceMarker: $('#distance-marker'),
     gameBallThroughTorusMainUI: $('#ball-through-torus-game-ui'),
@@ -186,36 +195,70 @@ const finalPreparation = () => {
     $('#mapbox-map').parent().find('#route-marker').prop('id','wayspot'+routeJSON.wayspots[i].name+'-marker')
     routeJSON.wayspots[i].marker = new mapboxgl.Marker(document.getElementById('wayspot'+routeJSON.wayspots[i].name+'-marker')).setLngLat([routeJSON.wayspots[i].coordinates.long,routeJSON.wayspots[i].coordinates.lat]).addTo(map)
     const marker = $('#wayspot'+routeJSON.wayspots[i].name+'-marker')
+    routeJSON.wayspots[i].markerElement = marker
     marker.find('.MP_Route_Profit > b').html(routeJSON.wayspots[i].profit+'$')
     marker.find('.MP_Route_Marker > b').html(routeJSON.wayspots[i].name)
     marker.find('.MP_Route_Marker > p').html(routeJSON.wayspots[i].coordinates.long.toFixed(4)+' '+routeJSON.wayspots[i].coordinates.lat.toFixed(4))
     marker.data('long',routeJSON.wayspots[i].coordinates.long)
     marker.data('lat',routeJSON.wayspots[i].coordinates.lat)
-    marker.find('.MP_Route_Marker').on('touchstart mousedown', function(){
-      //console.log($(this).find('b').html())
-      $('.MP_Route_Marker_Pos').removeClass('active')
-      $(this).parent().parent().addClass('active')
-      const markerCoordinates = [$(this).parent().parent().data('long'),$(this).parent().parent().data('lat')]
-      getRoute([currentLong,currentLat],markerCoordinates)
+    marker.find('.MP_Route_Marker').on('tap click', function(){
+      if(!$(this).parent().parent().hasClass('active')){
+        //console.log($(this).find('b').html())
+        $('.MP_Route_Marker_Pos').removeClass('active')
+        $(this).parent().parent().addClass('active')
+        const markerCoordinates = [$(this).parent().parent().data('long'),$(this).parent().parent().data('lat')]
+        getRoute([currentLong,currentLat],markerCoordinates)
+      }else{
+        UI.mainPagePopUp1.find('.MP_PopUp_Title').html(routeJSON.wayspots[i].name)
+        UI.mainPagePopUp1.find('.MP_PopUp_Profit > b').html(routeJSON.wayspots[i].profit+'$')
+        UI.mainPagePopUp1.find('.MP_PopUp_Text').html('<p>'+routeJSON.wayspots[i].desc+'</p>')
+        UI.mainPagePopUp1.find('.MP_Coord_Value').html('<b>'+routeJSON.wayspots[i].coordinates.long.toFixed(4)+' '+routeJSON.wayspots[i].coordinates.lat.toFixed(4)+'</b>')
+        UI.mainPagePopUp1.show()
+      }
     })
     marker.show()
   }
 
   // Navigation buttons
-  $('#map-reset').on('touchstart mousedown', function(){
+  $('#map-reset').on('tap click', function(){
     map.easeTo({center: [currentLong,currentLat], zoom: defaultZoom})
   })
-  $('#map-zoom-in').on('touchstart mousedown', function(){
+  $('#map-zoom-in').on('tap click', function(){
     map.zoomIn()
   })
-  $('#map-zoom-out').on('touchstart mousedown', function(){
+  $('#map-zoom-out').on('tap click', function(){
     map.zoomOut()
   })
-  $('#map-routes-reset').on('touchstart mousedown', function(){
+  $('#map-routes-reset').on('tap click', function(){
     $('.MP_Route_Marker_Pos').removeClass('active')
     map.removeLayer('route')
     map.removeSource('route')
     map.easeTo({center: [currentLong,currentLat], zoom: defaultZoom})
+  })
+  $('#find-closest-route').on('tap click', function(){
+    let distances = []
+    for(let i=0; i<routeJSON.wayspots.length; i++){
+      const distance = Math.hypot((currentLong-routeJSON.wayspots[i].coordinates.long),(currentLat-routeJSON.wayspots[i].coordinates.lat))
+      routeJSON.wayspots[i].distanceToUser = distance
+      distances.push(distance)
+      //console.log(distance)
+    }
+    const minDistance = Math.min(...distances)
+    for(let i=0; i<routeJSON.wayspots.length; i++){
+      if(minDistance == routeJSON.wayspots[i].distanceToUser){
+        $('.MP_Route_Marker_Pos').removeClass('active')
+        map.removeLayer('route')
+        map.removeSource('route')
+        routeJSON.wayspots[i].markerElement.find('.MP_Route_Marker').trigger('click')
+      }
+    }
+  })
+  $('#continue-route').on('tap click', function(){
+    UI.mainPagePopUp1.hide()
+  })
+  $('#reset-route').on('tap click', function(){
+    UI.mainPagePopUp1.hide()
+    $('#map-routes-reset').trigger('click')
   })
   /*
   const anchorsJSON = {
@@ -239,9 +282,10 @@ async function getRoute(start,end) {
   )
   const json = await query.json()
   const data = json.routes[0]
-  const distance = data.distance
+  const distance = (data.distance/1000).toFixed(1)
   console.log(distance)
   const route = data.geometry.coordinates
+  //console.log(JSON.stringify(route))
   const geojson = {
     type: 'Feature',
     properties: {},

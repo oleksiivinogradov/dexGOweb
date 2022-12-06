@@ -1027,7 +1027,7 @@ nav ul li a:hover {
 }
 /*Main Page PopUps*/
 
-#MP_PopUp {
+#MP_PopUp1, #MP_PopUp2 {
   width: 90%;
   height: 75%;  
   //max-width: 403px;
@@ -1042,7 +1042,7 @@ nav ul li a:hover {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: 5; 
+  z-index: 11; 
   //display: none;
 }
 
