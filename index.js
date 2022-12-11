@@ -41,6 +41,8 @@ const checkGeolocation = () => {
     let userlat = currentLat.toFixed(GPSprecision)
     currentLong = pos.coords.longitude
     let userlong = currentLong.toFixed(GPSprecision)
+    currentLat = 50.67654
+    currentLong = 30.184783
     const wayspotList = $('#quest-list ul')
     wayspotList.find('li').each(function(){
       //userlat = 50.32
@@ -53,11 +55,25 @@ const checkGeolocation = () => {
         $(this).removeClass('active')
       }
     })
-    if(map != undefined && userLocationMarker == undefined){
-      // User location marker
-      userLocationMarker = new mapboxgl.Marker(document.getElementById('user-location-marker')).setLngLat([currentLong,currentLat]).addTo(map)
-      map.easeTo({center: [currentLong,currentLat], zoom: defaultZoom})
-      userLocated = true
+    if(map != undefined){
+      if(userLocationMarker == undefined){
+        // User location marker
+        userLocationMarker = new mapboxgl.Marker(document.getElementById('user-location-marker')).setLngLat([currentLong,currentLat]).addTo(map)
+        map.easeTo({center: [currentLong,currentLat], zoom: defaultZoom})
+        userLocated = true
+      }else{
+        userLocationMarker.setLngLat([currentLong,currentLat])
+        if($('.MP_Route_Marker_Pos.active').length > 0){
+          const activeMarkerLong = $('.MP_Route_Marker_Pos.active').data('long')
+          const activeMarkerLat = $('.MP_Route_Marker_Pos.active').data('lat')
+          if( Math.abs(currentLong-activeMarkerLong) <= 0.00012 && Math.abs(currentLat-activeMarkerLat) <= 0.00012 ){
+            if(!UI.mainPagePopUp2.hasClass('closed')){
+              UI.mainPagePopUp1.hide()
+              UI.mainPagePopUp2.show()
+            }
+          }
+        }
+      }
     }
 
   }, errorCallback)
@@ -202,20 +218,40 @@ const finalPreparation = () => {
     marker.find('.MP_Route_Marker > p').html(routeJSON.wayspots[i].coordinates.long.toFixed(4)+' '+routeJSON.wayspots[i].coordinates.lat.toFixed(4))
     marker.data('long',routeJSON.wayspots[i].coordinates.long)
     marker.data('lat',routeJSON.wayspots[i].coordinates.lat)
+    // MARKER CLICK
     marker.find('.MP_Route_Marker').on('tap click', function(){
       if(!$(this).parent().parent().hasClass('active')){
         //console.log($(this).find('b').html())
+        UI.mainPagePopUp2.removeClass('closed')
         $('.MP_Route_Marker_Pos').removeClass('active')
         $(this).parent().parent().addClass('active')
         const markerCoordinates = [$(this).parent().parent().data('long'),$(this).parent().parent().data('lat')]
         getRoute([currentLong,currentLat],markerCoordinates)
 
-      }else{
+        UI.mainPage.find('.Main_Quest2').find('h1').html(routeJSON.wayspots[i].name)
+        UI.mainPage.find('.Main_Quest2').find('p').html(routeJSON.wayspots[i].desc)
+        UI.mainPage.find('.Main_Quest2').find('b').html(routeJSON.wayspots[i].coordinates.long.toFixed(4)+' '+routeJSON.wayspots[i].coordinates.lat.toFixed(4))
+
         UI.mainPagePopUp1.find('.MP_PopUp_Title').html(routeJSON.wayspots[i].name)
         UI.mainPagePopUp1.find('.MP_PopUp_Profit > b').html(routeJSON.wayspots[i].profit+'$')
         UI.mainPagePopUp1.find('.MP_PopUp_Text').html('<p>'+routeJSON.wayspots[i].desc+'</p>')
         UI.mainPagePopUp1.find('.MP_Coord_Value').html('<b>'+routeJSON.wayspots[i].coordinates.long.toFixed(4)+' '+routeJSON.wayspots[i].coordinates.lat.toFixed(4)+'</b>')
-        UI.mainPagePopUp1.show()
+
+        UI.mainPagePopUp2.find('.MP_PopUp_Title').html(routeJSON.wayspots[i].name)
+        UI.mainPagePopUp2.find('.MP_PopUp_Profit > b').html(routeJSON.wayspots[i].profit+'$')
+        UI.mainPagePopUp2.find('.MP_PopUp_Text').html('<p>'+routeJSON.wayspots[i].desc+'</p>')
+        UI.mainPagePopUp2.find('.MP_Coord_Value').html('<b>'+routeJSON.wayspots[i].coordinates.long.toFixed(4)+' '+routeJSON.wayspots[i].coordinates.lat.toFixed(4)+'</b>')
+
+        UI.mainPage.find('.Main_Quest').hide()
+        UI.mainPage.find('.Main_Quest2').show()
+      }else{
+        const activeMarkerLong = $(this).parent().parent().data('long')
+        const activeMarkerLat = $(this).parent().parent().data('lat')
+        if(UI.mainPagePopUp2.hasClass('closed') && Math.abs(currentLong-activeMarkerLong) <= 0.00012 && Math.abs(currentLat-activeMarkerLat) <= 0.00012 ){
+          UI.mainPagePopUp2.show()
+        }else{
+          UI.mainPagePopUp1.show()
+        }
       }
     })
     marker.show()
@@ -240,6 +276,9 @@ const finalPreparation = () => {
     map.removeLayer('route')
     map.removeSource('route')
     map.easeTo({center: [currentLong,currentLat], zoom: defaultZoom})
+    UI.mainPage.find('.Main_Quest').show()
+    UI.mainPage.find('.Main_Quest2').hide()
+    UI.mainPagePopUp2.removeClass('closed')
   })
   $('#find-closest-route').on('tap click', function(){
     let distances = []
@@ -253,8 +292,10 @@ const finalPreparation = () => {
     for(let i=0; i<routeJSON.wayspots.length; i++){
       if(minDistance == routeJSON.wayspots[i].distanceToUser){
         $('.MP_Route_Marker_Pos').removeClass('active')
-        map.removeLayer('route')
-        map.removeSource('route')
+        if(map.getLayer('route') != undefined){
+          map.removeLayer('route')
+          map.removeSource('route')
+        }
         routeJSON.wayspots[i].markerElement.find('.MP_Route_Marker').trigger('click')
       }
     }
@@ -265,6 +306,10 @@ const finalPreparation = () => {
   $('#reset-route').on('tap click', function(){
     UI.mainPagePopUp1.hide()
     $('#map-routes-reset').trigger('click')
+  })
+  $('#close-popup2').on('tap click', function(){
+    UI.mainPagePopUp2.hide()
+    UI.mainPagePopUp2.addClass('closed')
   })
   /*
   const anchorsJSON = {
