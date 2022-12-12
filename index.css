@@ -34,7 +34,7 @@ a {
   font-family: 'Montserrat', sans-serif;
   display:none;
 }
-#test-ui, #start-game, #main-page, .game-main-ui, #end-game {
+#test-ui, #start-game, #main-page, .game-main-ui {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -367,7 +367,7 @@ a {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 3vw;
-  color:#fff;  
+  color:#000000;  
   user-select:none;  
 }
 .Quest_Scan_Success {
@@ -422,7 +422,7 @@ a {
 /*Start PopUp*/
 
 .Quest_Start_PopUp {
-  //display: none;	
+  display: none;	
   width: 80vw;
   height: 115vw;
   position: absolute;
@@ -546,33 +546,60 @@ a {
 }
 
 /*GameOver*/
+
+.end-game{
+  //display: none;	
+  width: 80vw;
+  height: 115vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);   
+  z-index:1000;
+  text-align: center;
+  background-image:url('./assets/css/img/PopUp1.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;  
+}
+.end-game span{
+ vertical-align:middle; 
+}
 .GO_Title{
-   width: 100%;
-   font-family: 'Montserrat', sans-serif;
-   font-weight: 700;		
-   color:#a837ac;
-   position: absolute;
-   top: 15%;
-   left: 50%;
-   text-align: center;    
-   margin-right: -50%;
-   transform: translate(-50%, -50%);
-   font-size: 300%;   
-   z-index:6;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 9vw;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 8vw;
+  color:#fff; 
+}
+.GO_Result_Flow{
+  width: 65vw;
+  height: 18vw;
+  position: absolute;
+  top: 27vw;
+  Left: 7.5vw; 
+  background-image:url('./assets/css/img/User_Connection/Black_Label.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  text-align: center;  
 }
 .GO_Result{
-   width: 100%;
+   width:35vw;
+   height:5vw;   
    font-family: 'Montserrat', sans-serif;
-   font-weight: 400;		
-   color:#a837ac;
-   position: absolute;
-   top: 25%;
-   left: 50%;
-   text-align: center;    
-   margin-right: -50%;
-   transform: translate(-50%, -50%);
-   font-size: 200%;   
-   z-index:6;
+   font-weight: 700;		
+   color:#fff;
+   margin-top: -4.8vw;
+   margin-left: auto;   
+   margin-right: auto;   
+   font-size: 3.5vw;
+   background-image:url('./assets/css/img/User_Connection/Pink_Label.png');
+   background-size: 100% 100%;
+   background-repeat: no-repeat;
+   background-position:center;
 }
 .GO_Result_Value{
    width: 100%;
@@ -580,27 +607,38 @@ a {
    font-weight: 700;		
    color:#f2d40d;
    position: absolute;
-   top: 30%;
+   top: 50%;
    left: 50%;
    text-align: center;    
    margin-right: -50%;
    transform: translate(-50%, -50%);
-   font-size: 200%;   
-   z-index:6;
+   font-size: 10vw;   
+}
+.GO_Time_Flow{
+  width: 65vw;
+  height: 18vw;
+  position: absolute;
+  top: 57vw;
+  Left: 7.5vw; 
+  background-image:url('./assets/css/img/User_Connection/Black_Label.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  text-align: center;  
 }
 .GO_Time{
-   width: 100%;
+   width:35vw;
+   height:5vw;   
    font-family: 'Montserrat', sans-serif;
-   font-weight: 400;		
-   color:#a837ac;
-   position: absolute;
-   top: 40%;
-   left: 50%;
-   text-align: center;    
-   margin-right: -50%;
-   transform: translate(-50%, -50%);
-   font-size: 200%;   
-   z-index:6;
+   font-weight: 700;		
+   color:#fff;
+   margin-top: -4.8vw;
+   margin-left: auto;   
+   margin-right: auto;   
+   font-size: 3.5vw;
+   background-image:url('./assets/css/img/User_Connection/Pink_Label.png');
+   background-size: 100% 100%;
+   background-repeat: no-repeat;
+   background-position:center;   
 }
 .GO_Time_Value{
    width: 100%;
@@ -608,81 +646,45 @@ a {
    font-weight: 700;		
    color:#f2d40d;
    position: absolute;
-   top: 45%;
+   top: 50%;
    left: 50%;
    text-align: center;    
    margin-right: -50%;
    transform: translate(-50%, -50%);
-   font-size: 200%;   
-   z-index:6;
+   font-size: 10vw;
+ //-webkit-text-stroke-width: 0.4vw; 
+ //-webkit-text-stroke-color: #fff;  
 }
-.GO_Restart{
-  width: 100%;
-  height:51px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;		
-  color:#fff;
+.GO_Continue{
+  width: 34vw;
+  height: 14vw;
   position: absolute;
-  top: 70%;
-  left: 50%;
-  //text-align: center;    
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  font-size: 150%;   
-  background-image:url('./assets/css/img/Btn1.png');
-  background-size: 291px 51px;
+  top: 90vw;
+  left: 23vw; 
+  z-index: 6;
+  background-image:url('./assets/css/img/L_UI_Big_Btn.png');
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-position: center;
-  z-index:6;  
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;	
+  color: #fff;
+  font-size: 4.5vw;  
 }
-.GO_Restart:active{
-  background-image:url('./assets/css/img/Btn1_Hover.png');
-  background-size: 291px 51px;
+.GO_Continue:active {
+  background-image:url('./assets/css/img/L_UI_Big_Btn_Active.png');
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-position: center;
+  font-size: 4vw;
 }
-.GO_Restart span{
+.GO_Continue b{	
   position: absolute;
   top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  user-select:none;  
+  user-select:none;
 }
 
-.GO_Exit{
-  width: 100%;
-  height:51px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;		
-  color:#fff;
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  //text-align: center;    
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  font-size: 150%;   
-  background-image:url('./assets/css/img/Btn1.png');
-  background-size: 291px 51px;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index:6;  
-}
-.GO_Exit:active{
-  background-image:url('./assets/css/img/Btn1_Hover.png');
-  background-size: 291px 51px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.GO_Exit span{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  user-select:none;  
-}
 
 /*MainPage*/ 
 #Main_Tab {	
@@ -1338,7 +1340,7 @@ nav ul li a:hover {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400; 
   color: #fff;
-  font-size: 2vh;   
+  font-size: 3vw;   
   z-index:6; 
   position: absolute;
   top: 5%;
@@ -1350,10 +1352,53 @@ nav ul li a:hover {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; 
   color:#fff;
-  font-size: 5vh;   
+  font-size: 7.5vw;   
   z-index:6; 
   position: absolute;
   top: 55%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+ //-webkit-text-stroke-width: 1.0px; 
+ //-webkit-text-stroke-color: #fff;
+  text-shadow: 
+    -1.5px 0 0 #f2d40d,
+    0 -1.5px 0 #f2d40d, 
+    1.5px 0 0 #f2d40d, 
+    0 1.5px 0 #f2d40d; 
+}
+.MP_PopUp_Distance{   
+  width: 25vw;
+  height: 25vw;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  z-index: 7;
+  background-image:url('./assets/css/img/Route_Profit.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;  	
+}
+.MP_PopUp_Distance p{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400; 
+  color: #fff;
+  font-size: 2.8vw;   
+  z-index:6; 
+  position: absolute;
+  top: 0.4vw;
+  left: 5.3vw;  	
+}
+.MP_PopUp_Distance b{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; 
+  color:#fff;
+  font-size: 6vw;   
+  z-index:6; 
+  position: absolute;
+  top: 53%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);

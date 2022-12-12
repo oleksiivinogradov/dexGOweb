@@ -1,7 +1,1 @@
 .DS_Store
-dist
-src
-node_modules
-package*
-webpack*
-test.html
