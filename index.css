@@ -338,7 +338,7 @@ a {
   user-select:none;  
 }
 .Quest_Scanning {
-  display: none;	
+  //display: none;	
   width: 70vw;
   height: 3vw;
   position: absolute;
@@ -352,13 +352,12 @@ a {
   background-position: center;  
 }
 .Quest_Scanning img{
-  width: 70vw;
-  height: 3vw;	
-  position: absolute;  
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);    
+  width: 35vw;
+  height: 1.2vw;
+  padding-left:0.8vw;  
+  padding-top:1vw;  
+  float: left;
+  margin: auto;  
 }
 .Quest_Scanning p{
   margin-left: auto;
@@ -548,7 +547,7 @@ a {
 /*GameOver*/
 
 .end-game{
-  //display: none;	
+  display: none;	
   width: 80vw;
   height: 115vw;
   position: absolute;
