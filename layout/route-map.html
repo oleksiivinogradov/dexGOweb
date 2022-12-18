@@ -14,36 +14,35 @@
 
   <body>
     <!-- Main page -->
-    <div id="main-page">
-      <div id="Main_Tab">  
-        <div class="Main_BG"></div>     
-        <div class="Main_Road"></div> 
-        <div class="Main_Logo"></div>
-	  </div>
-	</div>  
-    <div class="Route_Map_Flow">
-      <div class="RM_Description">
-		<p class ="RM_RouteName">ROUTE NAME</p>
-		<p class ="RM_TotalQuests">TOTAL QUESTS: <span>7/10</span></p>
-		<p class ="RM_TotalDistance">TOTAL DISTANCE: <span>5.3km/10.2km</span></p>
-		<div class="RM_Points_Value">
-			<b>175</b>
-			<p>POINTS</p>
-		</div>	
-	  </div>
-	  <div class="RM_Map">
-		<div class="RM_Map_Flow">
-          <!--<img src="../assets/css/img/Route_Map_Mask.png">-->
-          <div id="mapbox-map"></div>
-          <div id="user-location-marker" class="marker"></div>
+    <div id="route-map" class="game-main-ui">
+      <div class="game-main-ui">
+        <div id="Main_Tab">  
+          <div class="Main_BG"></div>     
+          <div class="Main_Road"></div> 
+          <div class="Main_Logo"></div>
         </div>
-		<div id="map-zoom-out" class="RM_Minus_btn"></div>
-        <div id="map-reset" class="RM_Reset_Player_Btn"></div>     
-        <div id="map-zoom-in" class="RM_Plus_btn"></div>
-	  </div>
-	  <div class="RM_Bottom_Btn">
-		<p>FINISH</p>	  
-	  </div>
+      </div>  
+      <div class="Route_Map_Flow">
+        <div class="RM_Description">
+      		<p class ="RM_RouteName">ROUTE NAME</p>
+      		<p class ="RM_TotalQuests">TOTAL QUESTS: <span>7/10</span></p>
+      		<p class ="RM_TotalDistance">TOTAL DISTANCE: <span>5.3km/10.2km</span></p>
+      		<div class="RM_Points_Value">
+      			<b>175</b>
+      			<p>POINTS</p>
+      		</div>	
+        </div>
+    	  <div class="RM_Map">
+    	    <div class="RM_Map_Flow">
+          </div>
+    	    <div class="RM_Minus_btn"></div>
+          <div class="RM_Reset_Player_Btn"></div>     
+          <div class="RM_Plus_btn"></div>
+    	  </div>
+        <div class="RM_Bottom_Btn">
+      		<p>FINISH</p>	  
+      	</div>
+      </div>
     </div>
   </body>
 </html>

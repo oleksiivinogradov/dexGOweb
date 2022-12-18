@@ -34,7 +34,7 @@ a {
   font-family: 'Montserrat', sans-serif;
   display:none;
 }
-#test-ui, #start-game, #main-page, .game-main-ui {
+#test-ui, #start-game, .game-main-ui {
   width: 100%;
   height: 100%;
   margin: 0;
