@@ -11,20 +11,25 @@ a {
   color: unset; 
 }
 
-#mapbox-map { position: absolute; top: 0; bottom: 0; width: 100%; }
+#mapbox-map { position: absolute; width: 100%; height: 200%; }
+#main-page #mapbox-map { top: -45%; }
+#route-map #mapbox-map { top: -19%; }
 .marker {
   display: block;
   border: none;
   border-radius: 50%;
   cursor: pointer;
   padding: 0;
-  background-image: url('./assets/css/img/Route_Profit.png');
+  background-image: url('./assets/css/img/Routes/RM_Quest_Marker.png');
   background-size: 100%;
   width: 2em;
   height: 2em;
 }
 #user-location-marker {
-  background-image: url('./assets/css/img/Routes/RM_Quest_Marker.png');
+  background-image: url('./assets/css/img/Routes/RM_Player_Marker.png');
+}
+.marker.traveled {
+  background-image: url('./assets/css/img/Routes/RM_Quest_Marker_Comp.png');
 }
 
 #message {
@@ -874,7 +879,7 @@ a {
   z-index:6;
   text-align:center;  
 }
-.Main_Map img{
+.Main_Map img,.RM_Map img{
   width: 150%;	
   height: auto;
   top: 50%;
@@ -1186,7 +1191,7 @@ nav ul li a:hover {
 }
 /*Main Page PopUps*/
 
-#MP_PopUp1, #MP_PopUp2 {
+#MP_PopUp1, #MP_PopUp2, .popup1 {
   width: 90%;
   height: 75%;  
   //max-width: 403px;
@@ -1514,6 +1519,9 @@ nav ul li a:hover {
   background-position: center;
   z-index: 10;	
 }
+.MP_Route_Marker_Pos.traveled {
+  background-image: url('./assets/css/img/Routes/RM_Quest_Marker_Comp.png');
+}
 .MP_Route_Marker_Pos.active .MP_Route_Marker_Scaler{
   transform: scale(1.25);
   transition: all .2s ease-in-out;
@@ -1531,6 +1539,9 @@ nav ul li a:hover {
   background-position: center;
   z-index: 10;
   //opacity:50%;  
+}
+.MP_Route_Marker_Pos.traveled .MP_Route_Marker{
+  display: none;
 }
 .MP_Route_Marker_b{	
   transform: scaleX(0.6);	  
@@ -1570,6 +1581,9 @@ nav ul li a:hover {
  // mask-size: 100% 100%;
   z-index:9;  
 }
+.MP_Route_Marker_Pos.traveled .MP_Route_Mask{
+  display: none;
+}
 .MP_Route_Marker img{
   width: 12vw;
   height: 12vw;  
@@ -1590,6 +1604,9 @@ nav ul li a:hover {
   background-image:url('./assets/css/img/Route_Profit.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;  	
+}
+#route-map .MP_Route_Profit{
+  display: none;
 }
 .MP_Route_Profit_p{
   font-family: 'Montserrat', sans-serif;
