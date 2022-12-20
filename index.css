@@ -14,6 +14,7 @@ a {
 #mapbox-map { position: absolute; width: 100%; height: 200%; }
 #main-page #mapbox-map { top: -45%; }
 #route-map #mapbox-map { top: -19%; }
+.mapboxgl-marker-anchor-center {display: none;}
 .marker {
   display: block;
   border: none;
@@ -3046,23 +3047,19 @@ nav ul li a:hover {
   background-image:url('./assets/css/img/Routes/Route_Top_Field_Circle.png');
   background-size: 100% 100%;
   background-position: center center;
-  background-repeat: no-repeat;	
+  background-repeat: no-repeat;
+  text-align: center;
 }
-.RM_Points_Value b{
+.RM_Points_Value p#points-count{
    margin: 0;
-   position: absolute;               
-   top: 5.4vw;
-   left: 4.5vw;		
    color:#fff;
    font-size:8vw;
    font-family: 'Montserrat', sans-serif;
-   font-weight: 700;	
+   font-weight: 700;
+   margin-top: 20%;	
 }
 .RM_Points_Value p{
    margin: 0;
-   position: absolute;               
-   top: 14vw;
-   left: 5vw;		
    color:#fff;
    font-size:3vw;
    font-family: 'Montserrat', sans-serif;
@@ -3202,7 +3199,7 @@ nav ul li a:hover {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: 20;  
+  z-index: 20;
 }
 .RM_Quest_Distance_Flow{
   width: 14vw;
@@ -3231,25 +3228,37 @@ nav ul li a:hover {
 }
 .RM_Dist_Full{		  
   font-size: 2.5vw;
-  margin-top: -1.8vw;
+  //margin-top: -1.8vw;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; 
   color: #fff;  
-  z-index: 10; 
+  z-index: 10;
+  position: absolute;
+  top: -20%;
+  left: 0%;
+  width: 100%;
 }
 .RM_Dist_Text{		  
   font-size: 2vw;
-  margin-top: -1.4vw;
+  //margin-top: -1.4vw;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400; 
   color: #fff;  
-  z-index: 10; 
+  z-index: 10;
+  position: absolute;
+  top: 13%;
+  left: 0%;
+  width: 100%;
 }
 .RM_Dist_Real{		  
   font-size: 2.5vw;
-  margin-top: -0.85vw;
+  //margin-top: -0.85vw;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; 
   color: #fff;  
-  z-index: 10; 
+  z-index: 10;
+  position: absolute;
+  top: 43%;
+  left: 0%;
+  width: 100%;
 }
