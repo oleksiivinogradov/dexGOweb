@@ -1520,6 +1520,12 @@ nav ul li a:hover {
   background-position: center;
   z-index: 10;	
 }
+#route-map .MP_Route_Marker_Pos {
+  display: none;
+}
+#route-map .MP_Route_Marker_Pos.next {
+  display: block;
+}
 .MP_Route_Marker_Pos.traveled {
   background-image: url('./assets/css/img/Routes/RM_Quest_Marker_Comp.png');
 }
