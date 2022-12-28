@@ -1664,7 +1664,6 @@ nav ul li a:hover {
   position: absolute;
   top: -20vw;
   left: -4vw;
-  text-align: center;
   z-index: 11;
   background-image:url('./assets/css/img/Distance_Map.png');
   background-size: 100% 100%;
@@ -1675,10 +1674,11 @@ nav ul li a:hover {
   font-weight: 400; 
   color:#fff;
   font-size: 2.6vw;   
-  z-index:6; 
-  position: absolute;
-  top: -0.5vw;
-  left: 3vw;  	
+  z-index:6;
+  text-align: center;  
+  //position: absolute;
+  //top: -0.5vw;
+  //left: 3vw; 
 }
 .MP_Route_Distance b{
   font-family: 'Montserrat', sans-serif;
@@ -3102,7 +3102,8 @@ nav ul li a:hover {
   //background-repeat: no-repeat;
   z-index:8; 
 }
-.RM_Minus_btn{	
+.RM_Minus_btn{
+  display: none;	
   width: 18vw;
   height: 13vw;  
   position: absolute;  
@@ -3121,7 +3122,8 @@ nav ul li a:hover {
   background-position: center center;
   background-repeat: no-repeat;	
 }
-.RM_Plus_btn{	
+.RM_Plus_btn{
+  display: none;	
   width: 18vw;
   height: 13vw;  
   position: absolute;  
@@ -3159,7 +3161,8 @@ nav ul li a:hover {
   background-position: center center;
   background-repeat: no-repeat;	
 }
-.RM_Bottom_Btn{	
+.RM_Bottom_Btn{
+  display: none;	
   width: 45vw;
   height: 18vw;  
   position: absolute;  
@@ -3191,6 +3194,131 @@ nav ul li a:hover {
    font-weight: 700;    
 }
 
+.RM_RC_Flow{
+  //display: none;	
+  width: 46vw;
+  height: 19vw;  
+  position: absolute;  
+  top: 20vh;
+  left: 27vw;  
+  z-index:7;  
+  background-image:url('./assets/css/img/Pink_flow.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index:10;
+  text-align: center;  
+}
+.RM_RC_Flow h1{
+   margin-top: 1vw;
+   color:#fff;
+   font-size:2.5vw;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 700;   
+}
+.RM_RC_Flow p{
+   margin-top: 6vw;
+   color:#fff;
+   font-size:2.7vw;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 400;   
+}
+.RM_RC_LeftBtn{	
+  //display: none;
+  width: 25vw;
+  height: 14vw;  
+  position: absolute;  
+  bottom: 30vh;
+  left: 12vw;
+  font-size: 3.5vw;  
+  z-index:7;  
+  background-image:url('./assets/css/img/R_UI_Btn.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;	
+}
+.RM_RC_LeftBtn:active{    
+  font-size: 3vw;   
+  background-image:url('./assets/css/img/R_UI_Btn_Active.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;	
+}
+.RM_RC_LeftBtn p{
+   margin: 0;
+   position: absolute;               
+   top: 50%;
+   left: 50%;	
+   margin-right: -50%;
+   transform: translate(-50%, -50%); 	
+   color:#fff;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 400;    
+}
+.RM_RC_RightBtn{
+  //display: none;	
+  width: 25vw;
+  height: 14vw;  
+  position: absolute;  
+  bottom: 30vh;
+  right: 12vw;
+  font-size: 3.5vw;  
+  z-index:7;  
+  background-image:url('./assets/css/img/L_UI_Btn.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;	
+}
+.RM_RC_RightBtn:active{    
+  font-size: 3vw;   
+  background-image:url('./assets/css/img/L_UI_Btn_Active.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;	
+}
+.RM_RC_RightBtn p{
+   margin: 0;
+   position: absolute;               
+   top: 50%;
+   left: 50%;	
+   margin-right: -50%;
+   transform: translate(-50%, -50%); 	
+   color:#fff;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 400;    
+}
+.RM_RC_BottomBtn{
+  //display: none;
+  width: 45vw;
+  height: 18vw;  
+  position: absolute;  
+  top: 85vh;
+  left: 26vw;
+  font-size: 6.5vw;  
+  z-index:7;  
+  background-image:url('./assets/css/img/L_UI_Big_Btn2.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;	
+}
+.RM_RC_BottomBtn:active{    
+  font-size: 6vw;   
+  background-image:url('./assets/css/img/L_UI_Big_Btn2_Active.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;	
+}
+.RM_RC_BottomBtn p{
+   margin: 0;
+   position: absolute;               
+   top: 50%;
+   left: 50%;	
+   margin-right: -50%;
+   transform: translate(-50%, -50%); 	
+   color:#fff;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 700;    
+}
 
 /*Route Map Distance*/
 .RM_Quest_Distance{
