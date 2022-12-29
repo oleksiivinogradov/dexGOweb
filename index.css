@@ -750,8 +750,8 @@ a {
   top: 0;
   margin:0;
   padding:0;
-  width: 100%;
-  height: 25%;
+  width: 100vw;
+  //height: 25vh;
   z-index: 10;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
@@ -760,101 +760,103 @@ a {
 }
 
 .UserFlow {
-  display: block;
-  height: 150px;
-  width: 200px;
-  margin: 0;
-  top: -8%;
-  left: 5%;
-  position: absolute;
+  height: 20vw;
+  width: 46vw;
+  top: 2vh;
+  left: 2vw;
+  position: relative;
   z-index: 10;
   background-image: url('./assets/css/img/Profile_Field.png');
-  background-size: contain;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
 }
 .UserAvatar img{
-  width: 81px;	
-  height: 81px;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+  height: 19vw;  
+  width: 19vw;
+  top: 0.5vw;
+  left:0.5vw; 
   position:absolute;
 }
 
 .UserAvatar {
-  height: 80px;  
-  width: 80px;  
-  top: -32%;
-  left:-239%;  
-  position: absolute;	
+  height: 20vw;
+  width: 46vw;
+  position:absolute;  
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);	
  -webkit-mask-image: url(./assets/css/img/Avatar_Mask.png);
  -webkit-mask-repeat: no-repeat;
  -webkit-mask-position: center center;
- -webkit-mask-size: contain;
+ -webkit-mask-size: 100% 100%;
   mask-image: url(./assets/css/img/Avatar_Mask.png);
   mask-repeat: no-repeat;
   mask-position: center center;
-  mask-size: contain;  
+  mask-size: 100% 100%; 
   z-index:11;
   text-align:center;  
 }
 
-.UF_Username{
-  display:block;  
-  width: auto;
-  font-size:80%;  
-  margin: auto;
-  top: 23%;
-  left:49%;  
+.UF_Username{  
+  font-size:2.7vw;  
+  top: 0.8vw;
+  left:23.5vw;  
   position: absolute;  
   z-index: 10; 	
 }
-
-.UF_Values{  
-  width: auto;
-  font-size:80%;  
-  top: 34%;
-  left:55%;  
+.UF_Money{  
+  font-size:2.7vw;  
+  top: 4.5vw;
+  left:25vw;  
   position: absolute;  
-  z-index: 10;	
+  z-index: 10; 	
 }
-.UF_Values div{ 
-  padding-bottom:8%;	
+.UF_Distance{  
+  font-size:2.7vw;  
+  top: 8.9vw;
+  left:25vw;  
+  position: absolute;  
+  z-index: 10; 	
 }
-
-.TC_Profile{
-  display:block;	
-  width: 28%;
-  height: auto; 
-  margin: auto;	 
-  bottom: 25%;
-  left: 50%;
+.UF_Rating{  
+  font-size:2.7vw;  
+  top: 13.3vw;
+  left:25vw;  
+  position: absolute;  
+  z-index: 10; 	
+}
+.TC_Profile{	
+  width: 23vw;
+  height: 10vw; 	 
+  top: 12vh;
+  left: 50vw;
   position: absolute;
   z-index: 10;
-  font-size:80%;
+  font-size:2.5vw;
   background-image:url('./assets/css/img/Profile_Btn.png');
-  background-size: contain;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
-  text-align:center; 
+  text-align:center;  
   user-select:none;  
 }
 .TC_Profile:active {	
   background-image:url('./assets/css/img/Profile_Hover_Btn.png');
-  background-size: contain;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;  
 }
+.TC_Profile p{
+  margin-top:3.5vw;		
+}
 
 .TC_FAQ{
-  display: block;
-  width: 15%;
-  height: 34%;
-  margin: auto;
-  top: 5%;
-  right: 5px;
+  width: 15vw;
+  height: 15vw;
+  top: 2vh;
+  right: 2vw;
   position: absolute;
   z-index: 10;
   background-image:url('./assets/css/img/FAQ_Btn.png');
@@ -864,17 +866,14 @@ a {
 }
 
 .Main_Map {
-  display:block;	
-  width: 90%;
-  height: 50%;  
+  //display:block;	
+  width: 90vw;
+  height: 48vh;  
   position: absolute;
-  top: 42%;
-  left: 50%;
-  margin-top:2%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  background-image:url('./assets/css/img/MapField_Border_T.png');
-  background-size: contain;
+  top: 18.5vh;
+  left: 5vw;
+  background-image:url('./assets/css/img/MapField_Border.png');
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center; 
   z-index:6;
@@ -901,38 +900,35 @@ a {
  -webkit-mask-position: center center;
  -webkit-mask-size: contain;
   mask-image: url(../assets/css/img/MapField_Mask.png);
-  mask-repeat: no-repeat;
+  mask-repeat: 100% 100%;
   mask-position: center center;
-  mask-size: contain;
+  mask-size: 100% 100%; 
   z-index:5;  
 }
-.Map_Btn {
-  width: 100%;
-  height: 50%;
-  //display:block;
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between; 
+.Map_Title {
+  width: 90vw;
+  height: 48vh;  
   position: absolute;
-  top:55%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%); 
+  top: -0.6vh;
+  left: 16vw; 
+  font-size: 2.5vw;  
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #fff;  
+  text-align:center;
+  z-index: 10;  
 }
-
 .Minus_btn {
-  width: 8vw;
-  height: 8vw;
-  max-width:50px;
-  max-height:50px;
-  min-width:40px; 
-  min-height:40px;;  
+  width: 9vw;
+  height: 9vw; 
   z-index: 10;
+  position: absolute;
+  bottom: 7vh;
+  left: 7vw;
   background-image:url('./assets/css/img/Minus_Btn.png');
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
-  flex: 1 20%;  
+  background-position: center;  
 }
 .Minus_btn:active {
   background-image:url('./assets/css/img/Minus_Btn_Hover.png');
@@ -941,18 +937,16 @@ a {
   background-repeat: no-repeat; 
 }
 .Plus_btn {
-  width: 8vw;
-  height: 8vw;
-  max-width:50px;
-  max-height:50px;
-  min-width:40px; 
-  min-height:40px;  
+  width: 9vw;
+  height: 9vw;  
   z-index: 10;
+  position: absolute;
+  bottom: 7vh;
+  right: 7vw;  
   background-image:url('./assets/css/img/Plus_Btn.png');
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
-  flex: 1 20%;  
+  background-position: center;  
 }
 .Plus_btn:active {
   background-image:url('./assets/css/img/Plus_Btn_Hover.png');
@@ -960,24 +954,17 @@ a {
   background-position: center;
   background-repeat: no-repeat; 
 }
-.Map_Left_Flow{
-  flex: 1 30%;	
-}
 .Map_Reset_Player_Btn{
-  //width: 7vw;
-  height: 7vw;
-  //max-width:45px;
-  max-height:45px;
-  min-width:65%; 
-  min-height:38px;
-  margin-top:10px;  
+  width: 8vw;
+  height: 8vw; 
+  position: absolute;
+  bottom: 7vh;
+  left: 40vw;  
   z-index: 10;
   background-image:url('./assets/css/img/Reset_PlayerPos_Btn.png');
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;	
-  flex: 1 2%;
-  flex-basis: 380px;  
+  background-position: center;	  
 }
 .Map_Reset_Player_Btn:active {
   background-image:url('./assets/css/img/Reset_PlayerPos_Active_Btn.png');
@@ -985,21 +972,12 @@ a {
   background-position: center;
   background-repeat: no-repeat; 
 }
-.Map_Right_Flow{
-  flex: 1 30%;	
-}
 .Map_Reset_Btn {
-  width: 6vw;
-  height: 6vw;
-  top: 18%;
-  left: 12%; 
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  position:absolute; 
-  max-width:45px;
-  max-height:45px;
-  min-width:30px; 
-  min-height:30px;  
+  width: 7vw;
+  height: 7vw;
+  position: absolute;
+  top: 4vh;
+  left: 7vw;   
   z-index: 10;
   background-image:url('./assets/css/img/Reset_Map_Btn.png');
   background-size: contain;
@@ -1014,16 +992,13 @@ a {
 }
 .Main_Quest {
   //display:none;	
-  width: 90%;
-  height: 26%;
-  max-height:300px;  
+  width: 90vw;
+  height: 22vh;  
   position: absolute;
-  top: 75%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+  bottom: 13vh;
+  left: 5vw;
   background-image:url('./assets/css/img/Small_Field.png');
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center; 
   z-index:10;
@@ -1075,17 +1050,14 @@ a {
   background-repeat: no-repeat; 
 }
 .Main_Quest2 {
-  display:none;	
-  width: 90%;
-  height: 26%;
-  max-height:300px;  
+  display:none;	 
+  width: 90vw;
+  height: 22vh;  
   position: absolute;
-  top: 75%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+  bottom: 13vh;
+  left: 5vw;
   background-image:url('./assets/css/img/Small_Field.png');
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center; 
   z-index:10;
@@ -1135,17 +1107,14 @@ a {
 }
 
 #MainMenu{
-  width: 100%;
-  height: 100px; 
+  width: 100vw;
+  height: 20vw; 
   margin: auto;
   position: absolute;  
-  top: 94%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+  bottom: 0.2vh;
   text-align:center;
   color: #fff;
-  font-size: 80%;
+  font-size: 2.5vw;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   z-index:15;  
@@ -1158,7 +1127,6 @@ nav ul li {
 }
  nav ul {
   list-style-type: none;
-  margin-bottom: 20px;
 }
 nav ul li a {
   text-decoration: none;
@@ -1170,23 +1138,24 @@ nav ul li a:hover {
 
 #MainMenu li {
    display: inline-block;
-   height: 90px;
-   line-height: 90px;
-   padding: 0 5%;
+   height: 20vw;
+   width: 20vw;
+   line-height: 20vw;
+   padding: 0 1vw;
    background-image:url('./assets/css/img/Menu_Innactive_Btn.png');
-   background-size: 90px;
+   background-size: contain;
    background-position: center;
    background-repeat: no-repeat; 
 }
 #MainMenu li:hover {
    background-image:url('./assets/css/img/Menu_Hover_Btn.png');
-   background-size: 90px;
+   background-size: contain;
    background-position: center;
    background-repeat: no-repeat; 
 }
 #MainMenu li:active {
    background-image:url('./assets/css/img/Menu_Active_Btn.png');
-   background-size: 90px;
+   background-size: contain;
    background-position: center;
    background-repeat: no-repeat; 
 }
