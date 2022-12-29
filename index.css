@@ -898,19 +898,17 @@ a {
  -webkit-mask-image: url(../assets/css/img/MapField_Mask.png);
  -webkit-mask-repeat: no-repeat;
  -webkit-mask-position: center center;
- -webkit-mask-size: contain;
+ -webkit-mask-size: 100% 100%;
   mask-image: url(../assets/css/img/MapField_Mask.png);
-  mask-repeat: 100% 100%;
+  mask-repeat: no-repeat;
   mask-position: center center;
   mask-size: 100% 100%; 
   z-index:5;  
 }
-.Map_Title {
-  width: 90vw;
-  height: 48vh;  
+.Map_Title {  
   position: absolute;
   top: -0.6vh;
-  left: 16vw; 
+  right: 18.4vw; 
   font-size: 2.5vw;  
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
