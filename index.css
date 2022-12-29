@@ -1021,7 +1021,7 @@ a {
   top: 50%;
 }
 .Main_Quest_Btn{
-  display:block;	
+  //display:block;	
   width: 65%;
   height: auto; 
   margin: auto;
@@ -1048,7 +1048,7 @@ a {
   background-repeat: no-repeat; 
 }
 .Main_Quest2 {
-  display:none;	 
+  //display:none;	 
   width: 90vw;
   height: 22vh;  
   position: absolute;
@@ -1078,6 +1078,7 @@ a {
  -webkit-text-stroke-color: #f2d40d; 
 }
 .Main_Quest2 p{
+  width: 84vw;	
   color: #fff;
   font-size: 3vw;
   font-family: 'Montserrat', sans-serif;
