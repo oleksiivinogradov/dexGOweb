@@ -829,18 +829,19 @@ a {
 }
 .TC_Profile{	
   width: 23vw;
-  height: 10vw; 	 
+  height: auto; 	 
   top: 12vh;
   left: 50vw;
   position: absolute;
   z-index: 10;
   font-size:2.5vw;
   background-image:url('./assets/css/img/Profile_Btn.png');
-  background-size: 100% 100%;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   text-align:center;  
-  user-select:none;  
+  user-select:none;
+  font-size: 1.9vh;  
 }
 .TC_Profile:active {	
   background-image:url('./assets/css/img/Profile_Hover_Btn.png');
@@ -848,9 +849,7 @@ a {
   background-position: center;
   background-repeat: no-repeat;  
 }
-.TC_Profile p{
-  margin-top:3.5vw;		
-}
+
 
 .TC_FAQ{
   width: 15vw;
@@ -1005,12 +1004,12 @@ a {
 
 .Main_Quest h1{
   color: #fff;
-  font-size: 100%;
+  font-size: 2.4vh;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;  
   position: absolute;
   margin: auto;  
-  top: 35%;
+  top: 30%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%); 
@@ -1020,23 +1019,22 @@ a {
 .Main_Quest h1#tracking-status{
   top: 50%;
 }
-.Main_Quest_Btn{
-  //display:block;	
-  width: 65%;
+.Main_Quest_Btn{	
+  width: 65vw;
   height: auto; 
   margin: auto;
   position: absolute;  
   top: 70%;
   left: 50%;
   margin-right: -50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); 
   background-image:url('./assets/css/img/Big_Btn.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   text-align:center;
   color: #fff;
-  font-size: 100%;
+  font-size: 2.3vh;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;  
 }  
@@ -1048,7 +1046,7 @@ a {
   background-repeat: no-repeat; 
 }
 .Main_Quest2 {
-  //display:none;	 
+  display:none;	 
   width: 90vw;
   height: 22vh;  
   position: absolute;
@@ -1064,7 +1062,7 @@ a {
 
 .Main_Quest2 h1{
   color: #fff;
-  font-size: 5vw;
+  font-size: 3vh;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   text-decoration: underline;  
@@ -1078,9 +1076,9 @@ a {
  -webkit-text-stroke-color: #f2d40d; 
 }
 .Main_Quest2 p{
-  width: 84vw;	
+  width: 80vw;	
   color: #fff;
-  font-size: 3vw;
+  font-size: 2vh;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;  
   position: absolute;
@@ -1094,7 +1092,7 @@ a {
 }
 .Main_Quest2 b{
   color: #fff;
-  font-size: 6vw;
+  font-size: 4vh;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;  
   position: absolute;
@@ -1107,13 +1105,13 @@ a {
 
 #MainMenu{
   width: 100vw;
-  height: 20vw; 
+  height: 12.5vh; 
   margin: auto;
   position: absolute;  
-  bottom: 0.2vh;
+  bottom: 0.1vh;
   text-align:center;
   color: #fff;
-  font-size: 2.5vw;
+  font-size: 1.5vh;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   z-index:15;  
@@ -1137,10 +1135,10 @@ nav ul li a:hover {
 
 #MainMenu li {
    display: inline-block;
-   height: 20vw;
-   width: 20vw;
-   line-height: 20vw;
-   padding: 0 1vw;
+   height: 12vh;
+   width: 12vh;
+   line-height: 12vh;
+   padding: 0 0.5vw;
    background-image:url('./assets/css/img/Menu_Innactive_Btn.png');
    background-size: contain;
    background-position: center;
