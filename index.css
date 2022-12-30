@@ -1135,9 +1135,9 @@ nav ul li a:hover {
 
 #MainMenu li {
    display: inline-block;
-   height: 12vh;
-   width: 12vh;
-   line-height: 12vh;
+   height: 11vh;
+   width: 20vw;
+   line-height: 11vh;
    padding: 0 0.5vw;
    background-image:url('./assets/css/img/Menu_Innactive_Btn.png');
    background-size: contain;
