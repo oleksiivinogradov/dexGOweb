@@ -828,13 +828,13 @@ a {
   z-index: 10; 	
 }
 .TC_Profile{	
-  width: 23vw;
+  width: 23vh;
   height: auto; 	 
   top: 12vh;
   left: 50vw;
   position: absolute;
   z-index: 10;
-  font-size:2.5vw;
+  font-size:2vh;
   background-image:url('./assets/css/img/Profile_Btn.png');
   background-size: contain;
   background-position: center;
