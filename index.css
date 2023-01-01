@@ -3127,8 +3127,7 @@ nav ul li a:hover {
   background-position: center center;
   background-repeat: no-repeat;	
 }
-.RM_Bottom_Btn{
-  display: none;	
+.RM_Bottom_Btn{	
   width: 45vw;
   height: 18vw;  
   position: absolute;  
@@ -3160,8 +3159,11 @@ nav ul li a:hover {
    font-weight: 700;    
 }
 
+.path-selection {
+  display: none;
+}
 .RM_RC_Flow{
-  //display: none;	
+  display: none;	
   width: 46vw;
   height: 19vw;  
   position: absolute;  
@@ -3190,7 +3192,7 @@ nav ul li a:hover {
    font-weight: 400;   
 }
 .RM_RC_LeftBtn{	
-  //display: none;
+  display: none;
   width: 25vw;
   height: 14vw;  
   position: absolute;  
@@ -3222,7 +3224,7 @@ nav ul li a:hover {
    font-weight: 400;    
 }
 .RM_RC_RightBtn{
-  //display: none;	
+  display: none;	
   width: 25vw;
   height: 14vw;  
   position: absolute;  
@@ -3254,7 +3256,7 @@ nav ul li a:hover {
    font-weight: 400;    
 }
 .RM_RC_BottomBtn{
-  //display: none;
+  display: none;
   width: 45vw;
   height: 18vw;  
   position: absolute;  
