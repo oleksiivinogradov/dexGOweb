@@ -1486,13 +1486,7 @@ nav ul li a:hover {
   background-position: center;
   z-index: 10;	
 }
-#route-map .MP_Route_Marker_Pos {
-  display: none;
-}
-#route-map .MP_Route_Marker_Pos.next {
-  display: block;
-}
-.MP_Route_Marker_Pos.traveled {
+.quest-marker.traveled {
   background-image: url('./assets/css/img/Routes/RM_Quest_Marker_Comp.png');
 }
 .MP_Route_Marker_Pos.active .MP_Route_Marker_Scaler{
@@ -3069,7 +3063,6 @@ nav ul li a:hover {
   z-index:8; 
 }
 .RM_Minus_btn{
-  display: none;	
   width: 18vw;
   height: 13vw;  
   position: absolute;  
@@ -3088,8 +3081,7 @@ nav ul li a:hover {
   background-position: center center;
   background-repeat: no-repeat;	
 }
-.RM_Plus_btn{
-  display: none;	
+.RM_Plus_btn{	
   width: 18vw;
   height: 13vw;  
   position: absolute;  
