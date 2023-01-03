@@ -927,7 +927,7 @@ a {
 .Main_Map {
   //display:block;	
   width: 90vw;
-  height: 48vh;  
+  height: 48%;  
   position: absolute;
   top: 18.5%;
   left: 5vw;
@@ -1050,7 +1050,7 @@ a {
 .Main_Quest {
   //display:none;	
   width: 90vw;
-  height: 22vh;  
+  height: 22%;  
   position: absolute;
   bottom: 13%;
   left: 5vw;
@@ -1108,7 +1108,7 @@ a {
 .Main_Quest2 {
   display:none;	 
   width: 90vw;
-  height: 22vh;  
+  height: 22%;  
   position: absolute;
   bottom: 13%;
   left: 5vw;
