@@ -890,7 +890,7 @@ a {
 .TC_Profile{	
   width: 23vh;
   height: auto; 	 
-  top: 12vh;
+  top: 90%;
   left: 50vw;
   position: absolute;
   z-index: 10;
@@ -914,7 +914,7 @@ a {
 .TC_FAQ{
   width: 15vw;
   height: 15vw;
-  top: 2vh;
+  top: 10%;
   right: 2vw;
   position: absolute;
   z-index: 10;
@@ -929,7 +929,7 @@ a {
   width: 90vw;
   height: 48vh;  
   position: absolute;
-  top: 18.5vh;
+  top: 18.5%;
   left: 5vw;
   background-image:url('./assets/css/img/MapField_Border.png');
   background-size: 100% 100%;
@@ -966,7 +966,7 @@ a {
 }
 .Map_Title {  
   position: absolute;
-  top: -0.6vh;
+  top: -1.5%;
   right: 18.4vw; 
   font-size: 2.5vw;  
   font-family: 'Montserrat', sans-serif;
@@ -1052,7 +1052,7 @@ a {
   width: 90vw;
   height: 22vh;  
   position: absolute;
-  bottom: 13vh;
+  bottom: 13%;
   left: 5vw;
   background-image:url('./assets/css/img/Small_Field.png');
   background-size: 100% 100%;
@@ -1110,7 +1110,7 @@ a {
   width: 90vw;
   height: 22vh;  
   position: absolute;
-  bottom: 13vh;
+  bottom: 13%;
   left: 5vw;
   background-image:url('./assets/css/img/Small_Field.png');
   background-size: 100% 100%;
@@ -1165,7 +1165,7 @@ a {
 
 #MainMenu{
   width: 100vw;
-  height: 12.5vh; 
+  height: 12.5%; 
   margin: auto;
   position: absolute;  
   bottom: 0.1vh;
@@ -1195,7 +1195,7 @@ nav ul li a:hover {
 
 #MainMenu li {
    display: inline-block;
-   height: 11vh;
+   height: 11%;
    width: 20vw;
    line-height: 11vh;
    padding: 0 0.5vw;
