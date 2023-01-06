@@ -48,6 +48,7 @@ a {
   position:absolute;
   left:0;
   top:0;
+  //transition: left 0.5s ease-out;
 }
 #test-ui-wrapper {
   position: absolute;
@@ -747,7 +748,7 @@ a {
 
 
 /*MainPage*/ 
-#Main_Tab {	
+#Main_Tab, #global-background {	
   width: 100%;
   height: 100%;
   margin: 0;
@@ -1204,13 +1205,13 @@ nav ul li a:hover {
    background-position: center;
    background-repeat: no-repeat; 
 }
-#MainMenu li:hover {
+/*#MainMenu li:hover*/#MainMenu li:active {
    background-image:url('./assets/css/img/Menu_Hover_Btn.png');
    background-size: contain;
    background-position: center;
    background-repeat: no-repeat; 
 }
-#MainMenu li:active {
+/*#MainMenu li:active, */#MainMenu li.active {
    background-image:url('./assets/css/img/Menu_Active_Btn.png');
    background-size: contain;
    background-position: center;
