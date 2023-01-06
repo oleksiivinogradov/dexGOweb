@@ -194,6 +194,117 @@ a {
   color:#fff;  
   user-select:none;  
 }
+
+/*Anchors*/
+#Anchor_Map {
+  width: 100%;
+  height: 200%;	
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  	
+}
+.AM_Map {
+  width: 100%;
+  height: 100%;	
+  margin:0px;
+  padding:0px 0px 0px 0px;
+  z-index:1;  
+}
+.AM_Map img{
+  width: 200%;
+  height: 100%;	
+  margin:0px;
+  padding:0px 0px 0px 0px;	
+}
+.AM_Wayspot_Marker{
+  width: 6vw;
+  height: 6vw;
+  cursor: pointer;
+  position: absolute;  
+  top: 45%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  z-index:10;
+  background-image: url('./assets/css/img/Routes/RM_Quest_Marker.png');
+  background-size: 100%; 
+  background-repeat: no-repeat;
+  background-position: center;	
+}
+.AM_Wayspot_Marker p{
+  position: absolute;  
+  top: -120%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  z-index:10;
+  color: #000000;
+  font-size: 2.5vw;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+   text-shadow: 
+    0.3vw 0 0 white,
+    0 -0.3vw 0 white, 
+    0.3vw 0 0 white, 
+    0 0.3vw 0 white;   
+}
+.AM_Player_Marker{
+  width: 11vw;
+  height: 11vw;
+  cursor: pointer;
+  position: absolute;  
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  z-index:10;
+  background-image: url('./assets/css/img/Routes/RM_Player_Marker3.png');
+  background-size: contain; 
+  background-repeat: no-repeat;
+  background-position: center;	
+}
+.AM_Loc_Btn{
+  width: 42vw;
+  height: 14vw;
+  position: absolute; 
+  top: 70%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  z-index: 10;
+  text-align: center;
+  background-image:url('./assets/css/img/L_UI_Big_Btn.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;	
+  font-size: 2.5vw;  
+}
+.AM_Loc_Btn:active {
+  background-image:url('./assets/css/img/L_UI_Big_Btn_Active.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-size: 2.2vw;
+}
+.AM_Loc_Btn p{ 
+  margin: 0;
+  position: absolute;               
+  top: 50%;
+  left: 50%;	
+  margin-right: -50%;
+  transform: translate(-50%, -50%);	
+  font-family: 'Montserrat', sans-serif;
+  color:#fff;  
+  font-weight: 700;
+  //text-shadow: 
+    0.3vw 0 0 #f2d40d,
+    0 -0.3vw 0 #f2d40d, 
+    0.3vw 0 0 #f2d40d, 
+    0 -0.3vw 0 #f2d40d;   
+}
+
 /*Circle Game*/		
 .Had_Left {
   width: 23vw;
