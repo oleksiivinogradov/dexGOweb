@@ -148,7 +148,8 @@ a {
   position:absolute;
   left:0;
   top:0;
-  background-color: #450967;  
+  background-color: #450967;
+  z-index: 20;
 }	
 .LS_Logo {	
   width: 70vw;
@@ -164,17 +165,18 @@ a {
   background-position: center;  
 }
 .LS_PB {	
-  width: 80vw;
-  height: 3vw;
+  width: 30vw;
+  height: 30vw;
   position: absolute;
-  bottom: 20%;
-  left: 10vw;   
-  z-index:10;
+  bottom: 12%;
+  left: 50%;
+  z-index: 10;
   text-align: center;
-  background-image:url('./assets/css/img/LS_PB_BG.png');
+  background-image: url('./assets/css/img/User_connection/UC_Spinner.gif');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-position: center;  
+  background-position: center;
+  transform: translate(-50%, 0);  
 }
 .LS_PB img{
   width: 98%;
