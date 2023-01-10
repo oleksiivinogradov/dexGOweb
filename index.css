@@ -2011,7 +2011,7 @@ nav ul li a:hover {
 .Shoes_Tab {
   display:block;	
   width: 90vw;
-  height: 80%;  
+  height: 85%;  
   position: absolute;  
   top: 45%;
   left: 50%;
@@ -2074,11 +2074,11 @@ nav ul li a:hover {
 }
 .View_mask {	
   height:190px;    	
- -webkit-mask-image: url('./assets/css/img/Viewport/View-Flow-Mask.png');
+ -webkit-mask-image: url(./assets/css/img/Viewport/View-Flow-Mask.png);
  -webkit-mask-repeat: no-repeat;
  -webkit-mask-position: center top;
  -webkit-mask-size: contain;
-  mask-image: url('./assets/css/img/Viewport/View-Flow-Mask.png');
+  mask-image: url(./assets/css/img/Viewport/View-Flow-Mask.png);
   mask-repeat: no-repeat;
   mask-position: center top;
   mask-size: contain;
