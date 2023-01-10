@@ -2032,6 +2032,19 @@ nav ul li a:hover {
    background-size: 100% 100%;
    background-repeat: no-repeat;    
 }
+.Sh_Title{	
+  width: 30vw;
+  height: 5vh;  
+  position: absolute;  
+  top: 0.5%;
+  left: 46vw;
+  z-index:6;
+  text-align:center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; 
+  color:#fff;
+  font-size: 1.8vh;   	
+}
 .Viewport {
   display:flex;
   justify-content: space-around;
