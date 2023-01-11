@@ -2034,7 +2034,7 @@ nav ul li a:hover {
 }
 .Sh_Title{	
   width: 30vw;
-  height: 5vh;  
+  height: 5%;  
   position: absolute;  
   top: 0.5%;
   left: 46vw;
@@ -2043,7 +2043,7 @@ nav ul li a:hover {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; 
   color:#fff;
-  font-size: 1.8vh;   	
+  font-size: 1.6vh; 
 }
 .Viewport {
   display:flex;
@@ -2087,15 +2087,15 @@ nav ul li a:hover {
 }
 .View_mask {	
   height:190px;    	
- -webkit-mask-image: url(./assets/css/img/Viewport/View-Flow-Mask.png);
+ -webkit-mask-image: url(./assets/css/img/Viewport/View_Flow_Mask.png);
  -webkit-mask-repeat: no-repeat;
  -webkit-mask-position: center top;
  -webkit-mask-size: contain;
-  mask-image: url(./assets/css/img/Viewport/View-Flow-Mask.png);
+  mask-image: url(./assets/css/img/Viewport/View_Flow_Mask.png);
   mask-repeat: no-repeat;
   mask-position: center top;
   mask-size: contain;
-  text-align:center;
+  text-align:center;  
 }
 .View_mask img{	
   width: 130px;	
