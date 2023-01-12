@@ -2505,208 +2505,10 @@ nav ul li a:hover {
   font-weight: 400;  
 }
 /*User Connection*/
-.User_Connection_Tab {
-  display:block;	
-  width: 90vw;
-  max-width:400px;
-  height: 58vh;  
-  position: absolute;  
-  top: 40%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%); 
-  z-index:6;
-  text-align:center;
-  padding-bottom:10vh; 
-}
-
-.UC_top_BG {	
-   height: 45px;
-   width:auto;
-   margin:0px;
-   padding:0px 0px 0px 0px;
-   text-align: center;
-   min-width:80wh;  
-}
-.UC_top_BG img{	
-   height: 100%;
-   width:100%;
-   margin:0px;
-   padding:0px 0px 0px 0px;   
-}
-.UC_middle_BG {
-   //height: 55vh;
-   width:auto;
-   margin:-1px 0px 0px 0px;   
-   padding:0px 0px 0px 0px; 
-   text-align: center;   
-}
-.UC_middle_BG img{	
-   height: 100%;
-   width:100%;
-   margin:0px;
-   padding:0px 0px 0px 0px;   
-}
-.UC_bottom_BG {
-   height: 15vh;
-   width:auto;	
-   margin:-1px 0px 0px 0px;
-   padding:0px 0px 0px 0px;   
-   text-align: center;
-   min-height:100px;   
-}
-.UC_bottom_BG img{	
-   height: 100%;
-   width:100%;
-   margin:0px;
-   padding:0px 0px 0px 0px;    
-}
-.UC_bottom_BG p{	
-   //margin:-8.5vh 28vw 0vw 0vh;
-   position:absolute;
-   top: 101.5%;
-   left: 32%;
-   margin-right: -68%;
-   transform: translate(-50%, -50%);   
-   color: #000000;
-   //vertical-align: center;
-   font-size: 35px;
-   font-family: 'Montserrat', sans-serif;
-   font-weight: 400; 
-   text-shadow: 
-    -1.5px 0 0 white,
-    0 -1.5px 0 white, 
-    1.5px 0 0 white, 
-    0 1.5px 0 white; 	
-}
-.UC_Metamask {
-   width:200px;	
-   height: 212px;	
-   position: absolute; 
-   top: 25%;
-   left: 50%;
-   margin-top:5px;
-   margin-right: -50%;
-   transform: translate(-50%, -50%);
-   background-image:url('./assets/css/img/User_Connection/Metamask.png');
-   background-size: 200px auto;
-   background-position: center center;
-   background-repeat: no-repeat;
-   z-index:7;   
-}
-.UC_Met_Title {
-   width:200px;	
-   height: 10px;
-   margin-top:-5px;
-   margin-left: 5px;
-   text-align: center;  
-}
-
-.UC_Met_Title p{
-   color:#fff;
-   font-size: 9px;
-   font-family: 'Montserrat', sans-serif;
-   font-weight: 400;        
-}
-.UC_Met_Btn {
-   width:212px;
-   height:50px;
-   position: relative;
-   top:155px;
-   left: -5px;   
-   background-image:url('./assets/css/img/Big_Flipped_Btn.png');
-   background-size: contain;
-   background-position: center center;
-   background-repeat: no-repeat;    
-}
-.UC_Met_Btn:active{	
-   width:212px;
-   height:50px;   
-   background-image:url('./assets/css/img/Big_Flipped_Hover.png');
-   background-size: contain;
-   background-position: center center;
-   background-repeat: no-repeat;      
-}
-.UC_Met_Btn p{
-   margin: 0;
-   position: absolute;               
-   top: 50%;
-   left: 50%;	
-   margin-right: -50%;
-   transform: translate(-50%, -50%); 	
-   color:#f2d40d;
-   font-size: 20px;
-   font-family: 'Montserrat', sans-serif;
-   font-weight: 700;    
- -webkit-text-stroke-width: 1px; 
- -webkit-text-stroke-color: #fff;   
-}
-.UC_Wallet {
-   width:200px;	
-   height: 212px;	
-   position: absolute; 
-   top: 58%;
-   left: 50%;
-   margin-top:5px;
-   margin-right: -50%;
-   transform: translate(-50%, -50%);
-   background-image:url('./assets/css/img/User_Connection/Connect_Wallet.png');
-   background-size: 200px auto;
-   background-position: center center;
-   background-repeat: no-repeat;
-   z-index:7;   
-}
-.UC_Wall_Title {
-   width:200px;	
-   height: 10px;
-   margin-top:-5px;
-   margin-left: 5px;
-   text-align: center;  
-}
-
-.UC_Wall_Title p{
-   color:#fff;
-   font-size: 9px;
-   font-family: 'Montserrat', sans-serif;
-   font-weight: 400;        
-}
-.UC_Wall_Btn {
-   width:212px;
-   height:50px;
-   position: relative;
-   top:155px;
-   left: -5px;   
-   background-image:url('./assets/css/img/Big_Flipped_Btn.png');
-   background-size: contain;
-   background-position: center center;
-   background-repeat: no-repeat;    
-}
-.UC_Wall_Btn:active{	
-   width:212px;
-   height:50px;   
-   background-image:url('./assets/css/img/Big_Flipped_Hover.png');
-   background-size: contain;
-   background-position: center center;
-   background-repeat: no-repeat;      
-}
-.UC_Wall_Btn p{
-   margin: 0;
-   position: absolute;               
-   top: 50%;
-   left: 50%;	
-   margin-right: -50%;
-   transform: translate(-50%, -50%); 	
-   color:#f2d40d;
-   font-size: 20px;
-   font-family: 'Montserrat', sans-serif;
-   font-weight: 700;    
- -webkit-text-stroke-width: 1px; 
- -webkit-text-stroke-color: #fff;   
-}
 .UC_Title {
    margin: 0;
    position: absolute;               
-   top: 3%;
+   top: 6%;
    left: 50%;	
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
@@ -2718,12 +2520,158 @@ nav ul li a:hover {
  -webkit-text-stroke-color: #f2d40d;
    text-align: center; 
 }
+.User_Connection_Tab {	
+  width: 90vw;
+  height: 85%;  
+  position: absolute;  
+  top: 52%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  z-index:6;
+  background-image:url('./assets/css/img/User_Connection/UC_Field.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat; 
+}
+
+.UC_Step{	
+   position:absolute;
+   bottom: 1.5%;
+   left: 31%;
+   margin-right: -50%;
+   transform: translate(-50%);   
+   color: #000000;
+   font-size: 5vh;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 400; 
+   text-shadow: 
+    -1.5px 0 0 white,
+    0 -1.5px 0 white, 
+    1.5px 0 0 white, 
+    0 1.5px 0 white; 	
+}
+.UC_Metamask {
+   width:45vw;	
+   height: 48vw;   
+   position: absolute; 
+   top: 25%;
+   left: 50%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%);
+   background-image:url('./assets/css/img/User_Connection/Metamask.png');
+   background-size: 100% 100%;
+   background-position: center center;
+   background-repeat: no-repeat;
+   z-index:7;   
+}
+.UC_Met_Title {
+   margin-top:1vw;
+   margin-left: 2.5vw;
+   text-align: center;
+   color:#fff;
+   font-size: 1.8vw;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 400;   
+}
+
+.UC_Met_Btn {
+   width:48vw;
+   height:10vw;  
+   position: absolute;
+   bottom:-0.8vw;
+   left: -1.5vw;   
+   background-image:url('./assets/css/img/Big_Flipped_Btn.png');
+   background-size: 100% 100%;
+   background-position: center center;
+   background-repeat: no-repeat;    
+}
+.UC_Met_Btn:active{	
+   width:48vw;
+   height:10vw;   
+   background-image:url('./assets/css/img/Big_Flipped_Hover.png');
+   background-size: 99% 99%;
+   background-position: center center;
+   background-repeat: no-repeat;      
+}
+.UC_Met_Btn p{
+   margin: 0;
+   position: absolute;               
+   top: 50%;
+   left: 50%;	
+   margin-right: -50%;
+   transform: translate(-50%, -50%); 	
+   color:#f2d40d;
+   font-size: 3.5vw;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 700;    
+ -webkit-text-stroke-width: 1px; 
+ -webkit-text-stroke-color: #fff;   
+}
+.UC_Wallet {
+   width:45vw;	
+   height: 48vw;	
+   position: absolute; 
+   top: 68%;
+   left: 50%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%);
+   background-image:url('./assets/css/img/User_Connection/Connect_Wallet.png');
+   background-size: 100% 100%;
+   background-position: center center;
+   background-repeat: no-repeat;
+   z-index:7;  
+}
+.UC_Wall_Title {
+   margin-top:1vw;
+   margin-left: 2.5vw;
+   text-align: center;
+   color:#fff;
+   font-size: 1.8vw;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 400;  
+}
+
+.UC_Wall_Btn {
+   width:48vw;
+   height:10vw;
+   position: absolute;
+   bottom:-1vw;
+   left: -1.5vw;   
+   background-image:url('./assets/css/img/Big_Flipped_Btn.png');
+   background-size: 100% 100%;
+   background-position: center center;
+   background-repeat: no-repeat;   
+}
+.UC_Wall_Btn:active{	
+   width:48vw;
+   height:10vw;   
+   background-image:url('./assets/css/img/Big_Flipped_Hover.png');
+   background-size: 99% 99%;
+   background-position: center center;
+   background-repeat: no-repeat;      
+}
+.UC_Wall_Btn p{
+   margin: 0;
+   position: absolute;               
+   top: 50%;
+   left: 50%;	
+   margin-right: -50%;
+   transform: translate(-50%, -50%); 	
+   color:#f2d40d;
+   font-size: 3.5vw;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 700;    
+ -webkit-text-stroke-width: 1px; 
+ -webkit-text-stroke-color: #fff;   
+}
+
 .UC_Network {	
    width: 85vw;
    max-width:360px;
    height: 60vh;
    position: absolute;               
-   top: 42%;
+   top: 45%;
    left: 50%;	
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
@@ -2756,7 +2704,7 @@ nav ul li a:hover {
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
    color:#fff;
-   font-size: 12px;
+   font-size: 2.8vw;
    font-family: 'Montserrat', sans-serif;
    font-weight: 700;    
  -webkit-text-stroke-width: 1px; 
@@ -2785,7 +2733,7 @@ nav ul li a:hover {
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
    color:#fff;
-   font-size: 12px;
+   font-size: 2.8vw;
    font-family: 'Montserrat', sans-serif;
    font-weight: 400;      
 }
@@ -2812,7 +2760,7 @@ nav ul li a:hover {
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
    color:#fff;
-   font-size: 12px;
+   font-size: 2.8vw;
    font-family: 'Montserrat', sans-serif;
    font-weight: 700;    
  -webkit-text-stroke-width: 1px; 
@@ -2841,7 +2789,7 @@ nav ul li a:hover {
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
    color:#fff;
-   font-size: 12px;
+   font-size: 2.2vw;
    font-family: 'Montserrat', sans-serif;
    font-weight: 400;      
 }
@@ -2868,7 +2816,7 @@ nav ul li a:hover {
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
    color:#fff;
-   font-size: 12px;
+   font-size: 2.8vw;
    font-family: 'Montserrat', sans-serif;
    font-weight: 700;    
  -webkit-text-stroke-width: 1px; 
@@ -2897,30 +2845,30 @@ nav ul li a:hover {
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
    color:#fff;
-   font-size: 12px;
+   font-size: 2.8vw;
    font-family: 'Montserrat', sans-serif;
    font-weight: 400;      
 }
 .UC_Net_Btn {
-   width: 70vw;
+   width: 60vw;
    max-width:280px;
-   height: 10vh;
+   height: 8vh;
    position: relative;               
    top: 35%;
    left: 50%;	
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
    background-image:url('./assets/css/img/Big_Flipped_Btn.png');
-   background-size: contain;
+   background-size: 100% 100%;
    background-position: center center;
    background-repeat: no-repeat;
    z-index:8;	
 }
 .UC_Net_Btn:active {
-   width: 70vw;
+   width: 60vw;
    max-width:280px;	
    background-image:url('./assets/css/img/Big_Flipped_Hover.png');
-   background-size: contain;
+   background-size: 99% 99%;
    background-position: center center;
    background-repeat: no-repeat;
    z-index:8;	
@@ -2933,7 +2881,7 @@ nav ul li a:hover {
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
    color:#f2d40d;
-   font-size: 18px;
+   font-size: 3.2vw;
    font-family: 'Montserrat', sans-serif;
    font-weight: 700;    
  -webkit-text-stroke-width: 1px; 
@@ -2975,7 +2923,7 @@ nav ul li a:hover {
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
    color:#fff;
-   font-size: 12px;
+   font-size: 2.8vw;
    font-family: 'Montserrat', sans-serif;
    font-weight: 700;    
  -webkit-text-stroke-width: 1px; 
@@ -3004,30 +2952,30 @@ nav ul li a:hover {
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
    color:#fff;
-   font-size: 12px;
+   font-size: 2.8vw;
    font-family: 'Montserrat', sans-serif;
    font-weight: 400;      
 }
 .UC_Bal_Btn {
-   width: 70vw;
+   width: 60vw;
    max-width:280px;
-   height: 10vh;
+   height: 8vh;
    position: relative;               
    top: 50%;
    left: 50%;	
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
    background-image:url('./assets/css/img/Big_Flipped_Btn.png');
-   background-size: contain;
+   background-size: 100% 100%;
    background-position: center center;
    background-repeat: no-repeat;
    z-index:8;	
 }
 .UC_Bal_Btn:active {
-   width: 70vw;
+   width: 60vw;
    max-width:280px;	
    background-image:url('./assets/css/img/Big_Flipped_Hover.png');
-   background-size: contain;
+   background-size: 99% 99%;
    background-position: center center;
    background-repeat: no-repeat;
    z-index:8;	
@@ -3040,7 +2988,7 @@ nav ul li a:hover {
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
    color:#f2d40d;
-   font-size: 18px;
+   font-size: 3.5vw;
    font-family: 'Montserrat', sans-serif;
    font-weight: 700;    
  -webkit-text-stroke-width: 1.1px; 
@@ -3068,7 +3016,7 @@ nav ul li a:hover {
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
    color:#e82329;
-   font-size: 12px;
+   font-size: 2.4vw;
    font-family: 'Montserrat', sans-serif;
    font-weight: 700;
    text-align:center;
@@ -3096,7 +3044,7 @@ nav ul li a:hover {
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
    color:#fff;
-   font-size: 12px;
+   font-size: 2.5vw;
    font-family: 'Montserrat', sans-serif;
    font-weight: 700;    
  -webkit-text-stroke-width: 1px; 
@@ -3125,30 +3073,30 @@ nav ul li a:hover {
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
    color:#fff;
-   font-size: 12px;
+   font-size: 2.8vw;
    font-family: 'Montserrat', sans-serif;
    font-weight: 400;      
 }
 .UC_Bal_bad_Btn1 {
-   width: 70vw;
+   width: 60vw;
    max-width:280px;
-   height: 10vh;
+   height: 8vh;
    position: relative;               
    top: 40%;
    left: 50%;	
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
    background-image:url('./assets/css/img/Big_Flipped_Btn.png');
-   background-size: contain;
+   background-size: 100% 100%;
    background-position: center center;
    background-repeat: no-repeat;
    z-index:8;	
 }
 .UC_Bal_bad_Btn1:active {
-   width: 70vw;
+   width: 60vw;
    max-width:280px;	
    background-image:url('./assets/css/img/Big_Flipped_Hover.png');
-   background-size: contain;
+   background-size: 99% 99%;
    background-position: center center;
    background-repeat: no-repeat;
    z-index:8;	
@@ -3161,32 +3109,32 @@ nav ul li a:hover {
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
    color:#f2d40d;
-   font-size: 18px;
+   font-size: 3.2vw;
    font-family: 'Montserrat', sans-serif;
    font-weight: 700;    
  -webkit-text-stroke-width: 1.1px; 
  -webkit-text-stroke-color: #fff;
 }
 .UC_Bal_bad_Btn2 {
-   width: 70vw;
+   width: 60vw;
    max-width:280px;
-   height: 10vh;
+   height: 8vh;
    position: relative;               
    top: 40%;
    left: 50%;	
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
    background-image:url('./assets/css/img/Big_Hover.png');
-   background-size: contain;
+   background-size: 100% 100%;
    background-position: center center;
    background-repeat: no-repeat;
    z-index:8;	
 }
 .UC_Bal_bad_Btn2:active {
-   width: 65vw;
+   width: 60vw;
    max-width:270px;	
    background-image:url('./assets/css/img/Big_Hover.png');
-   background-size: contain;
+   background-size: 99% 99%;
    background-position: center center;
    background-repeat: no-repeat;
    z-index:8;	
@@ -3199,32 +3147,32 @@ nav ul li a:hover {
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
    color:#f2d40d;
-   font-size: 16px;
+   font-size: 3.2vw;
    font-family: 'Montserrat', sans-serif;
    font-weight: 700;    
  -webkit-text-stroke-width: 1.1px; 
  -webkit-text-stroke-color: #fff;
 }
 .UC_Bal_bad_Btn3 {
-   width: 70vw;
+   width: 60vw;
    max-width:280px;
-   height: 10vh;
+   height: 8vh;
    position: relative;               
    top: 40%;
    left: 50%;	
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
    background-image:url('./assets/css/img/Big_Hover.png');
-   background-size: contain;
+   background-size: 100% 100%;
    background-position: center center;
    background-repeat: no-repeat;
    z-index:8;	
 }
 .UC_Bal_bad_Btn3:active {
-   width: 65vw;
+   width: 60vw;
    max-width:270px;	
    background-image:url('./assets/css/img/Big_Hover.png');
-   background-size: contain;
+   background-size: 99% 99%;
    background-position: center center;
    background-repeat: no-repeat;
    z-index:8;	
@@ -3237,16 +3185,17 @@ nav ul li a:hover {
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
    color:#f2d40d;
-   font-size: 16px;
+   font-size: 3.2vw;
    font-family: 'Montserrat', sans-serif;
    font-weight: 700;    
  -webkit-text-stroke-width: 1.1px; 
  -webkit-text-stroke-color: #fff;
 }
-.UC_PopUp {
-   width: 250px;
-   height: 250px;
-   position: relative;               
+.UC_PopUp_Success {
+   display: none;	
+   width: 50vw;
+   height: 50vw;
+   position: absolute;               
    top: 40%;
    left: 50%;	
    margin-right: -50%;
@@ -3257,7 +3206,7 @@ nav ul li a:hover {
    background-repeat: no-repeat;
    z-index:8;	
 }
-.UC_PopUp b{
+.UC_PopUp_Success b{
    margin: 0;
    position: absolute;               
    top: 25%;
@@ -3265,16 +3214,96 @@ nav ul li a:hover {
    margin-right: -50%;
    transform: translate(-50%, -50%); 	
    color:#fff;
-   font-size: 22px;
+   font-size: 4.5vw;
    font-family: 'Montserrat', sans-serif;
    font-weight: 700;    
  -webkit-text-stroke-width: 1.0px; 
  -webkit-text-stroke-color: #fff;
    text-align:center;
 }
-.UC_PopUp img{
-   width:90px; 
-   height:90px;   
+.UC_PopUp_Success img{
+   width:18vw; 
+   height:18vw;   
+   margin: 0;
+   position: absolute;               
+   top: 60%;
+   left: 50%;	
+   margin-right: -50%;
+   transform: translate(-50%, -50%); 	
+}
+.UC_PopUp_Connection {
+   display: none;	
+   width: 50vw;
+   height: 50vw;
+   position: absolute;                 
+   top: 40%;
+   left: 50%;	
+   margin-right: -50%;
+   transform: translate(-50%, -50%); 	
+   background-image:url('./assets/css/img/User_Connection/Pop_Up_Field.png');
+   background-size: contain;
+   background-position: center center;
+   background-repeat: no-repeat;
+   z-index:8;	
+}
+.UC_PopUp_Connection b{
+   margin: 0;
+   position: absolute;               
+   top: 25%;
+   left: 50%;	
+   margin-right: -50%;
+   transform: translate(-50%, -50%); 	
+   color:#fff;
+   font-size: 4.5vw;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 700;    
+ -webkit-text-stroke-width: 1.0px; 
+ -webkit-text-stroke-color: #fff;
+   text-align:center;
+}
+.UC_PopUp_Connection img{
+   width:18vw; 
+   height:18vw;   
+   margin: 0;
+   position: absolute;               
+   top: 60%;
+   left: 50%;	
+   margin-right: -50%;
+   transform: translate(-50%, -50%); 	
+}
+.UC_PopUp_Error {
+   display: none;	
+   width: 50vw;
+   height: 50vw;
+   position: absolute;               
+   top: 40%;
+   left: 50%;	
+   margin-right: -50%;
+   transform: translate(-50%, -50%); 	
+   background-image:url('./assets/css/img/User_Connection/Pop_Up_Field.png');
+   background-size: contain;
+   background-position: center center;
+   background-repeat: no-repeat;
+   z-index:8;	
+}
+.UC_PopUp_Error b{
+   margin: 0;
+   position: absolute;               
+   top: 25%;
+   left: 50%;	
+   margin-right: -50%;
+   transform: translate(-50%, -50%); 	
+   font-size: 4.5vw;
+   color:#fff;  
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 700;    
+ -webkit-text-stroke-width: 1.0px; 
+ -webkit-text-stroke-color: #fff;
+   text-align:center;
+}
+.UC_PopUp_Error img{
+   width:18vw; 
+   height:18vw;   
    margin: 0;
    position: absolute;               
    top: 60%;
