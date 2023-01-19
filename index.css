@@ -27,7 +27,14 @@ a {
   height: 2em;
 }
 #user-location-marker {
-  background-image: url('./assets/css/img/Routes/RM_Player_Marker.png');
+  //background-image: url('./assets/css/img/Routes/RM_Player_Marker.png');
+  width: 11vw;
+  height: 11vw;
+  cursor: pointer;  
+  background-image: url('./assets/css/img/Routes/RM_Player_Marker3.png');
+  background-size: contain; 
+  background-repeat: no-repeat;
+  background-position: center;	  
 }
 .marker.traveled {
   background-image: url('./assets/css/img/Routes/RM_Quest_Marker_Comp.png');
@@ -1533,8 +1540,8 @@ nav ul li a:hover {
 }
 
 .MP_PopUp1_Left_Btn{
-  width: 130px;
-  height: 70px;
+  width: 26vw;
+  height: 14vw;
   position: absolute;
   top: 87%;
   left: 25%;
@@ -1542,7 +1549,7 @@ nav ul li a:hover {
   transform: translate(-50%, -50%); 
   text-align: center;
   color: #fff;
-  font-size: 100%;
+  font-size: 3vw;
   z-index: 6;
   background-image:url('./assets/css/img/L_UI_Btn2.png');
   background-size: 100% 100%;
@@ -1554,11 +1561,11 @@ nav ul li a:hover {
   background-image:url('./assets/css/img/L_UI_Btn2_Active.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  font-size: 90%;
+  font-size: 2.8vw;
 }
 .MP_PopUp1_Left_Btn p{
-  width: 130px;
-  height: 70px;	
+  width: 26vw;
+  height: 14vw;	
   position: absolute;
   top: 65%;
   left: 50%;
@@ -1567,8 +1574,8 @@ nav ul li a:hover {
   user-select:none;
 }
 .MP_PopUp1_Right_Btn{
-  width: 130px;
-  height: 70px;
+  width: 26vw;
+  height: 14vw;
   position: absolute;
   top: 87%;
   right: 25%;
@@ -1576,7 +1583,7 @@ nav ul li a:hover {
   transform: translate(50%, -50%); 
   text-align: center;
   color: #fff;
-  font-size: 100%;
+  font-size: 3vw;
   z-index: 6;
   background-image:url('./assets/css/img/L_UI_Btn.png');
   background-size: 100% 100%;
@@ -1588,11 +1595,11 @@ nav ul li a:hover {
   background-image:url('./assets/css/img/L_UI_Btn_Active.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  font-size: 90%;
+  font-size: 2.8vw;
 }
 .MP_PopUp1_Right_Btn p{
-  width: 130px;
-  height: 70px;	
+  width: 26vw;
+  height: 14vw;	
   position: absolute;
   top: 65%;
   left: 50%;
@@ -1601,8 +1608,8 @@ nav ul li a:hover {
   user-select:none;
 }
 .MP_PopUp2_Btn{
-  width: 246px;
-  height: 84px;
+  width: 48vw;
+  height: 17vw;
   position: absolute;
   top: 87%;
   left: 50%;
@@ -1610,7 +1617,7 @@ nav ul li a:hover {
   transform: translate(-50%, -50%); 
   text-align: center;
   color: #fff;
-  font-size: 160%;
+  font-size: 4.5vw;
   z-index: 6;
   background-image:url('./assets/css/img/L_UI_Big_Btn.png');
   background-size: 100% 100%;
@@ -1622,13 +1629,11 @@ nav ul li a:hover {
   background-image:url('./assets/css/img/L_UI_Big_Btn_Active.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  font-size: 150%;
+  font-size: 4.3vw;
 }
-.MP_PopUp2_Btn p{
-  width: 246px;
-  height: 84px;	
+.MP_PopUp2_Btn p{	
   position: absolute;
-  top: 52%;
+  top: 25%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
@@ -1645,7 +1650,7 @@ nav ul li a:hover {
   font-weight: 700;		
   color:#fff;
   text-align: center;
-  font-size: 4vh;   
+  font-size: 6vw;   
   z-index:6;   	
 }
 .MP_PopUp_Profit{   
@@ -1711,7 +1716,7 @@ nav ul li a:hover {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400; 
   color: #fff;
-  font-size: 2.8vw;   
+  font-size: 3vw;   
   z-index:6; 
   position: absolute;
   top: 0.4vw;
@@ -1737,14 +1742,14 @@ nav ul li a:hover {
     0 1.5px 0 #f2d40d; 
 }
 .MP_PopUp_Text{
-  width: 90%;	
+  width: 85%;	
   font-family: 'Montserrat', sans-serif;
   font-weight: 400; 
   color: #fff;
-  font-size: 3vh;   
+  font-size: 4.5vw;   
   z-index:6;
   position: absolute;  
-  top: 48%;
+  top: 46%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
@@ -1764,14 +1769,14 @@ nav ul li a:hover {
   background-size: 100% 100%;
   background-repeat: no-repeat;  	
 }
-.MP_Coord_Title p{
+.MP_Coord_Title p{	
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; 
   color: #fff;
-  font-size: 2vh;   
+  font-size: 3.2vw;   
   z-index:6; 
   position: absolute;
-  top: 5%;
+  top: 7%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);  	
@@ -1794,7 +1799,7 @@ nav ul li a:hover {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; 
   color: #fff;
-  font-size: 2.4vh;   
+  font-size: 3.4vw;   
   z-index:6; 
   position: absolute;
   top: 50%;
@@ -1808,7 +1813,7 @@ nav ul li a:hover {
   position: absolute;
   top: 5%;
   right: 10%;
-  margin-left: -50%;
+  //margin-left: -50%;
   transform: translate(50%, -50%); 
   text-align: center;
   z-index: 7;
@@ -1866,11 +1871,11 @@ nav ul li a:hover {
   display: none;
 }
 .MP_Route_Marker_b{	
-  transform: scaleX(0.6);	  
+  //transform: scaleX(0.6);	  
   position: absolute;
-  font-size: 1.8vw;
-  top: 5.4vw;
-  left: -0.05vw;
+  font-size: 1.3vw;
+  top: 5.7vw;
+  left: 1.8vw;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; 
   color: #fff;  
@@ -1928,7 +1933,7 @@ nav ul li a:hover {
   background-repeat: no-repeat;  	
 }
 #route-map .MP_Route_Profit{
-  display: none;
+  //display: none;
 }
 .MP_Route_Profit_p{
   font-family: 'Montserrat', sans-serif;
@@ -3313,8 +3318,8 @@ nav ul li a:hover {
 }
 /*Route Map*/
 .Route_Map_Flow {	
-  width: 100vw;
-  height: 100vh;  
+  width: 100%;
+  height: 100%;  
   position: absolute;  
   top: 50%;
   left: 50%;
@@ -3324,11 +3329,13 @@ nav ul li a:hover {
 }
 
 .RM_Description {	
-  width: 84vw;
-  height: 22vw;  
+  width: 84%;
+  height: 12%;  
   position: absolute;  
-  top: 2vw;
-  left: 8vw;
+  top: 7%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
   z-index:7;  
   background-image:url('./assets/css/img/Routes/Route_Top_Field.png');
   background-size: 100% 100%;
@@ -3338,39 +3345,48 @@ nav ul li a:hover {
 .RM_RouteName {
    margin: 0;
    position: absolute;               
-   top: 1vw;
-   left: 37vw;		
+   top: 13%;
+   left: 57%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%); 		
    color:#fff;
-   font-size:3vw;
+   font-size:1.8vh;
    font-family: 'Montserrat', sans-serif;
    font-weight: 700;   	
 }
 .RM_TotalQuests {
    margin: 0;
-   position: absolute;               
-   top: 7vw;
-   left: 8vw;		
+   position: absolute;   
+   top: 41%;
+   left: 28%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%); 		
    color:#fff;
-   font-size:3vw;
+   font-size:1.5vh;
    font-family: 'Montserrat', sans-serif;
    font-weight: 400;   	
 }
 .RM_TotalDistance {
    margin: 0;
-   position: absolute;               
-   top: 13vw;
-   left: 6vw;		
+   position: absolute;   
+   top: 68%;
+   left: 35%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%); 		
    color:#fff;
-   font-size:3vw;
+   font-size:1.5vh;
    font-family: 'Montserrat', sans-serif;
    font-weight: 400;   	
 }
 .RM_Points_Value{
-  width: 22vw;
-  height: 22vw;  
-  position: absolute;  
-  top: 0vw;
-  right: -5vw;
+  width: 11.5vh;
+  height: 11.5vh;  
+  position: absolute;
+  top: 53%;  
+  right: 30%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 		
+  color:#fff;
   z-index:8;  
   background-image:url('./assets/css/img/Routes/Route_Top_Field_Circle.png');
   background-size: 100% 100%;
@@ -3381,21 +3397,21 @@ nav ul li a:hover {
 .RM_Points_Value p#points-count{
    margin: 0;
    color:#fff;
-   font-size:8vw;
+   font-size:3.5vh;
    font-family: 'Montserrat', sans-serif;
    font-weight: 700;
-   margin-top: 20%;	
+   margin-top: 25%;	
 }
 .RM_Points_Value p{
    margin: 0;
    color:#fff;
-   font-size:3vw;
+   font-size:1.6vh;
    font-family: 'Montserrat', sans-serif;
    font-weight: 400;	
 }
 .RM_Map {	
-  width: 90vw;
-  height: 70vh;  
+  width: 90%;
+  height: 70%;  
   position: absolute;  
   top: 23vw;
   left: 5vw;
@@ -3406,8 +3422,8 @@ nav ul li a:hover {
   background-repeat: no-repeat;  
 }
 .RM_Map_Flow {	
-  width: 90vw;
-  height: 70vh;	
+  width: 100%;
+  height: 100%;	
   margin:0px;
   padding:0px 0px 0px 0px;	
  -webkit-mask-image: url(./assets/css/img/Routes/Route_Map_Mask.png);
@@ -3428,8 +3444,8 @@ nav ul li a:hover {
   width: 18vw;
   height: 13vw;  
   position: absolute;  
-  top: 50vh;
-  left: 0.5vw;  
+  top: 65%;
+  left: 0.5%;  
   z-index:7;  
   background-image:url('./assets/css/img/Routes/RM_Minus_Btn.png');
   background-size: 100% 100%;
@@ -3447,8 +3463,8 @@ nav ul li a:hover {
   width: 18vw;
   height: 13vw;  
   position: absolute;  
-  top: 50vh;
-  Right: 0.5vw;  
+  top: 65%;
+  Right: 0.5%;  
   z-index:7;  
   background-image:url('./assets/css/img/Routes/RM_Plus_Btn.png');
   background-size: 100% 100%;
@@ -3482,12 +3498,14 @@ nav ul li a:hover {
   background-repeat: no-repeat;	
 }
 .RM_Bottom_Btn{	
-  width: 45vw;
-  height: 18vw;  
+  width: 25vh;
+  height: 10vh;  
   position: absolute;  
-  top: 85vh;
-  left: 26vw;
-  font-size: 6.5vw;  
+  bottom: 5%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%);
+  font-size: 3.5vh;  
   z-index:7;  
   background-image:url('./assets/css/img/L_UI_Big_Btn2.png');
   background-size: 100% 100%;
@@ -3495,7 +3513,7 @@ nav ul li a:hover {
   background-repeat: no-repeat;	
 }
 .RM_Bottom_Btn:active{    
-  font-size: 6vw;   
+  font-size: 3.2vh;   
   background-image:url('./assets/css/img/L_UI_Big_Btn2_Active.png');
   background-size: 100% 100%;
   background-position: center center;
@@ -3684,37 +3702,34 @@ nav ul li a:hover {
 }
 .RM_Dist_Full{		  
   font-size: 2.5vw;
-  //margin-top: -1.8vw;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; 
   color: #fff;  
   z-index: 10;
   position: absolute;
-  top: -20%;
-  left: 0%;
+  top: -2vw;
+  left: 0vw;
   width: 100%;
 }
 .RM_Dist_Text{		  
   font-size: 2vw;
-  //margin-top: -1.4vw;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400; 
   color: #fff;  
   z-index: 10;
   position: absolute;
-  top: 13%;
-  left: 0%;
+  top: 2.7vw;
+  left: 0vw;
   width: 100%;
 }
 .RM_Dist_Real{		  
   font-size: 2.5vw;
-  //margin-top: -0.85vw;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; 
   color: #fff;  
   z-index: 10;
   position: absolute;
-  top: 43%;
-  left: 0%;
+  top: 6.5vw;
+  left: 0vw;
   width: 100%;
 }
