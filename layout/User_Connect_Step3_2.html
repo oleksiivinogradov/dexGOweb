@@ -11,32 +11,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
   </head>
 	<body> 
-	  <div class="UC_Title"><b>CHECKING THE BALANCE</b></div>	
-	  <div class="User_Connection_Tab">
-		  <div class="UC_Network">
-			<div class= "UC_Balance_bad_Icon"></div>
-			<div class= "UC_Balance_bad_Message"><p>YOU NEED HAVE MORE THAN 4 ETH</p><p>FOR THE PLAY!</p></div>		
-			<div class= "UC_Balance_bad_Cont">
-				<b>BALANCE:</b>
-				<div><p>3 ETH</p></div>
-			</div>
-			<div class="UC_Bal_bad_Btn1"><b>ADD BALANCE</b></div>
-			<div class="UC_Bal_bad_Btn2"><b>CHECK AGAIN</b></div>
-			<div class="UC_Bal_bad_Btn2"><b>CONTINUE ANYWAY</b></div>		
+		<div id="uc-balance-low" class="game-main-ui">
+		  <div class="UC_Title"><b>CHECKING THE BALANCE</b></div>	
+		  <div class="User_Connection_Tab">
+			  <div class="UC_Network">
+				<div class= "UC_Balance_bad_Icon"></div>
+				<div class= "UC_Balance_bad_Message"><p>YOU NEED HAVE MORE THAN 4 ETH</p><p>FOR THE PLAY!</p></div>		
+				<div class= "UC_Balance_bad_Cont">
+					<b>BALANCE:</b>
+					<div><p>3 ETH</p></div>
+				</div>
+				<div class="UC_Bal_bad_Btn1"><b>ADD BALANCE</b></div>
+				<div class="UC_Bal_bad_Btn2"><b>CHECK AGAIN</b></div>
+				<div id="balance-low-continue" class="UC_Bal_bad_Btn2"><b>CONTINUE ANYWAY</b></div>		
+			  </div>
+			  <div class="UC_Step">STEP 3</div>			  
 		  </div>
-		  <div class="UC_Step">STEP 3</div>			  
-	  </div>
-	  <div class="UC_PopUp_Success">
-		<b>SUCCESSFULLY</b>
-	    <img src="../assets/css/img/User_Connection/UC_Success_Icon.png">
-	  </div>
-	  <div class="UC_PopUp_Connection">
-		<b>CONNECTION</b>
-	    <img src="../assets/css/img/User_Connection/UC_Spinner.gif">
-	  </div>
-	  <div class="UC_PopUp_Error">
-		<b>SOMETHING <p>WRONG</p></b>
-	    <img src="../assets/css/img/User_Connection/UC_Attention_Icon.png">
-	  </div>	  
+		  <div class="UC_PopUp_Success">
+			<b>SUCCESSFULLY</b>
+		    <img src="../assets/css/img/User_Connection/UC_Success_Icon.png">
+		  </div>
+		  <div class="UC_PopUp_Connection">
+			<b>CONNECTION</b>
+		    <img src="../assets/css/img/User_Connection/UC_Spinner.gif">
+		  </div>
+		  <div class="UC_PopUp_Error">
+			<b>SOMETHING <p>WRONG</p></b>
+		    <img src="../assets/css/img/User_Connection/UC_Attention_Icon.png">
+		  </div>	
+		</div>  
 	</body>
 </html>
