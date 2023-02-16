@@ -2512,6 +2512,117 @@ nav ul li a:hover {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;  
 }
+/*Shoes Batch*/
+.SH_Batch{
+  display: none;
+  width: 60vw;
+  height: 15vw;
+  position: absolute;
+  top: -4vw;
+  left: 20vw;  
+  background-image:url('./assets/css/img/Batch_Flow_BG.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index:99;	
+}
+.SH_Batch_Money{
+  width: 26vw;
+  height: 12vw;
+  position: absolute;
+  top: -1.8vw;
+  left: 17vw;
+  background-image:url('./assets/css/img/Batch_Money_Label.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;  
+}
+.SH_Batch_Money p{
+  margin-top: 6.8vw;	
+  color: #fff;
+  font-size: 2.7vw;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; 
+}
+.SH_Batch_X{
+  width: 16.3vw;
+  height: 7.6vw;
+  position: absolute;
+  top: 5.6vw;  
+  left: 2vw;
+  background-image:url('./assets/css/img/Batch_X_Label.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;  
+}
+.SH_Batch_X p{
+  margin-top: 2vw;	
+  color: #fff;
+  font-size: 2.7vw;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; 
+}
+.SH_Batch_Reset_Btn{
+  width: 16.3vw;
+  height: 7.6vw;
+  position: absolute;
+  top: 5.6vw;  
+  right: 2vw;
+  font-size: 2vw;  
+  background-image:url('./assets/css/img/Batch_Reset_Btn.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;  
+}
+.SH_Batch_Reset_Btn:active{
+  font-size: 1.8vw;	
+  background-image:url('./assets/css/img/Batch_Reset_Btn_Hover.png');
+  background-size: 95% 95%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;  
+}
+.SH_Batch_Reset_Btn p{
+  margin-top: 2.7vw;	
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400; 
+}
+.SH_Batch_Buy_Btn{
+  width: 22vw;
+  height: 8vw;
+  position: absolute;
+  top: 9.5vw;
+  left: 19vw;
+  font-size: 2.3vw;  
+  background-image:url('./assets/css/img/Batch_Buy_Btn.png');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;  
+}
+.SH_Batch_Buy_Btn:active{
+  font-size: 2.1vw;	
+  background-image:url('./assets/css/img/Batch_Buy_Btn_Hover.png');
+  background-size: 95% 95%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;  
+}
+.SH_Batch_Buy_Btn p{
+  margin-top: 2.7vw;	
+  color: #000000;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-shadow: 
+    -0.2vw 0 0 white,
+    0 -0.2vw 0 white, 
+    0.2vw 0 0 white, 
+    0 0.2vw 0 white;  
+}
 /*User Connection*/
 .UC_Title {
    margin: 0;
