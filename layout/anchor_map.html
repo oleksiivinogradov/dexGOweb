@@ -14,15 +14,18 @@
 
   <body>
     <!-- Anchor Map -->
-      <div id="Anchor_Map">  
-        <div class="AM_Map"><img src="../assets/css/img/MapImage.png"></div>     
-        <div class="AM_Wayspot_Marker">
-			<p>80076C9B8DBE</p>		
-		</div> 
-        <div class="AM_Player_Marker"></div>
+      <div id="Anchor_Map" class="game-main-ui">  
+        <div class="AM_Map">
+          <div id="mapbox-map"></div>
+          <div id="user-location-marker" class="marker"></div>
+        </div>     
+        <div id="AM-wayspot-marker" class="AM_Wayspot_Marker">
+			   <p>80076C9B8DBE</p>		
+		    </div> 
+        <!--<div class="AM_Player_Marker"></div>-->
         <div class="AM_Loc_Btn">
-			<p>TAP TO LOCALIZE</p>
-		</div>
+			   <p>TAP TO LOCALIZE</p>
+		    </div>
       </div>	  
   </body>
 </html>

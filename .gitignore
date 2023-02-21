@@ -5,3 +5,4 @@ node_modules
 package*
 webpack*
 test.html
+anchors-test.html

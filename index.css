@@ -12,6 +12,7 @@ a {
 }
 
 #mapbox-map { position: absolute; width: 100%; height: 200%; }
+#Anchor_Map #mapbox-map { height: 100%; } 
 #main-page #mapbox-map { top: -45%; }
 #route-map #mapbox-map { top: -19%; }
 .mapboxgl-marker-anchor-center {display: none;}
@@ -250,7 +251,8 @@ a {
   background-image: url('./assets/css/img/Routes/RM_Quest_Marker.png');
   background-size: 100%; 
   background-repeat: no-repeat;
-  background-position: center;	
+  background-position: center;
+  display: none;
 }
 .AM_Wayspot_Marker p{
   position: absolute;  
@@ -299,7 +301,8 @@ a {
   background-repeat: no-repeat;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;	
-  font-size: 2.5vw;  
+  font-size: 2.5vw;
+  display: none;
 }
 .AM_Loc_Btn:active {
   background-image:url('./assets/css/img/L_UI_Big_Btn_Active.png');
