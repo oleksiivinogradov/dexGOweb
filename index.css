@@ -534,6 +534,108 @@ a {
   background-repeat: no-repeat;
   background-position: center; 
 }
+/*Anchor_PopUp*/
+#AL_PopUp {
+  //display: none;	
+  width: 90%;
+  height: 75%;  
+  max-width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background-image:url('./assets/css/img/PopUp1.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 99;  
+}
+.AL_PopUp_Title{
+  width: 90%;	
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;		
+  color:#f2d40d;
+ -webkit-text-stroke-width: 1.0px; 
+ -webkit-text-stroke-color: #fff;  
+  text-align: center;
+  font-size: 5vh;   
+  z-index:6;   	
+}
+.AL_PopUp_Descr{
+  width: 70%;
+  height: 65%;  
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;		
+  color:#fff;
+  text-align: center;
+  font-size: 3vh;
+  background-image:url('./assets/css/img/PopUp2.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;     	
+}
+.AL_PopUp_Descr span{
+  width: 90%;	
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);      	
+}
+.AL_PopUp_Btn_Flow{
+  width: 90%;
+  height: 10%;  
+  position: absolute;
+  top: 89%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);   	
+}
+.AL_PopUp_Btn{
+  width: 22vh;
+  height: 8vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  color: #fff;
+  font-size: 2.5vh;
+  z-index: 6;
+  background-image:url('./assets/css/img/L_UI_Big_Btn.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;		
+}
+.AL_PopUp_Btn:active {
+  background-image:url('./assets/css/img/L_UI_Big_Btn_Active.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-size: 2.4vh;
+}
+.AL_PopUp_Btn span{	
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  user-select:none;
+  text-transform: uppercase;
+}
+
 /*Circle Game*/		
 .Had_Left {
   width: 23vw;
