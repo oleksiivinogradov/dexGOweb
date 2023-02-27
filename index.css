@@ -4045,7 +4045,7 @@ nav ul li a:hover {
 }
 /*Quiz Type 1_Question*/
 #Quiz_Question_Type1 {
-  //display: none;	
+  display: none;	
   width: 90%;
   height: 75%;  
   max-width: 600px;
@@ -4303,6 +4303,177 @@ nav ul li a:hover {
   font-size: 1.5vh;
 }
 .Quiz_Question_Btn span{	
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  user-select:none;
+  text-transform: uppercase;
+}
+/*Quiz Result*/
+#Quiz_Result {
+  //display: none;	
+  width: 90%;
+  height: 75%;  
+  max-width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background-image:url('./assets/css/img/PopUp1.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 99;  
+}
+.Quiz_Result_Title{
+  width: 90%;	
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;		
+  color:#f2d40d;
+ -webkit-text-stroke-width: 1.0px; 
+ -webkit-text-stroke-color: #fff;  
+  text-align: center;
+  font-size: 4vh;   
+  z-index:6;   	
+}
+.Quiz_Result_Descr{
+  width: 80%;
+  height: 35%;  
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;		
+  color:#fff;
+  text-align: center;
+  font-size: 2.5vh;
+  background-image:url('./assets/css/img/User_Connection/Black_Label2.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;     	
+}
+.Quiz_Result_Descr p{
+  width: 90%;	
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);      	
+}
+.Quiz_Result_Result{	
+  width: 80%;
+  height: 30%;  
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);    	
+}
+.Quiz_Result_Text{
+  width: 60%;
+  height: 20%;  	
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background-image:url('./assets/css/img/User_Connection/Pink_Blue_Label2.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;   
+}
+.Quiz_Result_Text span{  	
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;		
+  color:#fff;
+  font-size: 2.2vh;
+  text-transform: uppercase;  
+}
+.Quiz_Result_Value{
+  width: 33%;
+  height: 65%;	
+  position: absolute;
+  top: 88%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  background-image:url('./assets/css/img/Square_Label.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;    
+}
+.Quiz_Result_Value span{  	
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;		
+  color:#fff;
+  font-size: 6vh;   
+}
+.Quiz_Result_Value p{  	
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;		
+  color:#fff;
+  font-size: 1.7vh;
+  text-transform: uppercase;  
+}
+.Quiz_Result_Btn_Flow{
+  width: 90%;
+  height: 10%;  
+  position: absolute;
+  top: 89%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);   	
+}
+.Quiz_Result_Btn{
+  width: 22vh;
+  height: 8vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  color: #fff;
+  font-size: 2.5vh;
+  z-index: 6;
+  background-image:url('./assets/css/img/L_UI_Big_Btn.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;		
+}
+.Quiz_Result_Btn:active {
+  background-image:url('./assets/css/img/L_UI_Big_Btn_Active.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-size: 2.4vh;
+}
+.Quiz_Result_Btn span{	
   position: absolute;
   top: 50%;
   left: 50%;
