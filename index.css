@@ -165,24 +165,7 @@ a {
 #uc-add-chain {
   z-index:2;
 }
-
-#headerimg {
-  width: 100vw;
-  height: auto;
-  margin-top:-0,1%;
-  position:relative;
-  z-index:1;
-  //opacity: 0.7;
-	}
-#headerimg img {
-  width: 100%;
-  height: auto;
-  top:-0,1%;
-  margin: 0px;
-  position:absolute;
-  z-index:1;
-  //opacity: 0.7;
-	}
+	
 /*Loading Screen*/
 #loadBackground, #requestingCameraPermissions{
   background-color: #450967 !important;
@@ -636,134 +619,175 @@ a {
   text-transform: uppercase;
 }
 
-/*Circle Game*/		
+/*Quest UI*/	
+#torus_game{
+  //display: none;	
+  width: 100%;
+  max-width:600px;
+  height: 100%;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);	
+}
+.header_torus {	
+  //display: none;
+  width: 100%;
+  height: 8%;
+  margin-top:-0,1%;
+  position:absolute;
+  top: 4%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  z-index:1;
+  background-image:url('./assets/css/img/header2.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;  
+  //opacity: 0.7;
+}	
 .Had_Left {
-  width: 23vw;
-  height: 23vw;
-  text-align: center;
-  color: #fff;
-  font-size: 2.1vw;
-  top: 1%;
+  width: 23%;
+  height: 52%;
+  position:absolute;
+  top: 4%;
   left: 0%;
-  position: fixed;
   z-index: 2;
   background-image:url('./assets/css/img/LeftLabel.png');
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
 }
-.Had_Left p{
-  width: 23vw;
-  height: 23vw;	
+.Had_Left b{
   position: absolute;
-  top: 55%;
+  top: 56%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-}
-
-
-.Had_Right {
-  width: 23vw;
-  height: 23vw;
-  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   color: #fff;
-  font-size: 2.1vw;
-  top: 1%;
+  font-size: 1.1vh;  
+}
+.Had_Right {
+  width: 23%;
+  height: 52%;
+  position:absolute;
+  top: 4%;
   right: 0%;
-  position: fixed;
   z-index: 2;
   background-image:url('./assets/css/img/RightLabel.png');
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
 }
-.Had_Right p{
-  width: 23vw;
-  height: 23vw;	
+.Had_Right b{
   position: absolute;
-  top: 55%;
+  top: 56%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  font-size: 1.1vh; 
 }
 
 .Had_MidleUp {
-  width: 22vw;
-  height: 7vw; 
-  text-align: center;
-  left:50%;
-  margin-right:-50%;
-  position: absolute; 
-  transform: translate(-50%);  
+  width: 22%;
+  height: 40%; 
+  position: absolute;  
+  top: 21%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
   color: #fff;
-  font-size: 4vw;
+  font-size: 2vh;
   z-index: 2;
   background-image:url('./assets/css/img/CenterLabel.png');
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; 
 }
-.Had_MidleUp p{
-  width: 22vw;
-  height: 7vw; 
+.Had_MidleUp b{ 
   position: absolute;
-  top: 0%;
+  top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%); 
 }
 .Had_MidleDown {
-  width: 22vw;
-  height: 12vw;
+  width: 22%;
+  height: 70%;
   position: absolute;
-  top:-0.6%;
-  left:50%;
-  margin-right:-50%;
-  position: absolute; 
-  transform: translate(-50%, 50%);  
-  text-align: center;
+  top: 97%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
   color: #fff;
-  font-size: 6vw;
-  margin-top:1.5vw;
+  font-size: 2.8vh;
   z-index: 2;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   background-image:url('./assets/css/img/TimerLabel.png');
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat; 
 }
-.Had_MidleDown p{
-  width: 22vw;
-  height: 12vw;
+.Had_MidleDown b{
   position: absolute;
-  top: 19%;
+  top: 55%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
 }
 .Circle {
-  width: 30vw;
-  height: 30vw;
-  position: absolute;
-  bottom: 6vh;
-  left: 35vw;   
+  width: 18vh;
+  height: 18vh;
+  position: absolute;  
+  top: 82%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
   z-index:2;
-  text-align: center;  
+  background-image:url('./assets/css/img/Circle.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;  
 }
-.Circle img{
-  width: 30vw;
-  height: 30vw; 
-  user-select:none;  
+.Ball {
+  /display: none;	
+  width: 13.5vh;
+  height: 13.5vh;
+  position: absolute;  
+  top: 82%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  z-index:2;
+  background-image:url('./assets/css/img/Ball.gif');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;    
 }
+.Ball:active {
+  width: 13.5vh;
+  height: 13.5vh;
+  position: absolute;  
+  top: 82%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  z-index:2;
+  background-image:url('./assets/css/img/Circle_Btn_Active_Hover.png');
+  background-size: 80% 80%;
+  background-repeat: no-repeat;
+  background-position: center;  
+}
+
 .Right_Btn {
-  width: 28vw;
-  height: 15vw;
+  width: 14vh;
+  height: 7.5vh;
   color: #fff;
-  font-size: 3.2vw;
+  font-size: 1.6vh;
   bottom: 5vh;
   right: 4.5vw; 
   position: absolute;
@@ -779,11 +803,9 @@ a {
   background-image:url('./assets/css/img/L_UI_Btn2_Active.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  font-size: 3vw;  
+  font-size: 1.5vh;  
 }
-.Right_Btn p{
-  width: 15vw;
-  height: 10.5vw;
+.Right_Btn b{
   position: absolute;  
   top: 50%;
   left: 50%;
@@ -792,12 +814,12 @@ a {
   user-select:none;
 }
 .Left_Btn {
-  width: 28vw;
-  height: 15vw;
+  width: 14vh;
+  height: 7.5vh;
   color: #fff;
-  font-size: 3.2vw;
-  text-align:center;
+  font-size: 1.6vh;
   bottom: 5vh;
+  text-align:center;
   left: 4.5vw; 
   position: absolute;
   z-index: 2;
@@ -812,11 +834,9 @@ a {
   background-image:url('./assets/css/img/L_UI_Btn_Active.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  font-size: 3vw; 
+  font-size: 1.5vh; 
 }
-.Left_Btn p{
-  width: 15vw;
-  height: 10.5vw;
+.Left_Btn b{
   position: absolute;  
   top: 50%;
   left: 50%;
@@ -825,29 +845,15 @@ a {
   user-select:none;  
 }
 
-.Ball {
-  width: 30vw;
-  height: 30vw;
-  position: absolute;
-  bottom: 6vh;
-  left: 35vw;
-  text-align: center;
-  //vertical-align: middle;  
-  z-index:2;  
-}
-.Ball img{
-  width: 26vw;
-  height: 26vw;
-  margin: 2vw;
-  user-select:none;  
-}
 .Quest_Scanning {
   //display: none;	
-  width: 70vw;
-  height: 3vw;
-  position: absolute;
-  bottom: 30vh;
-  left: 15vw;   
+  width: 35vh;
+  height: 1.5vh;
+  position: absolute;   
+  top: 65%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
   z-index:10;
   text-align: center;
   background-image:url('./assets/css/img/Level_PB_BG.png');
@@ -857,29 +863,31 @@ a {
 }
 .Quest_Scanning img{
   width: 0%;
-  height: 1.2vw;
-  padding-left:0.8vw;  
-  padding-top:1vw;  
+  height: 0.6vh;
+  padding-left:0.4vh;  
+  padding-top:0.5vh;  
   float: left;
   margin: auto;  
 }
 .Quest_Scanning p{
   margin-left: auto;
   margin-right: auto;
-  margin-top: -5vw;
+  margin-top: -2.5vh;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: 3vw;
+  font-size: 1.5vh;
   color:#000000;  
   user-select:none;  
 }
 .Quest_Scan_Success {
   display: none;	
-  width: 50vw;
-  height: 50vw;
-  position: absolute;
-  top: 25vh;
-  left: 25vw;   
+  width: 25vh;
+  height: 25vh;
+  position: absolute;   
+  top: 40%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);    
   z-index:15;
   text-align: center;
   background-image:url('./assets/css/img/Success_PopUp.png');
@@ -890,20 +898,22 @@ a {
 .Quest_Scan_Success p{
   margin-left: auto;
   margin-right: auto;
-  margin-top: 25vw;
+  margin-top: 15vh;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 5vw;
+  font-size: 2.5vh;
   color:#fff;  
   user-select:none;  
 }
 .Quest_Scan_Attention {
   display: none;	
-  width: 50vw;
-  height: 50vw;
+  width: 25vh;
+  height: 25vh;
   position: absolute;
-  top: 25vh;
-  left: 25vw;   
+  top: 40%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);    
   z-index:15;
   text-align: center;
   background-image:url('./assets/css/img/Attention_PopUp.png');
@@ -914,76 +924,64 @@ a {
 .Quest_Scan_Attention p{
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20vw;
+  margin-top: 12vh;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: 4vw;
+  font-size: 2vh;
   color:#fff;  
   user-select:none;  
 }
 
-/*Start PopUp*/
-
-.Quest_Start_PopUp {
-  display: none;	
-  width: 80vw;
-  height: 115vw;
+/*PopUps*/
+.PopUp_Overlay{
+  //display: none;	
+  width: 200vw;
+  height: 200vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background-color: #000000;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  opacity: 0.7;   
+}
+.Quest_PopUp_BG {	
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);   
-  z-index:1000;
-  text-align: center;
   background-image:url('./assets/css/img/PopUp1.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;  
 }
-.Quest_Start_PopUp h1{
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 7vw;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 6vw;
-  color:#fff;  
-  user-select:none;  
-}
-.Quest_Start_PopUp p{
-  width: 75vw;
-  height: 20vw;	
+.Quest_Target {	
+  width: 25vh;
+  height: 25vh;
   position: absolute;
-  top: 70vw;
-  left: 2.5vw;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  font-size: 4vw;
-  color:#fff;  
-  user-select:none;  
-}
-.QSP_Target {	
-  width: 50vw;
-  height: 50vw;
-  position: absolute;
-  top: 20vw;
-  left: 15vw;   
-  z-index:10;
+  top: 40%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);    
   background-image:url('./assets/css/img/User_Connection/Pop_Up_Field.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;  
 }
-.QSP_Target_Mask {	
-  width: 50vw;
-  height: 50vw;
+.Quest_Target_Mask {	
+  width: 25vh;
+  height: 25vh;
   position: absolute;
   top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%); 
   text-align: center;
-  z-index:11;
  -webkit-mask-image: url('./assets/css/img/User_Connection/Pop_Up_Field_Mask.png');
  -webkit-mask-repeat: no-repeat;
  -webkit-mask-position: center center;
@@ -993,37 +991,38 @@ a {
   mask-position: center center;
   mask-size: 100% 100%;   
 }
-.QSP_Target_Mask img{
-  width: 50vw;
-  height: 50vw;	
+.Quest_Target_Mask img{
+  width: 25vh;
+  height: 25vh;	
   position: absolute;  
   top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);    
 }
-.QSP_Start_Btn{
-  width: 34vw;
-  height: 14vw;
-  position: absolute;
-  top: 95vw;
-  left: 23vw; 
-  z-index: 6;
+.Quest_Center_Btn{
+  width: 17vh;
+  height: 7vh;
+  position: absolute;  
+  top: 85%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
   background-image:url('./assets/css/img/L_UI_Big_Btn.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;	
   color: #fff;
-  font-size: 4.5vw;  
+  font-size: 2.3vh;  
 }
-.QSP_Start_Btn:active {
+.Quest_Center_Btn:active {
   background-image:url('./assets/css/img/L_UI_Big_Btn_Active.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  font-size: 4vw;
+  font-size: 2.1vh;
 }
-.QSP_Start_Btn b{	
+.Quest_Center_Btn b{	
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1031,162 +1030,167 @@ a {
   transform: translate(-50%, -50%);
   user-select:none;
 }
-.QSP_Close_Btn{
-  width: 7vw;
-  height: 7vw;
+.Quest_Title{
   position: absolute;
-  top: 3vw;
-  right: 4vw; 
-  z-index: 6;
-  background-image:url('./assets/css/img/Close_Btn.png');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;  
+  top: 8%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 3.1vh;
+  color:#fff; 	
 }
-.QSP_Close_Btn:active {	
-  background-image:url('./assets/css/img/Close_Btn.png');
-  background-size: 90% 90%;
-  background-repeat: no-repeat;
-}
-
-/*GameOver*/
-
-.end-game{
+.Quest_Start_PopUp{
   display: none;	
-  width: 80vw;
-  height: 115vw;
+  width: 80%;
+  max-width: 600px;
+  height: 65%;
   position: absolute;
   top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);   
   z-index:1000;
-  text-align: center;
-  background-image:url('./assets/css/img/PopUp1.png');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;  
+  text-align: center;	
 }
-.end-game span{
- vertical-align:middle; 
-}
-.GO_Title{
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 9vw;
+.Quest_Start_PopUp p{
+  width: 90%;
+  height: 20%;	
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 8vw;
-  color:#fff; 
+  font-weight: 400;
+  font-size: 2vh;
+  color:#fff;  
+  user-select:none;  
 }
-.GO_Result_Flow{
-  width: 65vw;
-  height: 18vw;
+.Quest_Close_Btn{
+  width: 3.5vh;
+  height: 3.5vh;
   position: absolute;
-  top: 27vw;
-  Left: 7.5vw; 
-  background-image:url('./assets/css/img/User_Connection/Black_Label.png');
+  top: 3%;
+  right: 4%; 
+  background-image:url('./assets/css/img/Close_Btn.png');
   background-size: 100% 100%;
+  background-repeat: no-repeat;  
+}
+.Quest_Close_Btn:active {	
+  background-image:url('./assets/css/img/Close_Btn.png');
+  background-size: 90% 90%;
   background-repeat: no-repeat;
-  text-align: center;  
+  background-position: center;
 }
-.GO_Result{
-   width:35vw;
-   height:5vw;   
-   font-family: 'Montserrat', sans-serif;
-   font-weight: 700;		
-   color:#fff;
-   margin-top: -4.8vw;
-   margin-left: auto;   
-   margin-right: auto;   
-   font-size: 3.5vw;
-   background-image:url('./assets/css/img/User_Connection/Pink_Label.png');
-   background-size: 100% 100%;
-   background-repeat: no-repeat;
-   background-position:center;
-}
-.GO_Result_Value{
-   width: 100%;
-   font-family: 'Montserrat', sans-serif;
-   font-weight: 700;		
-   color:#f2d40d;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   text-align: center;    
-   margin-right: -50%;
-   transform: translate(-50%, -50%);
-   font-size: 10vw;   
-}
-.GO_Time_Flow{
-  width: 65vw;
-  height: 18vw;
-  position: absolute;
-  top: 57vw;
-  Left: 7.5vw; 
-  background-image:url('./assets/css/img/User_Connection/Black_Label.png');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  text-align: center;  
-}
-.GO_Time{
-   width:35vw;
-   height:5vw;   
-   font-family: 'Montserrat', sans-serif;
-   font-weight: 700;		
-   color:#fff;
-   margin-top: -4.8vw;
-   margin-left: auto;   
-   margin-right: auto;   
-   font-size: 3.5vw;
-   background-image:url('./assets/css/img/User_Connection/Pink_Label.png');
-   background-size: 100% 100%;
-   background-repeat: no-repeat;
-   background-position:center;   
-}
-.GO_Time_Value{
-   width: 100%;
-   font-family: 'Montserrat', sans-serif;
-   font-weight: 700;		
-   color:#f2d40d;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   text-align: center;    
-   margin-right: -50%;
-   transform: translate(-50%, -50%);
-   font-size: 10vw;
- //-webkit-text-stroke-width: 0.4vw; 
- //-webkit-text-stroke-color: #fff;  
-}
-.GO_Continue{
-  width: 34vw;
-  height: 14vw;
-  position: absolute;
-  top: 90vw;
-  left: 23vw; 
-  z-index: 6;
-  background-image:url('./assets/css/img/L_UI_Big_Btn.png');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;	
-  color: #fff;
-  font-size: 4.5vw;  
-}
-.GO_Continue:active {
-  background-image:url('./assets/css/img/L_UI_Big_Btn_Active.png');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  font-size: 4vw;
-}
-.GO_Continue b{	
+.Quest_Task1_PopUp {
+  display: none;	
+  width: 80%;
+  max-width: 600px;
+  height: 65%;
   position: absolute;
   top: 50%;
   left: 50%;
   margin-right: -50%;
-  transform: translate(-50%, -50%);
-  user-select:none;
+  transform: translate(-50%, -50%);   
+  z-index:1000;
+  text-align: center; 
 }
+.Quest_Task1_PopUp p{
+  width: 75%;
+  height: 20%;	
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 2vh;
+  color:#fff;  
+  user-select:none;  
+}
+
+/*GameOver PopUp*/
+
+.end-game{
+  display: none;	
+  width: 80%;
+  max-width: 600px;
+  height: 65%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);   
+  z-index:1000;
+  text-align: center;   
+}
+
+.GO_Point_Flow{
+  width: 82%;
+  height: 15%;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  background-image:url('./assets/css/img/User_Connection/Black_Label.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat; 
+}
+.GO_Result{
+  width:54%;
+  height:28%;   
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;		
+  position: absolute;
+  top: -13%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  background-image:url('./assets/css/img/User_Connection/Pink_Label.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position:center;
+}
+.GO_Result span{
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 700;		
+   color:#fff;
+   font-size: 1.6vh;   
+   position: absolute;
+   top: 50%;
+   left: 50%;    
+   margin-right: -50%;
+   transform: translate(-50%, -50%);  
+}
+.GO_Result_Value{
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 700;		
+   color:#f2d40d;
+   position: absolute;
+   top: 50%;
+   left: 50%;    
+   margin-right: -50%;
+   transform: translate(-50%, -50%);
+   font-size: 5vh;   
+}
+.GO_Time_Flow{
+  width: 82%;
+  height: 15%;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  background-image:url('./assets/css/img/User_Connection/Black_Label.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;  
+}
+/*Quiz PopUps*/
+
 
 
 /*MainPage*/ 
