@@ -15,7 +15,7 @@
   <body>
     <!-- Ball through Torus game -->
     <div id="ball-through-torus-game-ui" class="game-main-ui">
-	  <div id="torus_game">
+	  <div id="Quest_Flow">
 		  <div class="header_torus">
 				  <div class="Had_Left">
 					 <b>DESTROY CIRCLES</b>
@@ -29,7 +29,21 @@
 				  <div class="Had_Right">
 					 <b>AMOUNT: <span id="current-count">0</span>/<span id="total-count">12</span></b>
 				  </div> 				  
-		  </div>        
+		  </div> 
+		  <div class="header_quest">
+				  <div class="Had_Left">
+					 <b>Complete the quiz</b>
+				  </div>
+				  <div class="Had_MidleUp">
+					 <b>POINTS</b>     
+				  </div>
+				  <div class="Had_MidleDown">
+					 <b>25</b>       
+				  </div> 
+				  <div class="Had_Right">
+					 <b>Questions: <span id="current-count">0</span>/<span id="total-count">12</span></b>
+				  </div> 				  
+		  </div>		  
 		  <div id="restart-button" class="Left_Btn">
 			 <b>RESTART</b>
 		  </div>
@@ -37,7 +51,10 @@
 			 <b>FINISH</b>
 		  </div>  
 		  <div id="launch-ball-button" class="Ball">
-		  </div>      
+		  </div>
+		  <div class="Center_Btn">
+			 <b>Interact</b>
+		  </div> 		  
 		  <div class="Circle">
 		  </div>
 		  <div class="Quest_Scanning">
@@ -79,6 +96,47 @@
 				<b>START</b>
 			 </div>
 		  </div>
+		  <div id="Quiz_Start_PopUp">
+			<div class="PopUp_Overlay"></div>
+			<div class="Quest_PopUp_BG"></div>		  
+			<div class="Quiz_Start_PopUp_Title">
+				 WELCOME!
+			</div>
+			<div class="Quiz_Start_PopUp_Name">
+			     <span>Sport quiz</span>		 
+			</div>
+			<div class="Quiz_Start_PopUp_Text">
+				 <span>Would you like to take part in our sports Quiz?</span>			 
+			</div>						
+			<div class="Quiz_Start_PopUp_Left_Btn">
+					 <span>No, Thanks</span>
+			</div>
+			<div class="Quiz_Start_PopUp_Right_Btn">
+				<span>let's go</span>
+			</div> 				
+          </div>
+	  	  <div id="Quiz_Result">
+			<div class="PopUp_Overlay"></div>
+			<div class="Quest_PopUp_BG"></div>		  
+			<div class="Quiz_Result_Title">
+				 Congratulations!
+			</div>
+			<div class="Quiz_Result_Descr">
+			     <p>You answered exactly <span>3</span> questions correctly out of 5</p>		 
+			</div>
+			<div class="Quiz_Result_Result">			  
+			    <div class="Quiz_Result_Value">
+					<p>Points</p>				
+					<span>75</span>	
+				</div>	
+			    <div class="Quiz_Result_Text">	
+					<span>Your Result</span>	
+				</div>				
+			</div>					
+			<div class="Quiz_Result_Btn">
+					 <span>Finish</span>
+		    </div>		  
+		  </div>		  
 		  <div class="end-game">
 			  <div class="PopUp_Overlay"></div>
 			  <div class="Quest_PopUp_BG"></div>		  
