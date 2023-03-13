@@ -342,6 +342,21 @@ a {
     0.3vw 0 0 #f2d40d, 
     0 -0.3vw 0 #f2d40d;   
 }
+.selected-wayspot-name {
+  position: absolute;
+  bottom: 24%;
+  left: 50%;
+  padding: 5px;
+  z-index: 10;
+  background-color: #fff;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  border: 1px solid #000;
+  width: 80%;
+}
+.selected-wayspot-name p {
+  margin: 0;
+}
 #Anchor_Load {
   width: 100%;
   height: 100%;	
