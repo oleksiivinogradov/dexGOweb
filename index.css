@@ -354,8 +354,21 @@ a {
   border: 1px solid #000;
   width: 80%;
 }
-.selected-wayspot-name p {
+.gps-switch {
+  position: absolute;
+  top: 26%;
+  left: 5%;
+  padding: 12px;
+  z-index: 10;
+  background-color: #fff;
+  text-align: center;
+  border: 1px solid #000;
+}
+.selected-wayspot-name p, .gps-switch p {
   margin: 0;
+}
+.gps-switch p {
+
 }
 #Anchor_Load {
   width: 100%;
