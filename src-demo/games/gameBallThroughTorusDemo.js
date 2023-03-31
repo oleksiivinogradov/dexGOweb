@@ -2,13 +2,13 @@ export const startGame = (UI, coachingOverlay, vps, Ammo, wayspotId) => {
   //  Assets
   const assets = [
     {file: 'ring.glb', scale: 0.4, convexPhysicsBody: true},
-    {file: 'ball.glb', scale: 0.04},
+    {file: 'ball.glb', scale: 0.1},
     //{file: 'torus-700eb893eee6.glb', scale: 1},
     //{file: 'torus-6be453f79201.glb', scale: 1},
   ]
   //  Ball settings
   const ballMass = 1
-  const ballColliderRadius = 0.1
+  const ballColliderRadius = 0.2
   const ballThrowForce = 15
   let ball
   let ballBB
