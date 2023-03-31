@@ -1227,7 +1227,7 @@ a {
   transform: translate(-50%, -50%);
   user-select:none;
 }
-.Center_Shoes_Btn:active {  
+.Center_Shoes_Btn:hover {  
   z-index:2;
   background-image:url('./assets/css/img/Circle_Btn_Active_Hover.png');
   background-size: 80% 80%;
