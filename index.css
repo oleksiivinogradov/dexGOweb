@@ -1235,6 +1235,20 @@ a {
   background-position: center;
   font-size: 1.5vh;  
 }
+.CameraBtn_Shoes{	
+  width: 9vh;
+  height: 9vh;
+  position: absolute;  
+  top: 80%;
+  left: 90%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  z-index:899;
+  background-image:url('./assets/css/img/ShoesIcons/Camera_Icon_Small.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
 .Type1_Shoes{	
   width: 9vh;
   height: 9vh;
