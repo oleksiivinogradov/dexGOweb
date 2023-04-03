@@ -1235,7 +1235,8 @@ a {
   background-position: center;
   font-size: 1.5vh;  
 }
-.CameraBtn_Shoes{	
+.CameraBtn_Shoes{
+  display: none;	
   width: 9vh;
   height: 9vh;
   position: absolute;  
