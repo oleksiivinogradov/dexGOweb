@@ -1374,6 +1374,40 @@ a {
   background-repeat: no-repeat;
   background-position: center; 
 }
+/*Roll Dice Game*/
+
+.Dice_1{
+  //display: none;	  
+  width: 12vh;
+  height: 12vh;
+  position: absolute;  
+  top: 92%;
+  left: 37%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  z-index:899;
+  background-image:url('./assets/css/img/Roll_Dice/Dice1.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+.Dice_2{	
+  //display: none;
+  width: 12vh;
+  height: 12vh;
+  position: absolute;  
+  top: 92%;
+  left: 63%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  z-index:899;
+  background-image:url('./assets/css/img/Roll_Dice/Dice2.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+
+
 /*GameOver PopUp*/
 
 .end-game{
