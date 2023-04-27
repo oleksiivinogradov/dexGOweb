@@ -1,0 +1,745 @@
+body {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: -1px 0px 0px 0px !important;
+  padding: 0;
+  user-select:none;
+}
+a {
+  text-decoration: none;
+  color: unset; 
+}
+
+/*Roll Dice Game*/
+#roll_dice {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position:absolute;
+  left:0;
+  top:0;
+}
+#roll_dice_flow{
+  //display: none;	
+  width: 100%;
+  max-width:600px;
+  height: 100%;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);	
+}
+#roll_dice_header {	
+  //display: none;
+  width: 100%;
+  height: 8%;
+  margin-top:-0,1%;
+  position:absolute;
+  top: 4%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  z-index:1;
+  background-image:url('../assets/css/img/header2.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;  
+  text-transform: uppercase;  
+}	
+#roll_dice_header_left_label {
+  width: 23%;
+  height: 52%;  
+  position:absolute;
+  top: 4%;
+  left: 0%;
+  z-index: 2;
+  background-image:url('../assets/css/img/LeftLabel.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+#roll_dice_header_left_label b{
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  font-size: 1vh;  
+}
+#roll_dice_header_right_label {
+  width: 23%;
+  height: 52%;
+  position:absolute;
+  top: 4%;
+  right: 0%;
+  z-index: 2;
+  background-image:url('../assets/css/img/RightLabel.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+#roll_dice_header_right_label b{
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  font-size: 1vh; 
+}
+#roll_dice_more{
+  //display: none;	
+  font-size: 1.2vh;	
+}
+#roll_dice_less{
+  display: none;	
+  font-size: 1.2vh;	
+}
+#roll_dice_value{
+  //display: none;	
+  font-size: 1.2vh;	
+}
+#roll_dice_header_middle_up_label {
+  width: 22%;
+  height: 40%; 
+  position: absolute;  
+  top: 21%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  color: #fff;
+  font-size: 1.8vh;
+  z-index: 2;
+  background-image:url('../assets/css/img/CenterLabel.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; 
+}
+#roll_dice_header_middle_up_label b{ 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+}
+#roll_dice_header_middle_down_label {
+  width: 22%;
+  height: 70%;
+  position: absolute;
+  top: 97%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  color: #fff;
+  font-size: 2.8vh;
+  z-index: 2;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  background-image:url('../assets/css/img/TimerLabel.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat; 
+}
+#roll_dice_header_middle_down_label b{
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+#roll_dice_drag_icon{
+  display: none;	  
+  width: 12vh;
+  height: 20vh;
+  position: absolute;  
+  top: 50%;
+  left: 48%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  background-image:url('../assets/css/img/Roll_Dice/Drag_Icon.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+#roll_dice_drag_desc{
+  display: none;	  
+  width: 100vw;
+  height: 20vh;
+  position: absolute;  
+  top: 80%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #fff;
+  font-size: 3vh;
+  text-transform: uppercase; 
+  text-align: center;
+  text-shadow:0.2vh 0.3vh 0.5vh black; 
+  //text-shadow: 
+    -0.1vh 0 0 #f2d40d,
+    0 -0.1vh 0 #f2d40d, 
+    0.1vh 0 0 #f2d40d, 
+    0 0.1vh 0 #f2d40d;  
+}
+#roll_dice_task{
+  display: none;	  
+  width: 100vw;
+  height: 20vh;
+  position: absolute;  
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  font-size: 3vh;
+  text-transform: uppercase; 
+  text-align: center;
+  //text-shadow:0.2vh 0.3vh 0.9vh black; 
+  text-shadow: 
+    -0.1vh 0 0 #f2d40d,
+    0 -0.1vh 0 #f2d40d, 
+    0.1vh 0 0 #f2d40d, 
+    0 0.1vh 0 #f2d40d;  
+}
+#roll_dice_task span{
+  //display: none;	  
+  font-size: 5vh; 
+}
+#roll_dice_win{
+  //display: none;	  
+  width: 100vw;
+  height: 20vh;
+  position: absolute;  
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  text-align: center;  
+}
+#roll_dice_win_title{	  
+  position: absolute;  
+  top: 5%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  font-size: 6vh;
+  text-transform: uppercase; 
+  text-align: center;
+  //text-shadow:0.2vh 0.3vh 0.9vh black; 
+  text-shadow: 
+    -0.1vh 0 0 #f2d40d,
+    0 -0.1vh 0 #f2d40d, 
+    0.1vh 0 0 #f2d40d, 
+    0 0.1vh 0 #f2d40d;  
+}
+#roll_dice_win_emote{	
+  width: 7vh;
+  height: 7vh;  
+  position: absolute;  
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  background-image:url('../assets/css/img/Roll_Dice/Emote_Win.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;  
+}
+#roll_dice_win_points{	  
+  position: absolute;  
+  top: 95%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  font-size: 2vh;
+  text-transform: uppercase; 
+  text-align: center; 
+  text-shadow: 
+    -0.1vh 0 0 #f2d40d,
+    0 -0.1vh 0 #f2d40d, 
+    0.1vh 0 0 #f2d40d, 
+    0 0.1vh 0 #f2d40d;  
+}
+#roll_dice_win_points span{	   
+  font-size: 5vh; 
+}
+#roll_dice_lose{
+  display: none;	  
+  width: 100vw;
+  height: 20vh;
+  position: absolute;  
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  text-align: center;  
+}
+#roll_dice_lose_title{	  
+  position: absolute;  
+  top: 5%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  font-size: 2vh;
+  text-transform: uppercase; 
+  text-align: center;
+  //text-shadow:0.2vh 0.3vh 0.9vh black; 
+  text-shadow: 
+    -0.1vh 0 0 #f2d40d,
+    0 -0.1vh 0 #f2d40d, 
+    0.1vh 0 0 #f2d40d, 
+    0 0.1vh 0 #f2d40d;  
+}
+#roll_dice_lose_emote{	
+  width: 7vh;
+  height: 7vh;  
+  position: absolute;  
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  background-image:url('../assets/css/img/Roll_Dice/Emote_Lose.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;  
+}
+.roll_dice_all_dice{
+  //display: none;	
+}
+#roll_dice_left1{
+  //display: none;	  
+  width: 12vh;
+  height: 12vh;
+  position: absolute;  
+  top: 92%;
+  left: 37%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  background-image:url('../assets/css/img/Roll_Dice/Dice1.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+#roll_dice_left2{
+  display: none;	  
+  width: 12vh;
+  height: 12vh;
+  position: absolute;  
+  top: 92%;
+  left: 37%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  background-image:url('../assets/css/img/Roll_Dice/Dice2.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+#roll_dice_left3{
+  display: none;	  
+  width: 12vh;
+  height: 12vh;
+  position: absolute;  
+  top: 92%;
+  left: 37%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  background-image:url('../assets/css/img/Roll_Dice/Dice3.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+#roll_dice_left4{
+  display: none;	  
+  width: 12vh;
+  height: 12vh;
+  position: absolute;  
+  top: 92%;
+  left: 37%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  background-image:url('../assets/css/img/Roll_Dice/Dice4.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+#roll_dice_left5{
+  display: none;	  
+  width: 12vh;
+  height: 12vh;
+  position: absolute;  
+  top: 92%;
+  left: 37%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  background-image:url('../assets/css/img/Roll_Dice/Dice5.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+#roll_dice_left6{
+  display: none;	  
+  width: 12vh;
+  height: 12vh;
+  position: absolute;  
+  top: 92%;
+  left: 37%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  background-image:url('../assets/css/img/Roll_Dice/Dice6.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+#roll_dice_right1{	
+  //display: none;
+  width: 12vh;
+  height: 12vh;
+  position: absolute;  
+  top: 92%;
+  left: 63%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  background-image:url('../assets/css/img/Roll_Dice/Dice1.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+#roll_dice_right2{	
+  display: none;
+  width: 12vh;
+  height: 12vh;
+  position: absolute;  
+  top: 92%;
+  left: 63%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  background-image:url('../assets/css/img/Roll_Dice/Dice2.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+#roll_dice_right3{	
+  display: none;
+  width: 12vh;
+  height: 12vh;
+  position: absolute;  
+  top: 92%;
+  left: 63%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  background-image:url('../assets/css/img/Roll_Dice/Dice3.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+#roll_dice_right4{	
+  display: none;
+  width: 12vh;
+  height: 12vh;
+  position: absolute;  
+  top: 92%;
+  left: 63%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  background-image:url('../assets/css/img/Roll_Dice/Dice4.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+#roll_dice_right5{	
+  display: none;
+  width: 12vh;
+  height: 12vh;
+  position: absolute;  
+  top: 92%;
+  left: 63%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  background-image:url('../assets/css/img/Roll_Dice/Dice5.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+#roll_dice_right6{	
+  display: none;
+  width: 12vh;
+  height: 12vh;
+  position: absolute;  
+  top: 92%;
+  left: 63%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  background-image:url('../assets/css/img/Roll_Dice/Dice6.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+#roll_dice_overlay{
+  //display: none;	
+  width: 200vw;
+  height: 200vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background-color: #000000;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  opacity: 0.7;   
+}
+#roll_dice_popup_bg {	
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);   
+  background-image:url('../assets/css/img/PopUp1.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;  
+}
+#roll_dice_close_btn{
+  width: 3.5vh;
+  height: 3.5vh;
+  position: absolute;
+  top: 3%;
+  right: 5%; 
+  background-image:url('../assets/css/img/Close_Btn.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;  
+}
+#roll_dice_close_btn:active {	
+  background-image:url('../assets/css/img/Close_Btn.png');
+  background-size: 90% 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#roll_dice_btn{
+  width: 17vh;
+  height: 7vh;
+  position: absolute;  
+  top: 88%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  background-image:url('../assets/css/img/L_UI_Big_Btn.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;	
+  color: #fff;
+  font-size: 2.3vh;  
+}
+#roll_dice_btn:active {
+  background-image:url('../assets/css/img/L_UI_Big_Btn_Active.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-size: 2.1vh;
+}
+#roll_dice_btn b{	
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  user-select:none;
+}
+#roll_dice_title{
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 3.5vh;
+  color:#fff;
+  text-transform: uppercase;  
+}
+#roll_dice_start_popup{
+  //display: none;	
+  width: 80%;
+  max-width: 600px;
+  height: 65%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);   
+  z-index:1000;
+  text-align: center;	
+}
+#roll_dice_start_logo {	
+  width: 20vh;
+  height: 20vh;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);    
+  background-image:url('../assets/css/img/Roll_Dice/Dice_Game_Img.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;  
+}
+#roll_dice_start_question{
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2.5vh;
+  color:#fff;  
+}
+#roll_dice_start_desc{
+  width: 80%;
+  height: 15%;	
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 2vh;
+  color:#fff;  
+  user-select:none; 
+  background-image:url('../assets/css/img/User_Connection/Black_Label.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;   
+}
+#roll_dice_start_desc span{
+  width: 90%;	
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);    
+}
+#roll_dice_finish_popup{
+  display: none;	
+  width: 80%;
+  max-width: 600px;
+  height: 65%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);   
+  z-index:1000;
+  text-align: center;	
+}
+#roll_dice_finish_logo {	
+  width: 9vh;
+  height: 9vh;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);    
+  background-image:url('../assets/css/img/Roll_Dice/Emote_Smile.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;  
+}
+#roll_dice_finish_text{
+  width: 70%;
+  height: 8%;	
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 3vh;
+  //text-transform: uppercase;  
+  color:#fff;  
+  user-select:none; 
+  background-image:url('../assets/css/img/User_Connection/Pink_Label2.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;   
+}
+#roll_dice_finish_text span{
+  width: 90%;	
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);    
+}
+#roll_dice_finish_desc{
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2vh;
+  text-transform: uppercase; 
+  color:#fff;  
+}
+#roll_dice_finish_label{
+  width: 14vh;
+  height: 14vh;	
+  position: absolute;
+  top: 61%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);  
+  user-select:none; 
+  background-image:url('../assets/css/img/Square_Label.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;   
+}
+#roll_dice_finish_label_name{
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2vh;
+  text-transform: uppercase; 
+  color:#fff;  
+}
+#roll_dice_finish_label_result{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 6vh;
+  color:#fff;  
+}
