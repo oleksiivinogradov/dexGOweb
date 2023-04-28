@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>dexGo</title>
+    <link rel="stylesheet" type="text/css" href="../index.css">
+
+    <!-- Additional libs -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+  </head>
+	<body>
+		<div id="user_flow">
+			<div id="user_flow_step1">	
+			  <div id="user_flow_title"><b>CONNECTING TO THE METAMASK WALLET</b></div> 	
+			  <div id="user_flow_bg">
+				  <div id="user_flow_metamask">	  
+					<div id="user_flow_metamask_title">
+						Connect to your MetaMask wallet
+					</div>
+					<div id="user_flow_metamask_connect_btn">
+						<p>CONNECT</p>
+					</div>
+				  </div>
+				  <div id="user_flow_wallet">	  
+					<div id="user_flow_wallet_title">
+						Connect to your Connect Wallet
+					</div>
+					<div id="user_flow_wallet_connect_btn">
+						<p>CONNECT</p>
+					</div>
+				  </div>
+				  <div id="user_flow_step_count">STEP 1</div>		  
+			  </div>
+		    </div>
+			<div id="user_flow_step2">	
+			  <div id="user_flow_title"><b>ADD A NEW NETWORK TO METAMASK</b></div> 	
+			  <div id="user_flow_bg">
+				  <div id="user_flow_network">
+					<div id= "user_flow_network_name">
+						<b>NETWORK NAME:</b>
+						<div id="user_flow_network_name_value"><p>POLYGON MAINNET</p></div>
+					</div>
+					<div id= "user_flow_network_url">
+						<b>URL:</b>
+						<div id="user_flow_network_url_value"><p>HTTP://POLYGON-RPC.COM/</p></div>
+					</div>
+					<div id= "user_flow_network_id">
+						<b>CHAIN ID:</b>
+						<div id="user_flow_network_id_value"><p>137</p></div>
+					</div>
+					<div id="user_flow_network_add-chain_btn"><b>ADD TO METAMASK</b></div>
+				  </div>
+				  <div id="user_flow_step_count">STEP 2</div>		  
+			  </div>
+		    </div>
+			<div id="user_flow_step3_1">	
+			  <div id="user_flow_title"><b>CHECKING THE BALANCE</b></div> 	
+			  <div id="user_flow_bg">
+				  <div id="user_flow_balance_good">
+					<div id= "user_flow_balance_good_icon"></div>	  
+					<div id= "user_flow_balance_good_flow">
+						<b>BALANCE:</b>
+						<div id="user_flow_balance_good_flow_value"><p>50 ETH</p></div>
+					</div>
+					<div id="user_flow_balance_good_play_btn"><b>TAP TO PLAY</b></div>
+				  </div>
+				  <div id="user_flow_step_count">STEP 3</div>		  
+			  </div>
+		    </div>
+			<div id="user_flow_step3_2">	
+			  <div id="user_flow_title"><b>CHECKING THE BALANCE</b></div> 	
+			  <div id="user_flow_bg">
+				  <div id="user_flow_balance_bad">
+					<div id= "user_flow_balance_bad_icon"></div>
+					<div id= "user_flow_balance_bad_descr"><p>YOU NEED HAVE MORE THAN 4 ETH</p><p>FOR THE PLAY!</p></div>		
+					<div id= "user_flow_balance_bad_flow">
+						<b>BALANCE:</b>
+						<div id= "user_flow_balance_bad_flow_value"><p>3 ETH</p></div>
+					</div>
+					<div id="user_flow_balance_bad_add_balance_btn"><b>ADD BALANCE</b></div>
+					<div id="user_flow_balance_bad_check_balance_btn"><b>CHECK AGAIN</b></div>
+					<div id="user_flow_balance_bad_continue_btn"><b>CONTINUE ANYWAY</b></div>		
+				  </div>
+				  <div id="user_flow_step_count">STEP 3</div>		  
+			  </div>
+		    </div>							
+			<div id="user_flow_success_popup">
+				<b>SUCCESSFULLY</b>
+				<img src="../assets/css/img/User_Connection/UC_Success_Icon.png">
+			</div>
+			<div id="user_flow_connection_popup">
+				<b>CONNECTION</b>
+				<img src="../assets/css/img/User_Connection/UC_Spinner.gif">
+			</div>
+			<div id="user_flow_error_popup">
+				<b>SOMETHING <p>WRONG</p></b>
+				<img src="../assets/css/img/User_Connection/UC_Attention_Icon.png">
+			</div>		  
+		</div>		
+	</body>
+</html>
