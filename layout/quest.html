@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>dexGo</title>
+    <link rel="stylesheet" type="text/css" href="../index.css">
+
+    <!-- Additional libs -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- Ball through Torus game -->
+    <div id="ball-through-torus-game-ui" class="game-main-ui">
+	  <div id="Quest_Flow">
+		  <div class="header_torus">
+				  <div class="Had_Left">
+					 <b>DESTROY CIRCLES</b>
+				  </div>
+				  <div class="Had_MidleUp">
+					 <b>TIME</b>     
+				  </div>
+				  <div id="clock" class="Had_MidleDown">
+					 <b>00:00</b>       
+				  </div> 
+				  <div class="Had_Right">
+					 <b>AMOUNT: <span id="current-count">0</span>/<span id="total-count">12</span></b>
+				  </div> 				  
+		  </div> 
+		  <div class="header_quest">
+				  <div class="Had_Left">
+					 <b>Complete the quiz</b>
+				  </div>
+				  <div class="Had_MidleUp">
+					 <b>POINTS</b>     
+				  </div>
+				  <div class="Had_MidleDown">
+					 <b>25</b>       
+				  </div> 
+				  <div class="Had_Right">
+					 <b>Questions: <span id="current-count">0</span>/<span id="total-count">12</span></b>
+				  </div> 				  
+		  </div>		  
+		  <div id="restart-button" class="Left_Btn">
+			 <b>RESTART</b>
+		  </div>
+		  <div id="end-button" class="Right_Btn">
+			 <b>FINISH</b>
+		  </div>  
+		  <div id="launch-ball-button" class="Ball">
+		  </div>
+		  <div class="Center_Btn">
+			 <b>Interact</b>
+		  </div> 		  
+		  <div class="Circle">
+		  </div>
+		  <div class="Quest_Scanning">
+			 <img src="../assets/css/img/Level_PB_Fill.png">
+			 <p>SCANNING</p>
+		  </div>
+		  <div class="Quest_Scan_Success">
+			 <p>SUCCESSFUL!</p>
+		  </div>
+		  <div class="Quest_Scan_Attention">
+			 <p>Check your internet connection<br>or<br>try scanning slower!</p>
+		  </div>
+		  <div class="Quest_Start_PopUp">
+			 <div class="PopUp_Overlay"></div>
+			 <div class="Quest_PopUp_BG"></div>		  
+			 <div id="quest-start-popup-close" class="Quest_Close_Btn"></div>		 	
+			 <div class="Quest_Title">WELCOME</div>
+			 <div class="Quest_Target">
+				<div class="Quest_Target_Mask">
+					<img src="../assets/css/img/User_Connection/Pop_Up_Field_Img.png">
+				</div>
+			 </div>
+			 <p>Find this object, scan it and surroundings from all sides to create a collision Mesh</p>
+			 <div id="quest-start-popup-start" class="Quest_Center_Btn">
+				<b>LET'S GO</b>
+			 </div>
+	      </div>
+		  <div class="Quest_Task1_PopUp">
+			 <div class="PopUp_Overlay"></div>
+			 <div class="Quest_PopUp_BG"></div>
+			 <div class="Quest_Title">QUEST IS BEGINNING</div>
+			 <div class="Quest_Target">
+				<div class="Quest_Target_Mask">
+					<img src="../assets/css/img/User_Connection/Pop_Up_Field_Border.png">
+				</div>
+			 </div>
+			 <p>Find a board and open it</p>
+			 <div id="quest-start" class="Quest_Center_Btn">
+				<b>START</b>
+			 </div>
+		  </div>
+		  <div id="Quiz_Start_PopUp">
+			<div class="PopUp_Overlay"></div>
+			<div class="Quest_PopUp_BG"></div>		  
+			<div class="Quiz_Start_PopUp_Title">
+				 WELCOME!
+			</div>
+			<div class="Quiz_Start_PopUp_Name">
+			     <span>Sport quiz</span>		 
+			</div>
+			<div class="Quiz_Start_PopUp_Text">
+				 <span>Would you like to take part in our sports Quiz?</span>			 
+			</div>						
+			<div class="Quiz_Start_PopUp_Left_Btn">
+					 <span>No, Thanks</span>
+			</div>
+			<div class="Quiz_Start_PopUp_Right_Btn">
+				<span>let's go</span>
+			</div> 				
+          </div>
+	  	  <div id="Quiz_Result">
+			<div class="PopUp_Overlay"></div>
+			<div class="Quest_PopUp_BG"></div>		  
+			<div class="Quiz_Result_Title">
+				 Congratulations!
+			</div>
+			<div class="Quiz_Result_Descr">
+			     <p>You answered exactly <span>3</span> questions correctly out of 5</p>		 
+			</div>
+			<div class="Quiz_Result_Result">			  
+			    <div class="Quiz_Result_Value">
+					<p>Points</p>				
+					<span>75</span>	
+				</div>	
+			    <div class="Quiz_Result_Text">	
+					<span>Your Result</span>	
+				</div>				
+			</div>					
+			<div class="Quiz_Result_Btn">
+					 <span>Finish</span>
+		    </div>		  
+		  </div>		  
+		  <div class="end-game">
+			  <div class="PopUp_Overlay"></div>
+			  <div class="Quest_PopUp_BG"></div>		  
+			  <div class="Quest_Title">
+				GREAT JOB!
+			  </div>
+			  <div class="GO_Point_Flow">
+				  <div class="GO_Result">
+					<span>YOUR RESULT</span>
+				  </div>
+				  <div id="game-score" class="GO_Result_Value">
+					100
+				  </div>			  
+			  </div>
+			  <div class="GO_Time_Flow">		  
+				  <div class="GO_Result">
+					<span>YOUR TIME</span>
+				  </div>
+				  <div id="game-time" class="GO_Result_Value">
+					100
+				  </div>
+			  </div>		  
+			  <div id="exit-button" class="Quest_Center_Btn">
+				<b>CONTINUE</b>
+			  </div>
+		  </div>
+		</div>
+    </div>
+  </body>
+</html>
