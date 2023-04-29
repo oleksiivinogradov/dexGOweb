@@ -14,48 +14,71 @@
 
   <body>
     <!-- Main page -->
-    <div id="main-page" class="game-main-ui">
-      <div id="TopContent">
-          <div class="UserFlow">
-            <div class="UserAvatar"><img src="../assets/css/img/Avatar_Example_Img.png"></div>		  
-            <div class="UF_Username">Username</div>
-            <div class="UF_Money">10995$</div>
-            <div class="UF_Distance">231km</div>
-            <div class="UF_Rating">1795</div>			
-          </div>
-          <div class="TC_Profile">
-            <p>PROFILE</p>
-          </div>
-          <div class="TC_FAQ">
-          </div>      
-      </div>
-      <div class="Main_Map">
-        <div class="Map">
+    <div id="main_page" id="screen-main-ui">
+      <div id="main_page_map">
+        <div id="main_page_map_flow">
           <!--<img src="../assets/css/img/MapImage.png">-->
           <div id="mapbox-map"></div>
-          <div id="user-location-marker" class="marker"></div>
+          <div id="user-location-marker" id="marker"></div>
         </div>
-        <div id="map-zoom-out" class="Minus_btn"></div>
-        <div id="map-reset" class="Map_Reset_Player_Btn"></div>     
-        <div id="map-zoom-in" class="Plus_btn"></div>			
-        <div id="map-routes-reset" class="Map_Reset_Btn"></div>		
-  		  <div class="Map_Title">
-          <p>YOUR LOCATION</p>
-  		  </div>	
+        <div id="main_page_map-zoom-out"></div>
+        <div id="main_page_map-reset"></div>     
+        <div id="main_page_map-zoom-in"></div>			
+        <div id="main_page_map-routes-reset"></div>		
+  		<div id="main_page_map_info">
+          <div id="main_page_map_info_route">SELECT ROUTE</div>
+          <div id="main_page_map_info_start">FOLLOW TO START POINT</div>
+  		</div>	
       </div>
-      <div class="Main_Quest">
-        <h1>Explore the closest quest from you</h1>
-        <!--<h1 id="tracking-status">no tracking</h1>-->
-        <div id="find-closest-route" class= "Main_Quest_Btn">
-          <p>VIEW PATH</p>   
+	  	<div id="MP_PopUp1">
+			<div id="MP_PopUp_Title">
+				 NAME ROUTE
+			</div>
+			<div id="MP_PopUp_Profit">
+				<p>PROFIT</p>
+				<b>25$</b>
+			</div>
+			<div id="MP_PopUp_Text">
+				 <p>On this route you will learn a lot about 
+				 the activities of the purple gnomes who lived here several centuries ago...</p>			 
+			</div>		
+			<div id="MP_Coord_Title">
+				 <p>COORDINATES</p>
+			</div>
+			<div id="MP_Coord_Value">
+				 <b>41°24'12.2"N 2°10'26.5"E</b>
+			</div>			
+			<div id="reset-route" id="MP_PopUp1_Left_Btn">
+				 <p>RESET PATH</p>
+			</div>
+			<div id="continue-route" id="MP_PopUp1_Right_Btn">
+				 <p>CONTINUE</p>
+			</div>		
         </div>
-      </div>
-      <div class="Main_Quest2">
-        <h1>NAME OF ROUTE</h1>
-        <p>On this route you will learn a lot of useful information about the green gnomes who lived here a couple of centuries ago!...</p>
-        <b>800.03.23435</b>
-      </div>
-	  	
+	  	<div id="MP_PopUp2">
+			<div id="MP_PopUp_Title">
+				 NAME ROUTE
+			</div>
+			<div id="MP_PopUp_Profit">
+				<p>PROFIT</p>
+				<b>25$</b>
+			</div>
+			<div id="MP_PopUp_Text">
+				 <p>On this route you will learn a lot about 
+				 the activities of the purple gnomes who lived here several centuries ago...</p>			 
+			</div>		
+			<div id="MP_Coord_Title">
+				 <p>COORDINATES</p>
+			</div>
+			<div id="MP_Coord_Value">
+				 <b>41°24'12.2"N 2°10'26.5"E</b>
+			</div>			
+			<div id="start-route" id="MP_PopUp2_Btn">
+				 <p>START ROUTE</p>
+			</div>
+			<div id="close-popup2" id="MP_PopUp2_Close_Btn">
+			</div>			
+        </div>		
     </div>
   </body>
 </html>
